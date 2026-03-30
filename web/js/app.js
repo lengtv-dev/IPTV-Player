@@ -1,10 +1,25 @@
 /* ===== Config ===== */
-const isLocal = location.hostname === "localhost" || location.hostname === "127.0.0.1";
-const PLAYLIST_URL = isLocal
-  ? "/playlist/main.txt"
-  : "https://raw.githubusercontent.com/natajrak/IPTV-Player/main/playlist/main.txt";
+const pathBeforeWeb = location.pathname.split("/web/")[0] || "";
+const SITE_BASE_PATH = pathBeforeWeb === "/" ? "" : pathBeforeWeb;
+const PLAYLIST_URL = `${SITE_BASE_PATH}/playlist/main.txt`;
 
-const PAGE_SIZE = 30;
+const PAGE_SIZE = 20;
+const PAGINATION_ICON_PREV = `<i class="fi fi-br-angle-small-left" aria-hidden="true"></i>`;
+const PAGINATION_ICON_NEXT = `<i class="fi fi-br-angle-small-right" aria-hidden="true"></i>`;
+const SECTION_BACK_ICON = `<i class="fi fi-br-arrow-left" aria-hidden="true"></i>`;
+const PLAYER_ICON_PLAY = `<i class="fi fi-sr-play" aria-hidden="true"></i>`;
+const PLAYER_ICON_PAUSE = `<i class="fi fi-sr-pause" aria-hidden="true"></i>`;
+const EPISODES_ICON = `<i class="fi fi-rr-list" aria-hidden="true"></i>`;
+const TV_FOCUSABLE_SELECTOR = [
+  "button:not([disabled]):not(.hidden)",
+  ".card[tabindex='0']",
+  ".ep-card[tabindex='0']",
+  ".search-item[tabindex='0']",
+  ".breadcrumb-item[tabindex='0']",
+  ".logo[tabindex='0']",
+].join(", ");
+const TV_BACK_KEYS = new Set(["Escape", "Backspace", "GoBack", "BrowserBack"]);
+const TV_BACK_KEYCODES = new Set([8, 27, 10009, 461]);
 
 /* ===== State ===== */
 let navHistory = [];
@@ -19,12 +34,11 @@ let currentGroups = [];
 let currentGroupTitle = "";
 let currentGroupParent = null;
 let inheritedRefererCache = null;
-let currentTracks = null;    // [{name, stations, referer}]
-let currentTrackIdx = 0;
 let activeSearchIdx = -1;
 let preSearchState = null;   // saved state before search
 let lastNode = null;
 let lastTitle = "Home";
+let focusRefreshTimer = null;
 
 /* ===== DOM refs ===== */
 const loading    = document.getElementById("loading");
@@ -53,7 +67,6 @@ const btnEpisodes   = document.getElementById("btn-episodes");
 const epPanel       = document.getElementById("ep-panel");
 const epPanelGrid   = document.getElementById("ep-panel-grid");
 const epPanelClose  = document.getElementById("ep-panel-close");
-const btnTrack      = document.getElementById("btn-track");
 
 const upnextToast     = document.getElementById("upnext-toast");
 const upnextThumb     = document.getElementById("upnext-thumb");
@@ -76,16 +89,42 @@ logo.addEventListener("click", () => {
   closeSearch();
   fetchAndRender(PLAYLIST_URL, "Home");
 });
+logo.tabIndex = 0;
+logo.setAttribute("role", "button");
+logo.setAttribute("aria-label", "กลับหน้าแรก");
+logo.addEventListener("keydown", (e) => {
+  if (e.key === "Enter" || e.key === " ") {
+    e.preventDefault();
+    logo.click();
+  }
+});
 
 window.addEventListener("keydown", (e) => {
-  if (e.key === "Escape") {
-    if (!playerOverlay.classList.contains("hidden")) closePlayer();
-    else closeSearch();
+  if (isTypingTarget(e.target)) return;
+
+  if (isTVBackKey(e) && handleTVBack()) {
+    e.preventDefault();
+    return;
   }
-  if (!playerOverlay.classList.contains("hidden")) {
-    if (e.key === "ArrowLeft")  rewind10();
-    if (e.key === "ArrowRight") forward10();
-    if (e.key === " ") { e.preventDefault(); togglePlayPause(); }
+
+  if (["ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight"].includes(e.key)) {
+    e.preventDefault();
+    moveTVFocus(e.key);
+    return;
+  }
+
+  if (e.key === "Enter") {
+    const el = document.activeElement;
+    if (isTVFocusable(el)) {
+      e.preventDefault();
+      el.click();
+      return;
+    }
+  }
+
+  if (e.key === " " && !playerOverlay.classList.contains("hidden") && document.activeElement === playerVideo) {
+    e.preventDefault();
+    togglePlayPause();
   }
 });
 
@@ -99,7 +138,7 @@ fetchAndRender(PLAYLIST_URL, "Home");
 async function fetchAndRender(url, title, pushHistory = false, previousNode = null) {
   showLoading();
   try {
-    const node = await fetchJSON(url);
+    const node = normalizePlaylistNode(await fetchJSON(url));
     if (pushHistory && previousNode) {
       navHistory.push({ node: previousNode, title });
     }
@@ -114,6 +153,34 @@ async function fetchJSON(url) {
   const res = await fetch(url);
   if (!res.ok) throw new Error(`HTTP ${res.status}`);
   return res.json();
+}
+
+function normalizeUrlByBase(url) {
+  if (typeof url !== "string") return url;
+  if (url.startsWith("/web/") || url.startsWith("/playlist/")) {
+    return `${SITE_BASE_PATH}${url}`;
+  }
+  return url;
+}
+
+function normalizePlaylistNode(node) {
+  if (!node || typeof node !== "object") return node;
+
+  const cloned = Array.isArray(node) ? [...node] : { ...node };
+
+  if (!Array.isArray(cloned)) {
+    if (typeof cloned.image === "string") cloned.image = normalizeUrlByBase(cloned.image);
+    if (typeof cloned.url === "string") cloned.url = normalizeUrlByBase(cloned.url);
+  }
+
+  Object.keys(cloned).forEach((key) => {
+    const value = cloned[key];
+    if (!value) return;
+    if (Array.isArray(value)) cloned[key] = value.map(normalizePlaylistNode);
+    else if (typeof value === "object") cloned[key] = normalizePlaylistNode(value);
+  });
+
+  return cloned;
 }
 
 /* ===== Search Index ===== */
@@ -195,9 +262,13 @@ function renderSearchResults(results, q) {
         : "";
       const ph = `<div class="search-thumb-ph" style="${r.image ? "display:none" : ""}">🎬</div>`;
       const pathStr = r.path.length ? esc(r.path.join(" › ")) : "";
-      return `<div class="search-item" data-idx="${i}">${thumb}${ph}
+      const title = splitCardTitle(r.name);
+      return `<div class="search-item" data-idx="${i}" tabindex="0" role="button">${thumb}${ph}
         <div class="search-item-info">
-          <div class="search-item-name">${esc(r.name)}</div>
+          <div class="search-item-name">
+            <div class="search-item-name-main">${esc(title.main)}</div>
+            ${title.th ? `<div class="search-item-name-th">${esc(title.th)}</div>` : ""}
+          </div>
           ${pathStr ? `<div class="search-item-path">${pathStr}</div>` : ""}
         </div></div>`;
     }).join("");
@@ -205,6 +276,12 @@ function renderSearchResults(results, q) {
     searchResults.querySelectorAll(".search-item").forEach((el, i) => {
       el.addEventListener("click", () => {
         navigateToSearchResult(results[i]);
+      });
+      el.addEventListener("keydown", (e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          el.click();
+        }
       });
     });
   }
@@ -231,8 +308,127 @@ function closeSearch() {
   activeSearchIdx = -1;
 }
 
+function isTypingTarget(target) {
+  if (!target) return false;
+  const tag = target.tagName;
+  return tag === "INPUT" || tag === "TEXTAREA" || tag === "SELECT" || target.isContentEditable;
+}
+
+function isTVBackKey(e) {
+  return TV_BACK_KEYS.has(e.key) || TV_BACK_KEYCODES.has(e.keyCode);
+}
+
+function handleTVBack() {
+  if (!playerOverlay.classList.contains("hidden")) {
+    if (!epPanel.classList.contains("hidden")) {
+      epPanel.classList.add("hidden");
+      btnEpisodes.focus({ preventScroll: true });
+      return true;
+    }
+    closePlayer();
+    return true;
+  }
+
+  if (!searchResults.classList.contains("hidden")) {
+    closeSearch();
+    queueFocusRefresh();
+    return true;
+  }
+
+  if (navHistory.length > 0) {
+    goBackOneStep();
+    return true;
+  }
+
+  return false;
+}
+
+function isElementVisible(el) {
+  if (!el || !el.isConnected) return false;
+  if (el.classList?.contains("hidden")) return false;
+  const style = window.getComputedStyle(el);
+  if (style.display === "none" || style.visibility === "hidden" || style.opacity === "0") return false;
+  if (el.offsetParent === null && style.position !== "fixed") return false;
+  return true;
+}
+
+function isTVFocusable(el) {
+  return !!(el && el.matches && el.matches(TV_FOCUSABLE_SELECTOR) && isElementVisible(el));
+}
+
+function getTVFocusableElements() {
+  const root = playerOverlay.classList.contains("hidden") ? document : playerOverlay;
+  return Array.from(root.querySelectorAll(TV_FOCUSABLE_SELECTOR))
+    .filter(isTVFocusable);
+}
+
+function focusTVElement(el) {
+  if (!el) return;
+  el.focus({ preventScroll: true });
+  el.scrollIntoView({ block: "nearest", inline: "nearest" });
+}
+
+function moveTVFocus(directionKey) {
+  const elements = getTVFocusableElements();
+  if (!elements.length) return;
+
+  const current = isTVFocusable(document.activeElement) ? document.activeElement : null;
+  if (!current) {
+    focusTVElement(elements[0]);
+    return;
+  }
+
+  const currentRect = current.getBoundingClientRect();
+  const currentCenter = { x: currentRect.left + currentRect.width / 2, y: currentRect.top + currentRect.height / 2 };
+
+  let best = null;
+  let bestScore = Number.POSITIVE_INFINITY;
+
+  elements.forEach((el) => {
+    if (el === current) return;
+    const rect = el.getBoundingClientRect();
+    const center = { x: rect.left + rect.width / 2, y: rect.top + rect.height / 2 };
+    const dx = center.x - currentCenter.x;
+    const dy = center.y - currentCenter.y;
+
+    let primary = 0;
+    let cross = 0;
+    if (directionKey === "ArrowRight" && dx > 2) { primary = dx; cross = Math.abs(dy); }
+    else if (directionKey === "ArrowLeft" && dx < -2) { primary = -dx; cross = Math.abs(dy); }
+    else if (directionKey === "ArrowDown" && dy > 2) { primary = dy; cross = Math.abs(dx); }
+    else if (directionKey === "ArrowUp" && dy < -2) { primary = -dy; cross = Math.abs(dx); }
+    else return;
+
+    const score = primary * 1000 + cross;
+    if (score < bestScore) {
+      best = el;
+      bestScore = score;
+    }
+  });
+
+  if (best) focusTVElement(best);
+}
+
+function queueFocusRefresh() {
+  clearTimeout(focusRefreshTimer);
+  focusRefreshTimer = setTimeout(() => {
+    const elements = getTVFocusableElements();
+    if (!elements.length) return;
+
+    const preferred = !playerOverlay.classList.contains("hidden")
+      ? (!epPanel.classList.contains("hidden")
+        ? epPanelGrid.querySelector(".ep-card.active") || epPanelGrid.querySelector(".ep-card")
+        : btnPlayPause)
+      : gridView.classList.contains("hidden")
+        ? logo
+        : document.querySelector(".card") || document.querySelector(".section-back-btn") || logo;
+
+    focusTVElement(isTVFocusable(preferred) ? preferred : elements[0]);
+  }, 0);
+}
+
 /* ===== Render node ===== */
-function renderNode(node, title, tracks = null) {
+function renderNode(node, title) {
   lastNode = node;
   lastTitle = title;
   updateBreadcrumb(title);
@@ -241,7 +437,7 @@ function renderNode(node, title, tracks = null) {
     currentPage = 0;
     renderGroups(node.groups, title, node);
   } else if (node.stations?.length) {
-    renderStations(node.stations, node.referer, title, tracks);
+    renderStations(node.stations, node.referer, title);
   } else {
     showError("ไม่พบข้อมูลใน playlist นี้");
     return;
@@ -257,24 +453,37 @@ function renderGroups(groups, sectionTitle, parentNode) {
 
   const total = groups.length;
   const totalPages = Math.ceil(total / PAGE_SIZE);
+  currentPage = Math.max(0, Math.min(currentPage, totalPages - 1));
   const start = currentPage * PAGE_SIZE;
   const pageGroups = groups.slice(start, start + PAGE_SIZE);
+  const pageItems = getPaginationItems(totalPages, currentPage);
 
-  gridView.innerHTML = `<h2 class="section-title">${esc(sectionTitle)}</h2>
+  gridView.innerHTML = `${renderSectionHeader(sectionTitle)}
     <div class="card-grid portrait"></div>
-    ${totalPages > 1 ? `<div id="pagination">
-      <button class="page-btn" id="page-prev" ${currentPage === 0 ? "disabled" : ""}>◀ ก่อนหน้า</button>
-      <span id="page-info">หน้า ${currentPage + 1} / ${totalPages}</span>
-      <button class="page-btn" id="page-next" ${currentPage >= totalPages - 1 ? "disabled" : ""}>ถัดไป ▶</button>
-    </div>` : ""}`;
+    ${totalPages > 1 ? `<nav id="pagination" aria-label="Pagination">
+      <button class="page-btn page-nav" id="page-prev" ${currentPage === 0 ? "disabled" : ""} aria-label="หน้าก่อนหน้า">
+        ${PAGINATION_ICON_PREV}
+      </button>
+      <div id="page-numbers">
+        ${pageItems.map(item => {
+          const pageNum = Number(item);
+          const isActive = pageNum === currentPage + 1;
+          return `<button class="page-btn page-number${isActive ? " active" : ""}" data-page="${pageNum - 1}" ${isActive ? 'aria-current="page"' : ""} aria-label="หน้า ${pageNum}">${pageNum}</button>`;
+        }).join("")}
+      </div>
+      <button class="page-btn page-nav" id="page-next" ${currentPage >= totalPages - 1 ? "disabled" : ""} aria-label="หน้าถัดไป">
+        ${PAGINATION_ICON_NEXT}
+      </button>
+    </nav>` : ""}`;
 
   const grid = gridView.querySelector(".card-grid");
+  document.getElementById("section-back")?.addEventListener("click", goBackOneStep);
 
   pageGroups.forEach((group) => {
     const card = makeCard({
       name: group.name || group.info || "ไม่มีชื่อ",
       image: group.image,
-      sub: group.author || null,
+      sub: group.author && group.author !== "Bank_" ? group.author : null,
       landscape: false,
     });
 
@@ -284,14 +493,8 @@ function renderGroups(groups, sectionTitle, parentNode) {
         navHistory.push({ node: prevNode, title: sectionTitle });
         fetchAndRender(group.url, group.name || "...");
       } else {
-        // detect sibling language tracks
-        const siblingTracks = groups
-          .filter(g => g.stations?.length)
-          .map(g => ({ name: g.name || g.info || "ไม่ทราบ", stations: g.stations, referer: g.referer || null }));
-        const tracks = siblingTracks.length > 1 ? siblingTracks : null;
-
         navHistory.push({ node: prevNode, title: sectionTitle });
-        renderNode(group, group.name || "...", tracks);
+        renderNode(group, group.name || "...");
       }
     });
 
@@ -299,27 +502,67 @@ function renderGroups(groups, sectionTitle, parentNode) {
   });
 
   if (totalPages > 1) {
+    const goToPage = (targetPage) => {
+      const clamped = Math.max(0, Math.min(targetPage, totalPages - 1));
+      if (clamped === currentPage) return;
+      currentPage = clamped;
+      renderGroups(currentGroups, currentGroupTitle, currentGroupParent);
+      showGrid();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    };
+
     document.getElementById("page-prev")?.addEventListener("click", () => {
-      currentPage--;
-      renderGroups(currentGroups, currentGroupTitle, currentGroupParent);
-      showGrid();
-      window.scrollTo({ top: 0, behavior: "smooth" });
+      goToPage(currentPage - 1);
     });
+
     document.getElementById("page-next")?.addEventListener("click", () => {
-      currentPage++;
-      renderGroups(currentGroups, currentGroupTitle, currentGroupParent);
-      showGrid();
-      window.scrollTo({ top: 0, behavior: "smooth" });
+      goToPage(currentPage + 1);
+    });
+
+    gridView.querySelectorAll(".page-number").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        goToPage(Number(btn.dataset.page));
+      });
     });
   }
 }
 
+function getPaginationItems(totalPages, activePageIdx) {
+  const windowSize = 5;
+  if (totalPages <= windowSize) return Array.from({ length: totalPages }, (_, i) => i + 1);
+
+  let start = activePageIdx - Math.floor(windowSize / 2);
+  start = Math.max(0, Math.min(start, totalPages - windowSize));
+  return Array.from({ length: windowSize }, (_, i) => start + i + 1);
+}
+
+function renderSectionHeader(title) {
+  const canGoBack = navHistory.length > 0;
+  const splitTitle = splitCardTitle(title);
+  return `<div class="section-header">
+    ${canGoBack ? `<button id="section-back" class="section-back-btn" aria-label="ย้อนกลับ">${SECTION_BACK_ICON}</button>` : ""}
+    <h2 class="section-title">
+      <span class="section-title-main">${esc(splitTitle.main)}</span>
+      ${splitTitle.th ? `<span class="section-title-th">${esc(splitTitle.th)}</span>` : ""}
+    </h2>
+  </div>`;
+}
+
+function goBackOneStep() {
+  const prev = navHistory.pop();
+  if (!prev) return;
+  renderNode(prev.node, prev.title);
+  showGrid();
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
 /* ===== Render episode cards ===== */
-function renderStations(stations, referer, sectionTitle, tracks = null) {
-  gridView.innerHTML = `<h2 class="section-title">${esc(sectionTitle)}</h2>
+function renderStations(stations, referer, sectionTitle) {
+  gridView.innerHTML = `${renderSectionHeader(sectionTitle)}
     <div class="card-grid landscape"></div>`;
 
   const grid = gridView.querySelector(".card-grid");
+  document.getElementById("section-back")?.addEventListener("click", goBackOneStep);
 
   stations.forEach((station, i) => {
     const card = makeCard({
@@ -330,7 +573,7 @@ function renderStations(stations, referer, sectionTitle, tracks = null) {
     });
 
     card.addEventListener("click", () => {
-      openPlayer(stations, i, referer, tracks);
+      openPlayer(stations, i, referer);
     });
 
     grid.appendChild(card);
@@ -341,6 +584,7 @@ function renderStations(stations, referer, sectionTitle, tracks = null) {
 function makeCard({ name, image, sub, landscape }) {
   const card = document.createElement("div");
   card.className = "card";
+  card.title = name || "";
   card.tabIndex = 0;
   card.setAttribute("role", "button");
   card.addEventListener("keydown", (e) => {
@@ -366,11 +610,26 @@ function makeCard({ name, image, sub, landscape }) {
 
   const info = document.createElement("div");
   info.className = "card-info";
-  info.innerHTML = `<div class="card-name">${esc(name)}</div>${sub ? `<div class="card-sub">${esc(sub)}</div>` : ""}`;
+  const title = splitCardTitle(name);
+  info.innerHTML = `<div class="card-name"><div class="card-name-main">${esc(title.main)}</div>${title.th ? `<div class="card-name-th">${esc(title.th)}</div>` : ""}</div>${sub ? `<div class="card-sub">${esc(sub)}</div>` : ""}`;
 
   card.appendChild(thumb);
   card.appendChild(info);
   return card;
+}
+
+function splitCardTitle(name) {
+  const raw = String(name || "").trim();
+  if (!raw) return { main: "", th: "" };
+
+  const bracketMatch = raw.match(/^(.*?)\s*[\[\(](.+?)[\]\)]\s*$/);
+  if (bracketMatch) {
+    const main = bracketMatch[1].trim();
+    const alt = bracketMatch[2].trim();
+    if (main && /[\u0E00-\u0E7F]/.test(alt)) return { main, th: alt };
+  }
+
+  return { main: raw, th: "" };
 }
 
 /* ===== Breadcrumb ===== */
@@ -381,9 +640,17 @@ function updateBreadcrumb(currentTitle) {
     const span = document.createElement("span");
     span.className = "breadcrumb-item";
     span.textContent = entry.title;
+    span.tabIndex = 0;
+    span.setAttribute("role", "button");
     span.addEventListener("click", () => {
       navHistory = navHistory.slice(0, i);
       renderNode(entry.node, entry.title);
+    });
+    span.addEventListener("keydown", (e) => {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        span.click();
+      }
     });
     breadcrumb.appendChild(span);
 
@@ -400,15 +667,11 @@ function updateBreadcrumb(currentTitle) {
 }
 
 /* ===== Player ===== */
-function openPlayer(stations, index, inheritedReferer, tracks = null) {
+function openPlayer(stations, index, inheritedReferer) {
   currentStations = stations;
   currentIndex = index;
   upnextCancelled = false;
   inheritedRefererCache = inheritedReferer;
-  currentTracks = tracks;
-  currentTrackIdx = tracks ? tracks.findIndex(t => t.stations === stations) : 0;
-  if (currentTrackIdx < 0) currentTrackIdx = 0;
-  updateTrackButton();
 
   playerOverlay.classList.remove("hidden");
   document.body.style.overflow = "hidden";
@@ -416,6 +679,7 @@ function openPlayer(stations, index, inheritedReferer, tracks = null) {
   showPlayerUI();
 
   playEpisode(index, inheritedReferer);
+  queueFocusRefresh();
 }
 
 function playEpisode(index, inheritedReferer) {
@@ -431,7 +695,7 @@ function playEpisode(index, inheritedReferer) {
   playerTitle.textContent = station.name || `ตอนที่ ${index + 1}`;
   btnPrevEp.disabled = index <= 0;
   btnNextEp.disabled = index >= currentStations.length - 1;
-  btnEpisodes.textContent = `☰ ${index + 1}/${currentStations.length}`;
+  btnEpisodes.innerHTML = `${EPISODES_ICON}<span>${index + 1}/${currentStations.length}</span>`;
   if (!epPanel.classList.contains("hidden")) renderEpPanel();
 
   cancelUpnext();
@@ -470,8 +734,8 @@ btnForward.addEventListener("click", forward10);
 btnPrevEp.addEventListener("click", () => { if (currentIndex > 0) playEpisode(currentIndex - 1, inheritedRefererCache); });
 btnNextEp.addEventListener("click", () => { if (currentIndex < currentStations.length - 1) playEpisode(currentIndex + 1, inheritedRefererCache); });
 
-playerVideo.addEventListener("play",  () => { btnPlayPause.textContent = "⏸"; showPlayerUI(); });
-playerVideo.addEventListener("pause", () => { btnPlayPause.textContent = "▶"; showPlayerUI(); });
+playerVideo.addEventListener("play",  () => { btnPlayPause.innerHTML = PLAYER_ICON_PAUSE; showPlayerUI(); });
+playerVideo.addEventListener("pause", () => { btnPlayPause.innerHTML = PLAYER_ICON_PLAY; showPlayerUI(); });
 
 playerVideo.addEventListener("timeupdate", () => {
   if (!playerVideo.duration) return;
@@ -491,32 +755,49 @@ playerSeek.addEventListener("input", () => {
 btnEpisodes.addEventListener("click", (e) => {
   e.stopPropagation();
   const isOpen = !epPanel.classList.contains("hidden");
-  if (isOpen) { epPanel.classList.add("hidden"); return; }
+  if (isOpen) {
+    epPanel.classList.add("hidden");
+    btnEpisodes.focus({ preventScroll: true });
+    return;
+  }
   renderEpPanel();
   epPanel.classList.remove("hidden");
   showPlayerUI();
+  queueFocusRefresh();
 });
 
-epPanelClose.addEventListener("click", () => epPanel.classList.add("hidden"));
+epPanelClose.addEventListener("click", () => {
+  epPanel.classList.add("hidden");
+  btnEpisodes.focus({ preventScroll: true });
+});
 
 function renderEpPanel() {
   epPanelGrid.innerHTML = "";
   currentStations.forEach((station, i) => {
     const card = document.createElement("div");
     card.className = "ep-card" + (i === currentIndex ? " active" : "");
+    card.tabIndex = 0;
+    card.setAttribute("role", "button");
 
     const thumbEl = station.image
       ? `<img class="ep-card-thumb" src="${esc(station.image)}" alt="" loading="lazy" onerror="this.outerHTML='<div class=ep-card-thumb-ph>▶</div>'">`
       : `<div class="ep-card-thumb-ph">▶</div>`;
 
-    const label = station.name || `ตอนที่ ${i + 1}`;
-    const playingBadge = i === currentIndex ? `<span class="ep-card-playing">▶ กำลังเล่น</span>` : "";
+    const label = splitEpisodeLabel(station.name, i + 1);
+    const playingBadge = i === currentIndex ? `<span class="ep-card-playing">กำลังเล่น</span>` : "";
 
-    card.innerHTML = `${thumbEl}${playingBadge}<div class="ep-card-label">${esc(label)}</div>`;
+    const titleEl = label.title ? `<div class="ep-card-title">${esc(label.title)}</div>` : "";
+    card.innerHTML = `<div class="ep-card-media">${thumbEl}${playingBadge}</div><div class="ep-card-content"><div class="ep-card-label"><div class="ep-card-epno">${esc(label.ep)}</div>${titleEl}</div></div>`;
 
     card.addEventListener("click", () => {
       playEpisode(i, inheritedRefererCache);
       renderEpPanel();  // refresh active state
+    });
+    card.addEventListener("keydown", (e) => {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        card.click();
+      }
     });
 
     epPanelGrid.appendChild(card);
@@ -531,62 +812,12 @@ function renderEpPanel() {
 // Close panel when clicking outside
 playerOverlay.addEventListener("click", (e) => {
   if (!epPanel.contains(e.target) && e.target !== btnEpisodes) {
-    epPanel.classList.add("hidden");
-  }
-  const menu = document.getElementById("track-menu");
-  if (menu && !menu.contains(e.target) && e.target !== btnTrack) {
-    menu.remove();
+    if (!epPanel.classList.contains("hidden")) {
+      epPanel.classList.add("hidden");
+      btnEpisodes.focus({ preventScroll: true });
+    }
   }
 });
-
-// Track (language) switcher
-btnTrack.addEventListener("click", (e) => {
-  e.stopPropagation();
-  const existing = document.getElementById("track-menu");
-  if (existing) { existing.remove(); return; }
-  if (!currentTracks) return;
-
-  const menu = document.createElement("div");
-  menu.id = "track-menu";
-  currentTracks.forEach((track, i) => {
-    const opt = document.createElement("div");
-    opt.className = "track-option" + (i === currentTrackIdx ? " active" : "");
-    opt.innerHTML = `<span class="track-dot"></span>${esc(track.name)}`;
-    opt.addEventListener("click", () => {
-      menu.remove();
-      switchTrack(i);
-    });
-    menu.appendChild(opt);
-  });
-  playerOverlay.appendChild(menu);
-  showPlayerUI();
-});
-
-const TRACK_ICON = `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-  <circle cx="12" cy="12" r="10"/>
-  <line x1="2" y1="12" x2="22" y2="12"/>
-  <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
-</svg>`;
-
-function updateTrackButton() {
-  if (!currentTracks || currentTracks.length <= 1) {
-    btnTrack.classList.add("hidden");
-    return;
-  }
-  btnTrack.classList.remove("hidden");
-  const name = currentTracks[currentTrackIdx]?.name || "ภาษา";
-  btnTrack.innerHTML = `${TRACK_ICON} ${esc(name)}`;
-}
-
-function switchTrack(idx) {
-  const track = currentTracks[idx];
-  currentTrackIdx = idx;
-  currentStations = track.stations;
-  const targetIndex = Math.min(currentIndex, currentStations.length - 1);
-  updateTrackButton();
-  playEpisode(targetIndex, track.referer || inheritedRefererCache);
-  if (!epPanel.classList.contains("hidden")) renderEpPanel();
-}
 
 // Mute toggle
 btnMute.addEventListener("click", () => {
@@ -602,27 +833,17 @@ volumeSlider.addEventListener("input", () => {
 });
 
 const VOL_ICONS = {
-  mute: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-    <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
-    <line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/>
-  </svg>`,
-  low: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-    <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
-    <path d="M15.54 8.46a5 5 0 0 1 0 7.07"/>
-  </svg>`,
-  high: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-    <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
-    <path d="M15.54 8.46a5 5 0 0 1 0 7.07"/>
-    <path d="M19.07 4.93a10 10 0 0 1 0 14.14"/>
-  </svg>`,
+  low: `<i class="fi fi-rr-volume-down" aria-hidden="true"></i>`,
+  high: `<i class="fi fi-rr-volume" aria-hidden="true"></i>`,
+  mute: `<i class="fi fi-rr-volume-mute" aria-hidden="true"></i>`,
 };
 
 function updateVolumeUI() {
-  const v = playerVideo.muted ? 0 : playerVideo.volume;
-  volumeSlider.value = playerVideo.muted ? 0 : playerVideo.volume;
+  const v = playerVideo.volume;
+  volumeSlider.value = v;
   const pct = v * 100;
   volumeSlider.style.background = `linear-gradient(to right, rgba(255,255,255,.9) ${pct}%, rgba(255,255,255,.3) ${pct}%)`;
-  btnMute.innerHTML = v === 0 ? VOL_ICONS.mute : v < 0.5 ? VOL_ICONS.low : VOL_ICONS.high;
+  btnMute.innerHTML = playerVideo.muted || v === 0 ? VOL_ICONS.mute : v < 0.5 ? VOL_ICONS.low : VOL_ICONS.high;
 }
 
 // Fullscreen
@@ -668,6 +889,44 @@ function formatTime(secs) {
   const m = Math.floor(secs / 60);
   const s = Math.floor(secs % 60).toString().padStart(2, "0");
   return `${m}:${s}`;
+}
+
+function splitEpisodeLabel(name, index) {
+  const fallbackEp = `ตอนที่ ${index}`;
+  if (!name) return { ep: fallbackEp, title: "" };
+
+  const trimmed = String(name).trim();
+  const epDashSplit = trimmed.match(/^(EP\.?\s*\d+)\s*[-–—]\s*(.+)$/i);
+  if (epDashSplit) {
+    return { ep: epDashSplit[1].toUpperCase().replace(/\s+/g, " "), title: epDashSplit[2] };
+  }
+
+  const dashSplit = trimmed.match(/^(ตอนที่\s*\d+)\s*[-–—]\s*(.+)$/i);
+  if (dashSplit) {
+    return { ep: dashSplit[1], title: dashSplit[2] };
+  }
+
+  const epOnlyEn = trimmed.match(/^(EP\.?\s*\d+)$/i);
+  if (epOnlyEn) {
+    return { ep: epOnlyEn[1].toUpperCase().replace(/\s+/g, " "), title: "" };
+  }
+
+  const epOnlyTh = trimmed.match(/^(ตอนที่\s*\d+)$/i);
+  if (epOnlyTh) {
+    return { ep: epOnlyTh[1], title: "" };
+  }
+
+  const epSpaceSplit = trimmed.match(/^(EP\.?\s*\d+)\s+(.+)$/i);
+  if (epSpaceSplit) {
+    return { ep: epSpaceSplit[1].toUpperCase().replace(/\s+/g, " "), title: epSpaceSplit[2] };
+  }
+
+  const spaceSplit = trimmed.match(/^(ตอนที่\s*\d+)\s+(.+)$/i);
+  if (spaceSplit) {
+    return { ep: spaceSplit[1], title: spaceSplit[2] };
+  }
+
+  return { ep: fallbackEp, title: "" };
 }
 
 /* ===== Auto-next (Up Next toast) ===== */
@@ -724,6 +983,7 @@ function closePlayer() {
   playerOverlay.classList.remove("show-ui");
   clearTimeout(idleTimer);
   document.body.style.overflow = "";
+  queueFocusRefresh();
 }
 
 function destroyHls() {
@@ -743,6 +1003,7 @@ function showGrid() {
   loading.classList.add("hidden");
   errorView.classList.add("hidden");
   gridView.classList.remove("hidden");
+  queueFocusRefresh();
 }
 
 function showError(msg) {
