@@ -80,23 +80,23 @@
                                                          }
                                                      ],
                                           "name":  "The Series",
-                                          "image":  "https://drive.google.com/uc?id=1C0R9HJu8BXn2ezUgYsrL0rlhq9KYIygW"
+                                          "image":  "/web/images/covers/cover-anime-series.png"
                                       },
                                       {
                                           "url":  "https://raw.githubusercontent.com/natajrak/IPTV-Player/main/playlist/Anime/Movies/The-Movies.txt",
                                           "name":  "The Movies",
-                                          "image":  "https://drive.google.com/uc?id=1GkjBby5-kQSRwuCa36KptBkb80vqOXyx"
+                                          "image":  "/web/images/covers/cover-anime-movie.png"
                                       }
                                   ],
                        "name":  "Anime",
                        "author":  "Bank_",
-                       "image":  "https://drive.google.com/uc?id=1r4fBQlFAtD55BnJUdG2KRr-cte4BV7fi"
+                       "image":  "/web/images/covers/cover-anime.png"
                    },
                    {
                        "url":  "https://raw.githubusercontent.com/natajrak/IPTV-Player/main/playlist/Movies/Movies.txt",
                        "name":  "Movies",
-                       "image":  "https://i.ebayimg.com/images/g/LtwAAOSwZAdmtMsm/s-l1200.jpg"
+                       "image":  "/web/images/covers/cover-movie.png"
                    }
                ],
-    "image":  "https://drive.google.com/uc?id=1r4fBQlFAtD55BnJUdG2KRr-cte4BV7fi"
+    "image":  "/web/images/covers/Anime.jpg"
 }
