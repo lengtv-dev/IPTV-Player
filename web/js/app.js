@@ -862,7 +862,10 @@ function showPlayerUI() {
   playerOverlay.classList.add("show-ui");
   clearTimeout(idleTimer);
   if (!playerVideo.paused) {
-    idleTimer = setTimeout(() => playerOverlay.classList.remove("show-ui"), 3000);
+    idleTimer = setTimeout(() => {
+      playerOverlay.classList.remove("show-ui");
+      epPanel.classList.add("hidden");
+    }, 3000);
   }
 }
 
@@ -890,23 +893,33 @@ function splitEpisodeLabel(name, index) {
   if (!name) return { ep: fallbackEp, title: "" };
 
   const trimmed = String(name).trim();
-  const enMatch = trimmed.match(/^(?:ep|episode)\.?\s*(\d+)(?:\s*[-–—]\s*(.+)|\s+(.+))?$/i);
+  const normalized = trimmed
+    .replace(/\s+/g, " ")
+    .replace(/[‐‑‒–—−]/g, "-")
+    .trim();
+  const enMatch = normalized.match(/^(?:ep|episode)\.?\s*(\d+)(?:\s*[-:]\s*(.+)|\s+(.+))?$/i);
   if (enMatch) {
     const ep = `Ep. ${enMatch[1]}`;
     const title = (enMatch[2] || enMatch[3] || "").trim();
     return { ep, title };
   }
 
-  const thMatch = trimmed.match(/^(?:ตอนที่|ตอน)\s*(\d+)(?:\s*[-–—]\s*(.+)|\s+(.+))?$/u);
+  const thMatch = normalized.match(/^(?:ตอนที่|ตอน)\s*(\d+)(?:\s*[-:]\s*(.+)|\s+(.+))?$/u);
   if (thMatch) {
     const ep = `ตอน ${thMatch[1]}`;
-    const title = (thMatch[2] || thMatch[3] || "").trim();
+    let title = (thMatch[2] || thMatch[3] || "").trim();
+    if (!title) {
+      title = normalized
+        .replace(/^(?:ตอนที่|ตอน)\s*\d+\s*/u, "")
+        .replace(/^[-:]\s*/, "")
+        .trim();
+    }
     return { ep, title };
   }
 
   // Unknown format: keep full label as title.
-  const hasThai = /[\u0E00-\u0E7F]/.test(trimmed);
-  return { ep: hasThai ? `ตอน ${index}` : fallbackEp, title: trimmed };
+  const hasThai = /[\u0E00-\u0E7F]/.test(normalized);
+  return { ep: hasThai ? `ตอน ${index}` : fallbackEp, title: normalized };
 }
 /* ===== Auto-next (Up Next toast) ===== */
 function scheduleNext(inheritedReferer) {
