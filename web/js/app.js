@@ -38,6 +38,11 @@ let currentGroups = [];
 let currentGroupTitle = "";
 let currentGroupParent = null;
 let inheritedRefererCache = null;
+let crossSeasonQueue = [];
+let crossSeasonIndex = -1;
+let crossSeasonSeasons = [];
+let epPanelSeasonFilter = "";
+let currentSeasonTitle = "";
 let activeSearchIdx = -1;
 let preSearchState = null;   // saved state before search
 let lastNode = null;
@@ -69,6 +74,7 @@ const volumeSlider  = document.getElementById("volume-slider");
 const btnFullscreen = document.getElementById("btn-fullscreen");
 const btnEpisodes   = document.getElementById("btn-episodes");
 const epPanel       = document.getElementById("ep-panel");
+const epPanelTabs   = document.getElementById("ep-panel-tabs");
 const epPanelGrid   = document.getElementById("ep-panel-grid");
 const epPanelClose  = document.getElementById("ep-panel-close");
 
@@ -598,7 +604,7 @@ function renderStations(stations, referer, sectionTitle) {
     });
 
     card.addEventListener("click", () => {
-      openPlayer(stations, i, referer);
+      openPlayer(stations, i, referer, sectionTitle);
     });
 
     grid.appendChild(card);
@@ -692,11 +698,90 @@ function updateBreadcrumb(currentTitle) {
 }
 
 /* ===== Player ===== */
-function openPlayer(stations, index, inheritedReferer) {
+function normalizeKey(value) {
+  return String(value || "")
+    .trim()
+    .toLowerCase()
+    .replace(/\s+/g, " ")
+    .replace(/[‐‑‒–—−]/g, "-");
+}
+
+function buildCrossSeasonQueue(languageTitle, inheritedReferer) {
+  const seasonEntry = navHistory[navHistory.length - 1];
+  const seriesEntry = navHistory[navHistory.length - 2];
+  const seasonGroups = seriesEntry?.node?.groups;
+  if (!Array.isArray(seasonGroups) || seasonGroups.length === 0) return { queue: [], seasons: [] };
+  if (!Array.isArray(seasonEntry?.node?.groups)) return { queue: [], seasons: [] };
+
+  const langKey = normalizeKey(languageTitle);
+  const queue = [];
+  const seasons = [];
+
+  seasonGroups.forEach((season) => {
+    const langs = Array.isArray(season?.groups) ? season.groups : [];
+    const matchedLang = langs.find((lang) => normalizeKey(lang.name || lang.info) === langKey);
+    if (!matchedLang || !Array.isArray(matchedLang.stations) || matchedLang.stations.length === 0) return;
+
+    const groupReferer = matchedLang.referer ?? season.referer ?? inheritedReferer ?? null;
+    const seasonTitle = season.name || season.info || `Season ${seasons.length + 1}`;
+    seasons.push({
+      title: seasonTitle,
+      stations: matchedLang.stations,
+      referer: groupReferer,
+    });
+    matchedLang.stations.forEach((station, localIndex) => {
+      queue.push({
+        station,
+        stations: matchedLang.stations,
+        localIndex,
+        referer: station.referer ?? groupReferer,
+        seasonTitle,
+      });
+    });
+  });
+
+  return { queue, seasons };
+}
+
+function resolveAdjacentEpisode(step) {
+  const localIndex = currentIndex + step;
+  if (localIndex >= 0 && localIndex < currentStations.length) {
+    return { type: "local", index: localIndex };
+  }
+
+  if (crossSeasonIndex >= 0) {
+    const queueIndex = crossSeasonIndex + step;
+    if (queueIndex >= 0 && queueIndex < crossSeasonQueue.length) {
+      return { type: "queue", queueIndex };
+    }
+  }
+
+  return null;
+}
+
+function playEpisodeFromQueue(queueIndex) {
+  const item = crossSeasonQueue[queueIndex];
+  if (!item) return;
+  crossSeasonIndex = queueIndex;
+  currentStations = item.stations;
+  currentSeasonTitle = item.seasonTitle || currentSeasonTitle;
+  playEpisode(item.localIndex, item.referer);
+}
+
+function openPlayer(stations, index, inheritedReferer, languageTitle = "") {
   currentStations = stations;
   currentIndex = index;
   upnextCancelled = false;
   inheritedRefererCache = inheritedReferer;
+  const crossSeasonData = buildCrossSeasonQueue(languageTitle, inheritedReferer);
+  crossSeasonQueue = crossSeasonData.queue;
+  crossSeasonSeasons = crossSeasonData.seasons;
+  crossSeasonIndex = crossSeasonQueue.findIndex((item) => item.stations === stations && item.localIndex === index);
+  currentSeasonTitle = navHistory[navHistory.length - 1]?.title || "";
+  if (crossSeasonIndex >= 0) {
+    currentSeasonTitle = crossSeasonQueue[crossSeasonIndex].seasonTitle || currentSeasonTitle;
+  }
+  epPanelSeasonFilter = currentSeasonTitle || crossSeasonSeasons[0]?.title || "";
 
   playerOverlay.classList.remove("hidden");
   document.body.style.overflow = "hidden";
@@ -712,14 +797,20 @@ function playEpisode(index, inheritedReferer) {
   if (!station) { closePlayer(); return; }
 
   currentIndex = index;
-  inheritedRefererCache = inheritedReferer;
-
   const referer = station.referer ?? inheritedReferer ?? null;
+  inheritedRefererCache = referer;
   const url = station.url;
+  const matchedQueueIdx = crossSeasonQueue.findIndex((item) => item.stations === currentStations && item.localIndex === index);
+  if (matchedQueueIdx >= 0) {
+    crossSeasonIndex = matchedQueueIdx;
+    currentSeasonTitle = crossSeasonQueue[matchedQueueIdx].seasonTitle || currentSeasonTitle;
+    epPanelSeasonFilter = currentSeasonTitle || epPanelSeasonFilter;
+  }
 
-  playerTitle.textContent = station.name || `ตอนที่ ${index + 1}`;
-  btnPrevEp.disabled = index <= 0;
-  btnNextEp.disabled = index >= currentStations.length - 1;
+  const episodeTitle = station.name || `ตอนที่ ${index + 1}`;
+  playerTitle.innerHTML = `<span class="player-title-main">${esc(episodeTitle)}</span>${currentSeasonTitle ? `<span class="player-title-sub">${esc(currentSeasonTitle)}</span>` : ""}`;
+  btnPrevEp.disabled = !resolveAdjacentEpisode(-1);
+  btnNextEp.disabled = !resolveAdjacentEpisode(1);
   btnEpisodes.innerHTML = `${EPISODES_ICON}<span>${index + 1}/${currentStations.length}</span>`;
   if (!epPanel.classList.contains("hidden")) renderEpPanel();
 
@@ -741,7 +832,7 @@ function playEpisode(index, inheritedReferer) {
     playerVideo.play();
   }
 
-  playerVideo.onended = () => scheduleNext(inheritedReferer);
+  playerVideo.onended = () => scheduleNext();
 }
 
 /* ===== Player Controls ===== */
@@ -756,8 +847,18 @@ function forward10() { if (playerVideo.duration) playerVideo.currentTime = Math.
 btnPlayPause.addEventListener("click", togglePlayPause);
 btnRewind.addEventListener("click", rewind10);
 btnForward.addEventListener("click", forward10);
-btnPrevEp.addEventListener("click", () => { if (currentIndex > 0) playEpisode(currentIndex - 1, inheritedRefererCache); });
-btnNextEp.addEventListener("click", () => { if (currentIndex < currentStations.length - 1) playEpisode(currentIndex + 1, inheritedRefererCache); });
+btnPrevEp.addEventListener("click", () => {
+  const target = resolveAdjacentEpisode(-1);
+  if (!target) return;
+  if (target.type === "local") playEpisode(target.index, inheritedRefererCache);
+  else playEpisodeFromQueue(target.queueIndex);
+});
+btnNextEp.addEventListener("click", () => {
+  const target = resolveAdjacentEpisode(1);
+  if (!target) return;
+  if (target.type === "local") playEpisode(target.index, inheritedRefererCache);
+  else playEpisodeFromQueue(target.queueIndex);
+});
 
 playerVideo.addEventListener("play",  () => { btnPlayPause.innerHTML = PLAYER_ICON_PAUSE; showPlayerUI(); });
 playerVideo.addEventListener("pause", () => { btnPlayPause.innerHTML = PLAYER_ICON_PLAY; showPlayerUI(); });
@@ -796,11 +897,44 @@ epPanelClose.addEventListener("click", () => {
   btnEpisodes.focus({ preventScroll: true });
 });
 
+// Keep interactions inside panel from bubbling to overlay close handler.
+epPanel.addEventListener("click", (e) => {
+  e.stopPropagation();
+});
+
 function renderEpPanel() {
+  const seasonTabs = crossSeasonSeasons.filter((season) => Array.isArray(season.stations) && season.stations.length > 0);
+  if (epPanelTabs && seasonTabs.length > 1) {
+    const hasSelectedSeason = seasonTabs.some((season) => season.title === epPanelSeasonFilter);
+    if (!hasSelectedSeason) epPanelSeasonFilter = currentSeasonTitle || seasonTabs[0].title;
+
+    epPanelTabs.innerHTML = seasonTabs.map((season) => {
+      const activeClass = season.title === epPanelSeasonFilter ? " active" : "";
+      return `<button class="ep-season-tab${activeClass}" data-season="${esc(season.title)}">${esc(season.title)}</button>`;
+    }).join("");
+    epPanelTabs.classList.remove("hidden");
+
+    epPanelTabs.querySelectorAll(".ep-season-tab").forEach((btn, idx) => {
+      btn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        epPanelSeasonFilter = seasonTabs[idx].title;
+        renderEpPanel();
+      });
+    });
+  } else if (epPanelTabs) {
+    epPanelTabs.classList.add("hidden");
+    epPanelTabs.innerHTML = "";
+  }
+
+  const selectedSeason = seasonTabs.find((season) => season.title === epPanelSeasonFilter);
+  const panelStations = selectedSeason?.stations || currentStations;
+  const panelReferer = selectedSeason?.referer ?? inheritedRefererCache;
+
   epPanelGrid.innerHTML = "";
-  currentStations.forEach((station, i) => {
+  panelStations.forEach((station, i) => {
     const card = document.createElement("div");
-    card.className = "ep-card" + (i === currentIndex ? " active" : "");
+    const isActive = panelStations === currentStations && i === currentIndex;
+    card.className = "ep-card" + (isActive ? " active" : "");
     card.tabIndex = 0;
     card.setAttribute("role", "button");
 
@@ -809,13 +943,14 @@ function renderEpPanel() {
       : `<div class="ep-card-thumb-ph">▶</div>`;
 
     const label = splitEpisodeLabel(station.name, i + 1);
-    const playingBadge = i === currentIndex ? `<span class="ep-card-playing">กำลังเล่น</span>` : "";
+    const playingBadge = isActive ? `<span class="ep-card-playing">กำลังเล่น</span>` : "";
 
     const titleEl = label.title ? `<div class="ep-card-title">${esc(label.title)}</div>` : "";
     card.innerHTML = `<div class="ep-card-media">${thumbEl}${playingBadge}</div><div class="ep-card-content"><div class="ep-card-label"><div class="ep-card-epno">${esc(label.ep)}</div>${titleEl}</div></div>`;
 
     card.addEventListener("click", () => {
-      playEpisode(i, inheritedRefererCache);
+      currentStations = panelStations;
+      playEpisode(i, panelReferer);
       renderEpPanel();  // refresh active state
     });
     card.addEventListener("keydown", (e) => {
@@ -946,17 +1081,40 @@ function splitEpisodeLabel(name, index) {
   const hasThai = /[\u0E00-\u0E7F]/.test(normalized);
   return { ep: hasThai ? `ตอน ${index}` : fallbackEp, title: normalized };
 }
+
+function formatSeasonEpisodeMeta(seasonTitle, stationName, fallbackIndex) {
+  const label = splitEpisodeLabel(stationName, fallbackIndex);
+  const normalizedSeason = String(seasonTitle || "").trim() || "Season";
+  return {
+    meta: `${normalizedSeason} - ${label.ep}`,
+    title: label.title || stationName || "",
+  };
+}
 /* ===== Auto-next (Up Next toast) ===== */
-function scheduleNext(inheritedReferer) {
-  const nextIndex = currentIndex + 1;
-  if (nextIndex >= currentStations.length || upnextCancelled) {
+function scheduleNext() {
+  const target = resolveAdjacentEpisode(1);
+  if (!target || upnextCancelled) {
     closePlayer();
     return;
   }
 
-  const next = currentStations[nextIndex];
+  const next = target.type === "local"
+    ? currentStations[target.index]
+    : crossSeasonQueue[target.queueIndex]?.station;
+  const nextLabelIndex = target.type === "local"
+    ? target.index + 1
+    : (crossSeasonQueue[target.queueIndex]?.localIndex ?? 0) + 1;
+  const nextSeasonTitle = target.type === "local"
+    ? (currentSeasonTitle || "Season")
+    : (crossSeasonQueue[target.queueIndex]?.seasonTitle || currentSeasonTitle || "Season");
+  if (!next) {
+    closePlayer();
+    return;
+  }
+
+  const upnextLabel = formatSeasonEpisodeMeta(nextSeasonTitle, next.name, nextLabelIndex);
   upnextThumb.src = next.image || "";
-  upnextTitle.textContent = next.name || `ตอนที่ ${nextIndex + 1}`;
+  upnextTitle.innerHTML = `<span class="upnext-title-meta">${esc(upnextLabel.meta)}</span><span class="upnext-title-name">${esc(upnextLabel.title || `ตอนที่ ${nextLabelIndex}`)}</span>`;
   upnextToast.classList.remove("hidden");
 
   let secs = 5;
@@ -977,11 +1135,16 @@ function scheduleNext(inheritedReferer) {
     if (secs <= 0) {
       clearInterval(upnextCountdown);
       upnextToast.classList.add("hidden");
-      playEpisode(nextIndex, inheritedReferer);
+      if (target.type === "local") playEpisode(target.index, inheritedRefererCache);
+      else playEpisodeFromQueue(target.queueIndex);
     }
   }, 1000);
 
-  upnextPlayBtn.onclick = () => { cancelUpnext(); playEpisode(nextIndex, inheritedReferer); };
+  upnextPlayBtn.onclick = () => {
+    cancelUpnext();
+    if (target.type === "local") playEpisode(target.index, inheritedRefererCache);
+    else playEpisodeFromQueue(target.queueIndex);
+  };
   upnextCancelBtn.onclick = () => { upnextCancelled = true; cancelUpnext(); };
 }
 
@@ -1000,6 +1163,11 @@ function closePlayer() {
   playerOverlay.classList.remove("show-ui");
   clearTimeout(idleTimer);
   document.body.style.overflow = "";
+  crossSeasonQueue = [];
+  crossSeasonIndex = -1;
+  crossSeasonSeasons = [];
+  epPanelSeasonFilter = "";
+  currentSeasonTitle = "";
   queueFocusRefresh();
 }
 
