@@ -14,6 +14,11 @@
       "image": "https://image.tmdb.org/t/p/original/dZt1dqw0K4JGhwcqTh8yExHYK9w.jpg"
     },
     {
+      "url": "https://raw.githubusercontent.com/natajrak/IPTV-Player/refs/heads/main/playlist/Anime/Series/otonari-ni-ginga.txt",
+      "name": "A Galaxy Next Door [โอโตนาริ นิ กิงงะ]",
+      "image": "https://image.tmdb.org/t/p/original/otbEkcLvoI1XfJTBnkc8HPIvXcr.jpg"
+    },
+    {
       "url": "https://raw.githubusercontent.com/natajrak/IPTV-Player/refs/heads/main/playlist/Anime/Series/Isekai-Yururi-Kikou.txt",
       "name": "A Journey Through Another World: Raising Kids While Adventuring [บันทึกการเดินทางแสนเอื่อยในต่างโลก (เลี้ยงลูกพร้อมกับเป็นนักผจญภัย)]",
       "image": "https://image.tmdb.org/t/p/original/xvFV6ADOmUZfK28aLrPAXmxrEZO.jpg"
@@ -54,9 +59,24 @@
       "image": "https://image.tmdb.org/t/p/original/otO9fEZRVa5GRGswglYXXmcSnWF.jpg"
     },
     {
+      "url": "https://raw.githubusercontent.com/natajrak/IPTV-Player/refs/heads/main/playlist/Anime/Series/ao-no-hako.txt",
+      "name": "Blue Box [กล่องรักวัยใส]",
+      "image": "https://image.tmdb.org/t/p/original/mVAWCCNBxPX3EUf9XhcFff4wW5V.jpg"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/natajrak/IPTV-Player/refs/heads/main/playlist/Anime/Series/blue-period.txt",
+      "name": "Blue Period",
+      "image": "https://image.tmdb.org/t/p/original/bK669RsJ4xaZYHvc144iKlEyzJ7.jpg"
+    },
+    {
       "url": "https://raw.githubusercontent.com/natajrak/IPTV-Player/refs/heads/main/playlist/Anime/Series/Bofuri.txt",
       "name": "BOFURI: I Don't Want to Get Hurt, so I'll Max Out My Defense. [น้องโล่สายแทงก์ แกร่งเกินร้อย]",
       "image": "https://image.tmdb.org/t/p/original/fdcMiknnRcmVgWb9wGS9TxE06cG.jpg"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/natajrak/IPTV-Player/refs/heads/main/playlist/Anime/Series/hazure-skill-kinomi-maste.txt",
+      "name": "Bogus Skill «Fruitmaster» ~About that time I became able to eat unlimited numbers of Skill Fruits (that kill you)~ [สกิลไร้ประโยชน์ มาสเตอร์ผลไม้]",
+      "image": "https://image.tmdb.org/t/p/original/fZiuJtxzOlvvbQcgrCSnwefqkcp.jpg"
     },
     {
       "url": "https://raw.githubusercontent.com/natajrak/IPTV-Player/refs/heads/main/playlist/Anime/Series/Kami-tachi-ni-Hirowareta-Otoko.txt",
@@ -74,6 +94,26 @@
       "image": "https://image.tmdb.org/t/p/original/yVtx7Xn9UxNJqvG2BkvhCcmed9S.jpg"
     },
     {
+      "url": "https://raw.githubusercontent.com/natajrak/IPTV-Player/refs/heads/main/playlist/Anime/Series/lv2-kara-cheat-datta.txt",
+      "name": "Chillin' in Another World with Level 2 Super Cheat Powers [ชีวิตชิล ๆ ในต่างโลกกับอดีตแคนดิเดตผู้กล้าที่หลังจากเลเวล 2 ก็โคตรโกง]",
+      "image": "https://image.tmdb.org/t/p/original/3eBu6hYDRe72ZPUfLbhaHfF7EM9.jpg"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/natajrak/IPTV-Player/refs/heads/main/playlist/Anime/Series/youkoso-jitsuryoku-shijou-shugi-kyoushitsu.txt",
+      "name": "Classroom of the Elite [ขอต้อนรับสู่ห้องเรียนนิยม (เฉพาะ) ยอดคน]",
+      "image": "https://image.tmdb.org/t/p/original/yuHanbUUIv2UWRxxQFt9n8jtmOJ.jpg"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/natajrak/IPTV-Player/refs/heads/main/playlist/Anime/Series/clevatess.txt",
+      "name": "Clevatess [เคลวาเทส อสูรจอมราชัน]",
+      "image": "https://image.tmdb.org/t/p/original/7sWrMBhOS1x4RUCr3o2I4ld13fq.jpg"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/natajrak/IPTV-Player/refs/heads/main/playlist/Anime/Series/mattaku-saikin-no-tantei-to-kitara.txt",
+      "name": "Detectives These Days Are Crazy! [นักสืบสมัยนี้มันบ้าไปแล้ว!]",
+      "image": "https://image.tmdb.org/t/p/original/hv51RYVvaCrKJKuwFEWm17V0QaD.jpg"
+    },
+    {
       "url": "https://raw.githubusercontent.com/natajrak/IPTV-Player/refs/heads/main/playlist/Anime/Series/dusk-maiden-of-amnesia.txt",
       "name": "Dusk Maiden of Amnesia [คนสืบผี]",
       "image": "https://image.tmdb.org/t/p/original/v2xEALi1U4foXfLUXB2FkAqo4qC.jpg"
@@ -82,6 +122,16 @@
       "url": "https://raw.githubusercontent.com/natajrak/IPTV-Player/refs/heads/main/playlist/Anime/Series/eden-of-the-east.txt",
       "name": "Eden of the East [อีเดน ออฟ ดิ อีสท์]",
       "image": "https://image.tmdb.org/t/p/original/z7fWrBzCwd5DRPvNh1tr7yaQQP8.jpg"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/natajrak/IPTV-Player/refs/heads/main/playlist/Anime/Series/hazurewaku-no.txt",
+      "name": "Failure Frame: I Became the Strongest and Annihilated Everything with Low-Level Spells [E rank ผู้ถูกทิ้งเพราะสกิลไร้ค่าอย่าง [สร้างสถานะผิดปกติ] จะเหยียบย้ำทุกสิ่งที่ขวางทางจนแกร่งสุดในใต้หล้า]",
+      "image": "https://image.tmdb.org/t/p/original/jjpkWZ9LUXoUnh4F65qp7FuFawO.jpg"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/natajrak/IPTV-Player/refs/heads/main/playlist/Anime/Series/fermat-no-ryouri.txt",
+      "name": "Fermat Kitchen [2 อัจฉริยะ เมนูคณิตทฤษฎีแฟร์มา]",
+      "image": "https://image.tmdb.org/t/p/original/2CrSIqyoZIVk0UsbBPaJlMkCxcM.jpg"
     },
     {
       "url": "https://raw.githubusercontent.com/natajrak/IPTV-Player/refs/heads/main/playlist/Anime/Series/fire-force.txt",
@@ -132,6 +182,21 @@
       "url": "https://raw.githubusercontent.com/natajrak/IPTV-Player/refs/heads/main/playlist/Anime/Series/genjitsu-shugi-yuusha-no-oukoku-saikenki.txt",
       "name": "How a Realist Hero Rebuilt the Kingdom [ยุทธศาสตร์กู้ชาติของราชามือใหม่]",
       "image": "https://image.tmdb.org/t/p/original/ymbGZbNjHK4uAy3l29jUBvqeXIX.jpg"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/natajrak/IPTV-Player/refs/heads/main/playlist/Anime/Series/hunter-x-hunter.txt",
+      "name": "Hunter x Hunter [ฮันเตอร์ x ฮันเตอร์]",
+      "image": "https://image.tmdb.org/t/p/original/i2EEr2uBvRlAwJ8d8zTG2Y19mIa.jpg"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/natajrak/IPTV-Player/refs/heads/main/playlist/Anime/Series/hyouka.txt",
+      "name": "Hyouka [ปริศนาความทรงจำ]",
+      "image": "https://image.tmdb.org/t/p/original/qoAig2n9LkukqnizytaBtOSwif7.jpg"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/natajrak/IPTV-Player/refs/heads/main/playlist/Anime/Series/ore-wa-subete-wo.txt",
+      "name": "I Parry Everything [ฉันจะ แพรี่ ให้หมด –ผู้แข็งแกร่งที่สุดในโลกอยากจะเป็นนักผจญภัยให้ได้]",
+      "image": "https://image.tmdb.org/t/p/original/nVmc8K5J7SGMlE6tA5lVzVzAzQ9.jpg"
     },
     {
       "url": "https://raw.githubusercontent.com/natajrak/IPTV-Player/refs/heads/main/playlist/Anime/Series/tensei-shitara-dainana-ouji-datta-node-kimama-ni-majutsu-wo-kiwamemasu.txt",
@@ -319,9 +384,19 @@
       "image": "https://image.tmdb.org/t/p/original/za2EAhBtO08JJw9Q25zKyrY5Jkd.jpg"
     },
     {
+      "url": "https://raw.githubusercontent.com/natajrak/IPTV-Player/refs/heads/main/playlist/Anime/Series/toriko.txt",
+      "name": "Toriko [โทริโกะ]",
+      "image": "https://image.tmdb.org/t/p/original/8NyEmf5xB1HSYM0MzADv8mjUnc4.jpg"
+    },
+    {
       "url": "https://raw.githubusercontent.com/natajrak/IPTV-Player/refs/heads/main/playlist/Anime/Series/Tsuki-ga-Michibiku-Isekai-Douchuu.txt",
       "name": "TSUKIMICHI -Moonlit Fantasy- [จันทรานำพาสู่ต่างโลก]",
       "image": "https://image.tmdb.org/t/p/original/7XQ2dMEARAdUZQscnIJFPI54q3r.jpg"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/natajrak/IPTV-Player/refs/heads/main/playlist/Anime/Series/busamen-gachi-fighter.txt",
+      "name": "Uglymug, Epicfighter [ไอ้หน้าปลวกยอดนักสู้]",
+      "image": "https://image.tmdb.org/t/p/original/6lYZ29Y4lBpod50gBz1OndQFqx0.jpg"
     },
     {
       "url": "https://raw.githubusercontent.com/natajrak/IPTV-Player/refs/heads/main/playlist/Anime/Series/unbreakable-machine-doll.txt",
@@ -337,6 +412,11 @@
       "url": "https://raw.githubusercontent.com/natajrak/IPTV-Player/refs/heads/main/playlist/Anime/Series/tsue-to-tsurugi-no-wistoria.txt",
       "name": "Wistoria: Wand and Sword [ตำนานดาบและคทาแห่งวิสตอเรีย]",
       "image": "https://image.tmdb.org/t/p/original/gxYKhO0GuPAeCb3llknWu53bYYS.jpg"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/natajrak/IPTV-Player/refs/heads/main/playlist/Anime/Series/hanyou-no-yashahime.txt",
+      "name": "Yashahime: Princess Half-Demon [ยาฉะฮิเมะ เจ้าหญิงครึ่งอสูร]",
+      "image": "https://image.tmdb.org/t/p/original/78l5gFTXyLp9KE4uSWJgSRb9RGj.jpg"
     }
   ]
 }
