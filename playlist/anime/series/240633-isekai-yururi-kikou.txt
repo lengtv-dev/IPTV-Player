@@ -1,0 +1,168 @@
+{
+    "name": "A Journey Through Another World: Raising Kids While Adventuring [บันทึกการเดินทางแสนเอื่อยในต่างโลก (เลี้ยงลูกพร้อมกับเป็นนักผจญภัย)]",
+    "image": "https://image.tmdb.org/t/p/original/xvFV6ADOmUZfK28aLrPAXmxrEZO.jpg",
+    "groups": [
+        {
+            "name": "Season 1",
+            "image": "https://image.tmdb.org/t/p/original/47XgvfPqOwVAjuCZuLWRsRUqtm3.jpg",
+            "groups": [
+                {
+                    "name": "พากย์ไทย",
+                    "image": "https://image.tmdb.org/t/p/original/47XgvfPqOwVAjuCZuLWRsRUqtm3.jpg",
+                    "stations": [
+                        {
+                            "name": "ตอน 1 - ต่างโลกและฝาแฝด",
+                            "image": "https://image.tmdb.org/t/p/original/xvuYe88vhPOsOYC9fyXLC10CCzb.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2Fe9ay4FQC%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2Fe9ay4FQC",
+                            "referer": ""
+                        },
+                        {
+                            "name": "ตอน 2 - ฝากตัวด้วยนะ จูล",
+                            "image": "https://image.tmdb.org/t/p/original/pOFnlFEY8Uj0IXX0aV6rmDVVYJ0.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FLpWH5kWj%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FLpWH5kWj",
+                            "referer": ""
+                        },
+                        {
+                            "name": "ตอน 3 - ปราบปราม มอนสเตอร์!",
+                            "image": "https://image.tmdb.org/t/p/original/kdc55LMpEyefGRRGSa1kMcelaFy.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FeJHkfXr6%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FeJHkfXr6",
+                            "referer": ""
+                        },
+                        {
+                            "name": "ตอน 4 - พี่ชาย โกรธ",
+                            "image": "https://image.tmdb.org/t/p/original/5fxdXRUzzK9JbgvzDpqNAZtc9Xa.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FRX3F8rhI%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FRX3F8rhI",
+                            "referer": ""
+                        },
+                        {
+                            "name": "ตอน 5 - จัดการก็อบลิน!",
+                            "image": "https://image.tmdb.org/t/p/original/awU8kszCQmLpEf1mDU1dnDIACkZ.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FG7CfDipn%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FG7CfDipn",
+                            "referer": ""
+                        },
+                        {
+                            "name": "ตอน 6 - ทะเล! เค็มปี๋!",
+                            "image": "https://image.tmdb.org/t/p/original/sGxughtXQEy5d0cgwpVC2MvQjW6.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FpcKaR5je%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FpcKaR5je",
+                            "referer": ""
+                        },
+                        {
+                            "name": "ตอน 7 - ตุ๊กตา! มังกร!",
+                            "image": "https://image.tmdb.org/t/p/original/yxpQasZUUSPoemIWXLu4CKlH9EK.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FHzR1nu2l%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FHzR1nu2l",
+                            "referer": ""
+                        },
+                        {
+                            "name": "ตอน 8 - ปู! ปู!",
+                            "image": "https://image.tmdb.org/t/p/original/6bCKNBjJIonA310o1leCnjIp8Ag.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FObbZ46zy%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FObbZ46zy",
+                            "referer": ""
+                        },
+                        {
+                            "name": "ตอน 9 - ป๊ะป๋า คืออะไร",
+                            "image": "https://image.tmdb.org/t/p/original/zrYTl5Gh0sNStzc1L6zsdGeqUNx.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2F3ecJ66y6%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2F3ecJ66y6",
+                            "referer": ""
+                        },
+                        {
+                            "name": "ตอน 10 - จะหาเพื่อน... ได้ไหมนะ...",
+                            "image": "https://image.tmdb.org/t/p/original/osWazWV7wo2PV8wTLvRnUSOf2Xd.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FlaxhLibP%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FlaxhLibP",
+                            "referer": ""
+                        },
+                        {
+                            "name": "ตอน 11 - เวคเตอร์ บทบาทสำคัญ",
+                            "image": "https://image.tmdb.org/t/p/original/sIzKWpDplVa3ABmAfdfUqbrStvy.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FZVdVm4VG%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FZVdVm4VG",
+                            "referer": ""
+                        },
+                        {
+                            "name": "ตอน 12 - Bye-Bye! See You Next Time!",
+                            "image": "https://image.tmdb.org/t/p/original/o2Kv8PrMDqEmn38h7zAAQXFCRXM.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FGGPC5PDV%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FGGPC5PDV",
+                            "referer": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "ซับไทย",
+                    "image": "https://image.tmdb.org/t/p/original/47XgvfPqOwVAjuCZuLWRsRUqtm3.jpg",
+                    "stations": [
+                        {
+                            "name": "Ep. 1 - Another World and Twins",
+                            "image": "https://image.tmdb.org/t/p/original/xvuYe88vhPOsOYC9fyXLC10CCzb.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FsZizf1fd%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FsZizf1fd",
+                            "referer": ""
+                        },
+                        {
+                            "name": "Ep. 2 - Nice to Meet You, Joule",
+                            "image": "https://image.tmdb.org/t/p/original/pOFnlFEY8Uj0IXX0aV6rmDVVYJ0.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FRnYjj7lY%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FRnYjj7lY",
+                            "referer": ""
+                        },
+                        {
+                            "name": "Ep. 3 - Monster Hunting!",
+                            "image": "https://image.tmdb.org/t/p/original/kdc55LMpEyefGRRGSa1kMcelaFy.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2F2bffINZi%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2F2bffINZi",
+                            "referer": ""
+                        },
+                        {
+                            "name": "Ep. 4 - Taku Gets Mad",
+                            "image": "https://image.tmdb.org/t/p/original/5fxdXRUzzK9JbgvzDpqNAZtc9Xa.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FFx97XgRO%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FFx97XgRO",
+                            "referer": ""
+                        },
+                        {
+                            "name": "Ep. 5 - We're Gonna Beat the Goblins!",
+                            "image": "https://image.tmdb.org/t/p/original/awU8kszCQmLpEf1mDU1dnDIACkZ.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FQ3VuTyAs%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FQ3VuTyAs",
+                            "referer": ""
+                        },
+                        {
+                            "name": "Ep. 6 - The Ocean! It's Salty!",
+                            "image": "https://image.tmdb.org/t/p/original/sGxughtXQEy5d0cgwpVC2MvQjW6.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2Fs5EAqowm%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2Fs5EAqowm",
+                            "referer": ""
+                        },
+                        {
+                            "name": "Ep. 7 - Mermaids! Dragons!",
+                            "image": "https://image.tmdb.org/t/p/original/yxpQasZUUSPoemIWXLu4CKlH9EK.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2F1ng6tFJh%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2F1ng6tFJh",
+                            "referer": ""
+                        },
+                        {
+                            "name": "Ep. 8 - Crab! Crab!",
+                            "image": "https://image.tmdb.org/t/p/original/6bCKNBjJIonA310o1leCnjIp8Ag.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2F2SMSTzi8%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2F2SMSTzi8",
+                            "referer": ""
+                        },
+                        {
+                            "name": "Ep. 9 - What's a Dad?",
+                            "image": "https://image.tmdb.org/t/p/original/zrYTl5Gh0sNStzc1L6zsdGeqUNx.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2Ff8XIFCKc%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2Ff8XIFCKc",
+                            "referer": ""
+                        },
+                        {
+                            "name": "Ep. 10 - I Hope We Can Make Friends...",
+                            "image": "https://image.tmdb.org/t/p/original/osWazWV7wo2PV8wTLvRnUSOf2Xd.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FwRar4Azo%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FwRar4Azo",
+                            "referer": ""
+                        },
+                        {
+                            "name": "Ep. 11 - Vector Does a Good Job!",
+                            "image": "https://image.tmdb.org/t/p/original/sIzKWpDplVa3ABmAfdfUqbrStvy.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FINKXki4V%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FINKXki4V",
+                            "referer": ""
+                        },
+                        {
+                            "name": "Ep. 12 - Bye-Bye! See You Next Time!",
+                            "image": "https://image.tmdb.org/t/p/original/o2Kv8PrMDqEmn38h7zAAQXFCRXM.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FpN7CJ88z%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FpN7CJ88z",
+                            "referer": ""
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,774 @@
+{
+    "name": "Fire Force [หน่วยผจญคนไฟลุก]",
+    "image": "https://image.tmdb.org/t/p/original/sC4sTJnI0rLakinXMgBHv3Ynl9D.jpg",
+    "groups": [
+        {
+            "name": "Season 1",
+            "image": "https://image.tmdb.org/t/p/original/bvdZcGpE6YLI61Yuv40j45pxGut.jpg",
+            "groups": [
+                {
+                    "name": "พากย์ไทย",
+                    "image": "https://image.tmdb.org/t/p/original/bvdZcGpE6YLI61Yuv40j45pxGut.jpg",
+                    "stations": [
+                        {
+                            "name": "ตอน 1 - ชินระ คุซาคาเบะเข้าประจำการ",
+                            "image": "https://image.tmdb.org/t/p/original/2OWHHF5wGZ7cU1VlqDc4L2nwhng.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/YLzCkXfS0/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "ตอน 2 - หัวใจของพลดับเพลิง",
+                            "image": "https://image.tmdb.org/t/p/original/o0Y2Ln91IMj3uUIM1hJj6eqcHWQ.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/cU40C0u1tM/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "ตอน 3 - การแข่งขันของพลดับเพลิงใหม่",
+                            "image": "https://image.tmdb.org/t/p/original/6aiFNvCcv5593e4a6CVsN1VvJv7.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/FC59DyrGH6/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "ตอน 4 - ฮีโร่กับปรินเซส",
+                            "image": "https://image.tmdb.org/t/p/original/cHIyHmCOUaEl3W8bLqIjXZ5J7sk.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/du9BMayVpw/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "ตอน 5 - เปิดศึก",
+                            "image": "https://image.tmdb.org/t/p/original/5MXiQW13qR4SMLUKMupDGIVX2KR.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/xFk4GNl19/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "ตอน 6 - ประกายแห่งคำมั่นสัญญา",
+                            "image": "https://image.tmdb.org/t/p/original/ykWfYxu1VGROLptPqOim49yjI8r.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/g6KEPA8MvY/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "ตอน 7 - เริ่มตรวจสอบหน่วยหนึ่ง",
+                            "image": "https://image.tmdb.org/t/p/original/124ZSqCAPZnrBW35brkVuK0DURQ.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/Dtzx4KCZu/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "ตอน 8 - แมลงไฟลุก",
+                            "image": "https://image.tmdb.org/t/p/original/nrrPvzxEwN75T3s0TF5UMzB4xQn.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/tZxZFTFB3j/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "ตอน 9 - เจตนาร้ายที่ลุกลาม",
+                            "image": "https://image.tmdb.org/t/p/original/eWLGY5LrVFKPKs5go4mrwvfjKEy.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/PZVgGwhoYA/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "ตอน 10 - คำสัญญา",
+                            "image": "https://image.tmdb.org/t/p/original/9srqqZAzMW7S6snGGr5yDkl0VFy.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/LcgRi2d11U/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "ตอน 11 - การก่อตั้งหน่วยดับเพลิงพิเศษแปด / นักดับเพลิงที่แกร่งที่สุด",
+                            "image": "https://image.tmdb.org/t/p/original/4kErkTtZZaMvnJDi0be3EVyZEee.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/Tzd06Kcpdo/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "ตอน 12 - คืนก่อเหตุในอาซาคุสะ",
+                            "image": "https://image.tmdb.org/t/p/original/biVy4na1k6lS1uZKRZSanai5v6J.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/rnwKk2Uoz9/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "ตอน 13 - วางกับดักไว้แล้ว",
+                            "image": "https://image.tmdb.org/t/p/original/qnbZ77nAPD2nl9sVfIhutZlWr2j.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/8bA601yVMn/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "ตอน 14 - เปลวเพลิงที่ช่วยคุ้มครอง",
+                            "image": "https://image.tmdb.org/t/p/original/duudBJkS71aRder9CUMykMYTxbb.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/yZoKcB7QFJ/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "ตอน 15 - ความฝันของช่างเหล็ก",
+                            "image": "https://image.tmdb.org/t/p/original/l0LrgVnbrFh9fWeaq7C5vgqil6K.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/sjG9itFStf/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "ตอน 16 - พวกเราเป็นครอบครัวเดียวกัน",
+                            "image": "https://image.tmdb.org/t/p/original/fBXakIvdE0UZkeMG3fk2ZD1II9F.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/GwXeW1L7vp/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "ตอน 17 - ดำ ขาว และเทา",
+                            "image": "https://image.tmdb.org/t/p/original/oYMOoCjLQ5nhQTUxOhjH7MuRdVx.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/sdYmOMLLiE/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "ตอน 18 - ความลับของการควบคุมเปลวไฟ",
+                            "image": "https://image.tmdb.org/t/p/original/hPShwKq5tm8r4VnohuGanYkpXyy.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/4ScoYUBcG1/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "ตอน 19 - บุกเนเธอร์",
+                            "image": "https://image.tmdb.org/t/p/original/uEMHxCagxXalMrKOXqzjQ9NDWbq.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/boIKegFMVd/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "ตอน 20 - สู้ให้สมศักดิ์ศรี",
+                            "image": "https://image.tmdb.org/t/p/original/p7YIyNsv4KhYR3OhvtwGViu2rge.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/1koO9ImCzA/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "ตอน 21 - ผู้ที่เชื่อมโยงถึงกัน",
+                            "image": "https://image.tmdb.org/t/p/original/wJ9Z8v6s6liuEYtOpDzsgslaS1X.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/qSRL4gnbek/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "ตอน 22 - ปณิธานของพี่ชาย",
+                            "image": "https://image.tmdb.org/t/p/original/AcjSO3Ky8aEXlyJO3DD6rWYbypM.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/6tkMHVamP/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "ตอน 23 - รอยยิ้ม",
+                            "image": "https://image.tmdb.org/t/p/original/4BdI9SH6LYCO98ck7ICVXLX5VJB.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/NAnw9gH7ZU/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "ตอน 24 - อดีตที่เผาผลาญใจ",
+                            "image": "https://image.tmdb.org/t/p/original/9KatPe3wyu7us8bAswBbf9doHXy.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/C7lvU9flG/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        }
+                    ]
+                },
+                {
+                    "name": "ซับไทย",
+                    "image": "https://image.tmdb.org/t/p/original/bvdZcGpE6YLI61Yuv40j45pxGut.jpg",
+                    "stations": [
+                        {
+                            "name": "Ep. 1 - Shinra Kusakabe Enlists",
+                            "image": "https://image.tmdb.org/t/p/original/2OWHHF5wGZ7cU1VlqDc4L2nwhng.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/HSZ19BmN/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "Ep. 2 - The Heart of a Fire Soldier",
+                            "image": "https://image.tmdb.org/t/p/original/o0Y2Ln91IMj3uUIM1hJj6eqcHWQ.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/6wVTuKJx/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "Ep. 3 - The Rookie Fire Soldier Games",
+                            "image": "https://image.tmdb.org/t/p/original/6aiFNvCcv5593e4a6CVsN1VvJv7.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/uviWgJEm/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "Ep. 4 - The Hero and the Princess",
+                            "image": "https://image.tmdb.org/t/p/original/cHIyHmCOUaEl3W8bLqIjXZ5J7sk.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/EKo5Vbsx/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "Ep. 5 - The Battle Begins",
+                            "image": "https://image.tmdb.org/t/p/original/5MXiQW13qR4SMLUKMupDGIVX2KR.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/j052XyGi/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "Ep. 6 - The Spark of Promise",
+                            "image": "https://image.tmdb.org/t/p/original/ykWfYxu1VGROLptPqOim49yjI8r.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/CHxa7EyE/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "Ep. 7 - The Investigation of the 1st Commences",
+                            "image": "https://image.tmdb.org/t/p/original/124ZSqCAPZnrBW35brkVuK0DURQ.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/UbGCWpsF/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "Ep. 8 - Infernal Insects",
+                            "image": "https://image.tmdb.org/t/p/original/nrrPvzxEwN75T3s0TF5UMzB4xQn.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/QryxGa5i/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "Ep. 9 - The Spreading Malice",
+                            "image": "https://image.tmdb.org/t/p/original/eWLGY5LrVFKPKs5go4mrwvfjKEy.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/JjHD9dwk/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "Ep. 10 - The Promise",
+                            "image": "https://image.tmdb.org/t/p/original/9srqqZAzMW7S6snGGr5yDkl0VFy.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/iOn7kRrn/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "Ep. 11 - Formation of Special Fire Force Company 8 / The Mightiest Hikeshi",
+                            "image": "https://image.tmdb.org/t/p/original/4kErkTtZZaMvnJDi0be3EVyZEee.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/c4BkzkDd/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "Ep. 12 - Eve of Hostilities in Asakusa",
+                            "image": "https://image.tmdb.org/t/p/original/biVy4na1k6lS1uZKRZSanai5v6J.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/E9VuzaVw/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "Ep. 13 - The Trap Is Set",
+                            "image": "https://image.tmdb.org/t/p/original/qnbZ77nAPD2nl9sVfIhutZlWr2j.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/BlV8j6k8/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "Ep. 14 - For Whom the Flames Burn",
+                            "image": "https://image.tmdb.org/t/p/original/duudBJkS71aRder9CUMykMYTxbb.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/MAsg1U5q/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "Ep. 15 - The Blacksmith’s Dream",
+                            "image": "https://image.tmdb.org/t/p/original/l0LrgVnbrFh9fWeaq7C5vgqil6K.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/xeNdWxQx/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "Ep. 16 - We Are Family",
+                            "image": "https://image.tmdb.org/t/p/original/fBXakIvdE0UZkeMG3fk2ZD1II9F.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/vMz2HKol/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "Ep. 17 - Black and White and Gray",
+                            "image": "https://image.tmdb.org/t/p/original/oYMOoCjLQ5nhQTUxOhjH7MuRdVx.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/s8UHSz05/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "Ep. 18 - The Secrets of Pyrokinesis",
+                            "image": "https://image.tmdb.org/t/p/original/hPShwKq5tm8r4VnohuGanYkpXyy.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/SVOExCYn/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "Ep. 19 - Into the Nether",
+                            "image": "https://image.tmdb.org/t/p/original/uEMHxCagxXalMrKOXqzjQ9NDWbq.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/myEotqJy/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "Ep. 20 - Wearing His Pride",
+                            "image": "https://image.tmdb.org/t/p/original/p7YIyNsv4KhYR3OhvtwGViu2rge.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/YP7NWlbA/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "Ep. 21 - Those Connected",
+                            "image": "https://image.tmdb.org/t/p/original/wJ9Z8v6s6liuEYtOpDzsgslaS1X.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/xxl3FO6m/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "Ep. 22 - A Brother’s Determination",
+                            "image": "https://image.tmdb.org/t/p/original/AcjSO3Ky8aEXlyJO3DD6rWYbypM.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/1nnZcRv/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "Ep. 23 - Smile",
+                            "image": "https://image.tmdb.org/t/p/original/4BdI9SH6LYCO98ck7ICVXLX5VJB.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/Ci2qaLx4/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "Ep. 24 - The Burning Past",
+                            "image": "https://image.tmdb.org/t/p/original/9KatPe3wyu7us8bAswBbf9doHXy.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/OzEgedr1/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Season 2",
+            "image": "https://image.tmdb.org/t/p/original/5I8pf0sFQChYwj0telXsiB0JVFe.jpg",
+            "groups": [
+                {
+                    "name": "พากย์ไทย",
+                    "image": "https://image.tmdb.org/t/p/original/5I8pf0sFQChYwj0telXsiB0JVFe.jpg",
+                    "stations": [
+                        {
+                            "name": "ตอน 1 - การต่อสู้ของพลดับเพลิง",
+                            "image": "https://image.tmdb.org/t/p/original/jo8K4aBvvOSdrAvpt5OjgULAZyB.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/IyL9l76HJ4/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "ตอน 2 - เปลวเพลิงอันบ้าคลั่ง",
+                            "image": "https://image.tmdb.org/t/p/original/tD0VFFGtTv24UNdCubHYkrsK4Fb.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/aihI9KVN5C/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "ตอน 3 - ต้นเพลิงลูกใหม่",
+                            "image": "https://image.tmdb.org/t/p/original/fx5qAyWuoIdKBZzdvMX35z5rvdV.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/agwEhcPhVX/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "ตอน 4 - คลำทางท่ามกลางเพลิง",
+                            "image": "https://image.tmdb.org/t/p/original/tak2EEsBi6unbA8JhfYLC3dkj4k.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/XR0oCqq2ST/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "ตอน 5 - คอร์น่า (สัญลักษณ์ปีศาจ) / แผนลับ",
+                            "image": "https://image.tmdb.org/t/p/original/bGaxO6pEanGmIfGMgTgv4AGNUCh.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/lZDwCGbsZ7/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "ตอน 6 - เวลาแห่งการเลือก",
+                            "image": "https://image.tmdb.org/t/p/original/AmzdHcr98pwN3lnBUKwmFaKqE01.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/zQv5PlYCif/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "ตอน 7 - หนทางสู่โอเอซิส",
+                            "image": "https://image.tmdb.org/t/p/original/wqxSI5bd1Erer8D5xS896NoQnPG.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/8dZFkABSrb/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "ตอน 8 - แรงพยาบาทที่คุกรุ่น",
+                            "image": "https://image.tmdb.org/t/p/original/xO0YMWOsHSXj5zDzeYlreWd4JtR.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/qvRYY2lgkW/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "ตอน 9 - ใจกลาง",
+                            "image": "https://image.tmdb.org/t/p/original/2kO7UREcg9JnEtsRcrG1d4kVNcz.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/iu7SXd3chc/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "ตอน 10 - หญิงสาวชุดดำ",
+                            "image": "https://image.tmdb.org/t/p/original/pn1x9BNZ35cYgIvHjRGWp7flEm0.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/CAOYL8jFZF/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "ตอน 11 - ดาร์กฮีโร่",
+                            "image": "https://image.tmdb.org/t/p/original/bQUVobVTVvwbvg2rD2lKNLOfm9V.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/OlZmtIQROB/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "ตอน 12 - เงาที่กำหนดจากแสงศักดิ์สิทธิ์",
+                            "image": "https://image.tmdb.org/t/p/original/8kUoM0NQROdtN8O0ZRfcZqmV0x8.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/9kM2kxFuF1/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "ตอน 13 - ตาข้างเดียวที่คู่กัน",
+                            "image": "https://image.tmdb.org/t/p/original/5eE7hRXclt4Owjy5mt2oG8oM2oU.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/PmWyGIavFX/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "ตอน 14 - ยมทูตแห่งเถ้าถ่าน",
+                            "image": "https://image.tmdb.org/t/p/original/sgz1440zN1OsWeknO9QCxXolDEx.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/Tql4IipbDT/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "ตอน 15 - ศึกตะลุมบอลสามทาง",
+                            "image": "https://image.tmdb.org/t/p/original/jV4YfFN7YHkwnkAyYc0FkWFx4NB.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/SsfdWV8kXf/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "ตอน 16 - ใจแตกสลาย",
+                            "image": "https://image.tmdb.org/t/p/original/l1gLwxc3Vkr1KI4dqQuuZcd97nh.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/FiSvVWPPm4/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "ตอน 17 - เด็กหนุ่มเอ๋ย จงอ่อนแอ",
+                            "image": "https://image.tmdb.org/t/p/original/gTXRPeyhozpt4tRjewdpmhsWwd3.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/Ch2Mwj7OTo/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "ตอน 18 - ความกังวลใจของนักบุญหญิง/ลูกผู้ชาย...แอสซัลต์",
+                            "image": "https://image.tmdb.org/t/p/original/ark0siMtX7c4IDSQcfkHNOErirI.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/fyel2wxmKe/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "ตอน 19 - ตระกูลโอเซะ",
+                            "image": "https://image.tmdb.org/t/p/original/vnOZSQSvHUEQ594j7a87y6zfKGw.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/5BT5IhcarR/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "ตอน 20 - อาวุธทำลายล้าง",
+                            "image": "https://image.tmdb.org/t/p/original/lM4ChRhala9LEawz9ZQP8pXaBB6.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/Si0BwyzyoW/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "ตอน 21 - เผชิญหน้า",
+                            "image": "https://image.tmdb.org/t/p/original/9CcZxholODXneBPhNrMHQcTTdhA.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/ytOTgdXflb/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "ตอน 22 - แผนการทำลายล้าง",
+                            "image": "https://image.tmdb.org/t/p/original/jQps7RD3DjW1L4KJNVFO3n69GUO.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/UzgYBNworD/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "ตอน 23 - แมวเพลิง",
+                            "image": "https://image.tmdb.org/t/p/original/qV0fVa0npeuRYo7pNQI874oT2P3.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/5bZ6cjhyF/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "ตอน 24 - สัญญาณของแรงสั่นสะเทือน",
+                            "image": "https://image.tmdb.org/t/p/original/ijqDQU0RiuaIHWEmZySWhbSDbow.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/dNRh60GzyG/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        }
+                    ]
+                },
+                {
+                    "name": "ซับไทย",
+                    "image": "https://image.tmdb.org/t/p/original/5I8pf0sFQChYwj0telXsiB0JVFe.jpg",
+                    "stations": [
+                        {
+                            "name": "Ep. 1 - A Fire Soldier’s Fight",
+                            "image": "https://image.tmdb.org/t/p/original/jo8K4aBvvOSdrAvpt5OjgULAZyB.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/8UzjWdAT/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "Ep. 2 - Flames of Madness",
+                            "image": "https://image.tmdb.org/t/p/original/tD0VFFGtTv24UNdCubHYkrsK4Fb.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/X5oXQQfD/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "Ep. 3 - A New Flashpoint",
+                            "image": "https://image.tmdb.org/t/p/original/fx5qAyWuoIdKBZzdvMX35z5rvdV.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/yZp7dlaf/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "Ep. 4 - Groping Through the Fire",
+                            "image": "https://image.tmdb.org/t/p/original/tak2EEsBi6unbA8JhfYLC3dkj4k.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/z5DJdKQB/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "Ep. 5 - Corna (Sign of the Devil) / A Secret Plan",
+                            "image": "https://image.tmdb.org/t/p/original/bGaxO6pEanGmIfGMgTgv4AGNUCh.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/5R3KopcE/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "Ep. 6 - The Time to Choose",
+                            "image": "https://image.tmdb.org/t/p/original/AmzdHcr98pwN3lnBUKwmFaKqE01.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/F10oy4WC/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "Ep. 7 - Road to the Oasis",
+                            "image": "https://image.tmdb.org/t/p/original/wqxSI5bd1Erer8D5xS896NoQnPG.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/ehpLh0iN/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "Ep. 8 - Smoldering Malevolence",
+                            "image": "https://image.tmdb.org/t/p/original/xO0YMWOsHSXj5zDzeYlreWd4JtR.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/FmkKyow/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "Ep. 9 - The Core",
+                            "image": "https://image.tmdb.org/t/p/original/2kO7UREcg9JnEtsRcrG1d4kVNcz.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/fLkkt2jq/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "Ep. 10 - The Woman in Black",
+                            "image": "https://image.tmdb.org/t/p/original/pn1x9BNZ35cYgIvHjRGWp7flEm0.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/qbNff8Ch/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "Ep. 11 - Dark Hero",
+                            "image": "https://image.tmdb.org/t/p/original/bQUVobVTVvwbvg2rD2lKNLOfm9V.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/MUcTwDv/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "Ep. 12 - Shadows Cast by Divine Light",
+                            "image": "https://image.tmdb.org/t/p/original/8kUoM0NQROdtN8O0ZRfcZqmV0x8.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/EVta25j/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "Ep. 13 - A Pair of One-Eyes",
+                            "image": "https://image.tmdb.org/t/p/original/5eE7hRXclt4Owjy5mt2oG8oM2oU.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/lagRhey8/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "Ep. 14 - The Ashen Reaper",
+                            "image": "https://image.tmdb.org/t/p/original/sgz1440zN1OsWeknO9QCxXolDEx.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/4UdnJC23/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "Ep. 15 - A Three-Way Melee",
+                            "image": "https://image.tmdb.org/t/p/original/jV4YfFN7YHkwnkAyYc0FkWFx4NB.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/0cyJGudO/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "Ep. 16 - Mind Blown",
+                            "image": "https://image.tmdb.org/t/p/original/l1gLwxc3Vkr1KI4dqQuuZcd97nh.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/nCW9TnHt/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "Ep. 17 - Boys, Be Weak",
+                            "image": "https://image.tmdb.org/t/p/original/gTXRPeyhozpt4tRjewdpmhsWwd3.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/zmbBRnGP/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "Ep. 18 - The Holy Woman’s Anguish / The Man, Assault",
+                            "image": "https://image.tmdb.org/t/p/original/ark0siMtX7c4IDSQcfkHNOErirI.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/4wJdTDd/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "Ep. 19 - The Oze Family",
+                            "image": "https://image.tmdb.org/t/p/original/vnOZSQSvHUEQ594j7a87y6zfKGw.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/FfIJNT21/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "Ep. 20 - Weapons of Destruction",
+                            "image": "https://image.tmdb.org/t/p/original/lM4ChRhala9LEawz9ZQP8pXaBB6.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/KL9reb0/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "Ep. 21 - Enemy Contact",
+                            "image": "https://image.tmdb.org/t/p/original/9CcZxholODXneBPhNrMHQcTTdhA.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/h2LZgydK/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "Ep. 22 - Plot for Extinction",
+                            "image": "https://image.tmdb.org/t/p/original/jQps7RD3DjW1L4KJNVFO3n69GUO.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/gAmM3Aoj/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "Ep. 23 - Firecat",
+                            "image": "https://image.tmdb.org/t/p/original/qV0fVa0npeuRYo7pNQI874oT2P3.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/NhcvSocn/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "Ep. 24 - Signs of Upheaval",
+                            "image": "https://image.tmdb.org/t/p/original/ijqDQU0RiuaIHWEmZySWhbSDbow.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/wSdfWGSU/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Season 3",
+            "image": "https://image.tmdb.org/t/p/original/qGX5f2jwgIsz1bvIt0qwjzrl7Pm.jpg",
+            "groups": [
+                {
+                    "name": "ซับไทย",
+                    "image": "https://image.tmdb.org/t/p/original/qGX5f2jwgIsz1bvIt0qwjzrl7Pm.jpg",
+                    "stations": [
+                        {
+                            "name": "Ep. 1 - Indomitable Resolve",
+                            "image": "https://image.tmdb.org/t/p/original/ezFO2sGKwfucIu0sHgLI2oVn6kS.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/MmyHzrznLH/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "Ep. 2 - Prisoner",
+                            "image": "https://image.tmdb.org/t/p/original/ofCevgGbPL1LB0EGw9GrRkRhpqL.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/5jj5AH1Cc5/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "Ep. 3 - Incarnation of Flame",
+                            "image": "https://image.tmdb.org/t/p/original/gjDucocWmYZu7UuAMPgu2HBQwbv.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/yvFxhJakMN/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "Ep. 4 - Golden Secret",
+                            "image": "https://image.tmdb.org/t/p/original/cBGmtLTzkDfDSbts1qO3iaSDy9G.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/y9WtKeZGDS/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "Ep. 5 - Chance Meeting with an Arch-Enemy",
+                            "image": "https://image.tmdb.org/t/p/original/tzdJlxea5c66ZxWWnRKK0erbSOk.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/rCWOACYv7s/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "Ep. 6 - Beyond Prayer's End",
+                            "image": "https://image.tmdb.org/t/p/original/4SvnrSgKO54BQPVXmH5Va5hBT8H.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/GICwlOVt0B/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "Ep. 7 - Sleeping Truth",
+                            "image": "https://image.tmdb.org/t/p/original/tgzRLRZ6usWWyUSC4Lc9xZ3wopg.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/fai219QUCf/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "Ep. 8 - Holy Mother of Darkness / The Knight-King's Great Adventure",
+                            "image": "https://image.tmdb.org/t/p/original/rfTkoKalQDPAxj28GOwZHpaOCbH.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/rLTgofIlBv/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "Ep. 9 - Holy Sword, Resurrected",
+                            "image": "https://image.tmdb.org/t/p/original/93wsBztJrSJlt62qwc1litpBb0r.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/R2EYHrctgh/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "Ep. 10 - Advent",
+                            "image": "https://image.tmdb.org/t/p/original/dRHAnkxSgkdqsjOyW90vLAyBDZQ.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/2wnVD18mad/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "Ep. 11 - The Great Kaiju Battlefront",
+                            "image": "https://image.tmdb.org/t/p/original/9SmH9Ah6lRGXl1YKgCMraZla9lk.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/2r6RvGSxJd/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "Ep. 12 - The Madness of the Distant Past",
+                            "image": "https://image.tmdb.org/t/p/original/qELUCQlmQkVHJlbL60G1t5vYhtr.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/ObBPbRO5ew/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "Ep. 13 - Unaware",
+                            "image": "https://image.tmdb.org/t/p/original/erIr9pU4weGTg9NBETQGoHMpDgC.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/dfWAp6GbNk/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "Ep. 14 - With the Sun at His Back",
+                            "image": "https://image.tmdb.org/t/p/original/7IZkxJvhucexnwcA3tXJIXwZJnf.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/CwWaud7Gs/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "Ep. 15 - Birth",
+                            "image": "https://image.tmdb.org/t/p/original/aHscusvTEN38CC01JJZ9ZpYmaDF.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/IcKCkbbSfO/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "Ep. 16 - Savior",
+                            "image": "https://image.tmdb.org/t/p/original/zfghCGzlr2fV2JGXPmI8kMShMI9.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/RQEtlfuHt6/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "Ep. 17 - At the Center of the World",
+                            "image": "https://image.tmdb.org/t/p/original/suSmGan4NrZviqpm1UwS1KU5Kun.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/bgjmCIoOVY/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "Ep. 18 - Incantation of Destruction",
+                            "image": "https://image.tmdb.org/t/p/original/nZGwkF7viO0PX8PIHZt8z0DzHZa.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/6VNBnmhVao/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "Ep. 19 - Those Who Fight Back / The Final Imagining",
+                            "image": "https://image.tmdb.org/t/p/original/2rZ5goxe6xcGdVGtCksWbQX4QSG.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/n6SOZ487IS/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "Ep. 20 - Where Hope Is",
+                            "image": "https://image.tmdb.org/t/p/original/5W1GlgvCfBzjg1JhFMJS5bSxdQg.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/jYvXudHOgl/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "Ep. 21 - Dragon and Knight Surge Toward the Heavens",
+                            "image": "https://image.tmdb.org/t/p/original/hWNSiAO20TPdvup2w8LK4nLsu5F.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/bNZJVRJySb/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "Ep. 22 - Hero Resurrected",
+                            "image": "https://image.tmdb.org/t/p/original/7dqvACBvU86ntHfFvJA58ee2onb.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/buis2laWcx/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "Ep. 23 - Despair Saintess",
+                            "image": "https://image.tmdb.org/t/p/original/urKtmAncwJTHGmkKaPqgrz2n9Zo.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/A7obQJkCyf/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "Ep. 24 - Answer",
+                            "image": "https://image.tmdb.org/t/p/original/dv0SboWloTlcLVxFsfeDWzgvTYw.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/uk2O8feSl9/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

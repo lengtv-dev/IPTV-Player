@@ -1,0 +1,594 @@
+{
+    "name": "Shangri-La Frontier [เมื่อนักล่าเกมขยะท้าสู้ในเกมเทพ]",
+    "image": "https://image.tmdb.org/t/p/original/aCGdpgNkgz66R1winFkTFsMAhlC.jpg",
+    "groups": [
+        {
+            "name": "Season 1",
+            "image": "https://image.tmdb.org/t/p/original/xjhFYCzH9l2j3eH7TVnj4qTam2f.jpg",
+            "groups": [
+                {
+                    "name": "พากย์ไทย",
+                    "info": "เมื่อนักล่าเกมขยะท้าสู้ในเกมเทพ",
+                    "image": "https://image.tmdb.org/t/p/original/xjhFYCzH9l2j3eH7TVnj4qTam2f.jpg",
+                    "stations": [
+                        {
+                            "name": "ตอน 1 - คุณเล่นเกมไปทำไม?",
+                            "image": "https://image.tmdb.org/t/p/original/cwOMKeIPzHO8Op8FezrL3oOHaDT.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/Eqp7gVOIFv/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "ตอน 2 - ผู้มีเอกลักษณ์",
+                            "image": "https://image.tmdb.org/t/p/original/8qU5suic2xgx54CscaQnEGJw0CU.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/hBz4exJL57/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "ตอน 3 - หมาป่าทมิฬพิชิตราตรี",
+                            "image": "https://image.tmdb.org/t/p/original/9Y6qao7KeBA0UlcdVrmclR3SUPD.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/3YRbFucrN/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "ตอน 4 - ชำระล้างค่านิยมด้วยเกมกาก",
+                            "image": "https://image.tmdb.org/t/p/original/qdRbZFPYRJoTycMRYCC9afEwkt8.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/h1bqmUTNJ6/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "ตอน 5 - สุดท้ายแล้วคุณก็โดนล้อมไปด้วยคมหอก",
+                            "image": "https://image.tmdb.org/t/p/original/801UUNL5prJhGNuO5yE6dkiCHXj.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/AyxE1EomuX/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "ตอน 6 - ราชาอัศวินแห่งเครื่องเขียน",
+                            "image": "https://image.tmdb.org/t/p/original/wy656yWsHnqWKVeZfL9XMS2p4CE.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/0lql355fHL/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "ตอน 7 - สิ่งที่เหลืออยู่ของยุคสมัยแห่งพระเจ้า, ผู้แพ้ที่ยึดติด",
+                            "image": "https://image.tmdb.org/t/p/original/wVgQiWOwR38KW2Yg32nxG0oHRs8.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/oFmT8nUHsr/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "ตอน 8 - 300 ลิมิต บทเพลงแห่งความคลุ้มคลั่ง",
+                            "image": "https://image.tmdb.org/t/p/original/zudIBME8WHd8K4xp3DTcVAHdwQq.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/SKa4IXziQR/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "ตอน 9 - ทะเลไม้ที่สวยสง่า",
+                            "image": "https://image.tmdb.org/t/p/original/z4kItR68niGXJ8cWqLuImEydkyP.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/L4Fd7MtjnS/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "ตอน 10 - ปล้นสุสานกันเถอะ!!",
+                            "image": "https://image.tmdb.org/t/p/original/nen1lUA9HCXC8nIUDEOmXZmLZFZ.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/mjyjabqFTJ/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "ตอน 11 - แสงเจิดจรัสที่แท้จริง",
+                            "image": "https://image.tmdb.org/t/p/original/30kuWcgXImAyx34GdsbINMuyduN.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/E9um1fkXX/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "ตอน 12 - การเสียใจภายหลังจะเกิดขึ้นในอดีตเสมอ",
+                            "image": "https://image.tmdb.org/t/p/original/7NdNyHHGPm6tgTgghiWrxbD5kT0.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/7HSZr8Ltrc/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "ตอน 13 - ที่อยู่ตรงนั้นมีแค่ความอาวรณ์",
+                            "image": "https://image.tmdb.org/t/p/original/qqZFExzjqSFMikALqFlsKU7zsis.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/iq7puGDVbE/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "ตอน 14 - เล็กน้อย",
+                            "image": "https://image.tmdb.org/t/p/original/reZZzRAJ9DCUrIEv2rb6nbz1bPF.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/DWXl4RbRCv/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "ตอน 15 - ทุ่มเทความรู้สึกในชั่วพริบตา พาร์ทหนึ่ง",
+                            "image": "https://image.tmdb.org/t/p/original/28TnUtcCtgaFbut5SLwZysObGGT.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/IpP082Bwe5/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "ตอน 16 - หมาป่าทมิฬพิชิตราตรี",
+                            "image": "https://image.tmdb.org/t/p/original/3Fm7PCgMZ76OhwMRtdC8E53Na9k.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/aBo8QQLw2o/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "ตอน 17 - ทุ่มเทความรู้สึกในชั่วพริบตา พาร์ทสาม",
+                            "image": "https://image.tmdb.org/t/p/original/p90w8NaO1tD2vxgRGWgVPiSxU39.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/hvW1CNhJ/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "ตอน 18 - ทุ่มเทความรู้สึกในชั่วพริบตา พาร์ทสี่",
+                            "image": "https://image.tmdb.org/t/p/original/cCh3PGxqhqq8sFaCGT0ClhmKIBS.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/vMcEUiWYZ/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "ตอน 19 - โลกที่ก้าวไปต่อ ฮีโร่ผู้ถูกเปิดเผย",
+                            "image": "https://image.tmdb.org/t/p/original/dSgVDs03axBDfOA04duszylnFEf.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/cahbKfmIBm/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "ตอน 20 - ปัจจุบันและอนาคตของแต่ละคน",
+                            "image": "https://image.tmdb.org/t/p/original/sxkBsV99blbhZF6ze99n52kdHSp.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/Uj49QOGiPG/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "ตอน 21 - ธุระ การเลี้ยงดูและการพิชิต",
+                            "image": "https://image.tmdb.org/t/p/original/pNGzb7fV8TdlVSK99rMxo4j85jH.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/DYWqheFXM3/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "ตอน 22 - ว็อคกิ้ง ออฟ เดอะ แอร์คลีนเนอร์",
+                            "image": "https://image.tmdb.org/t/p/original/mRV7YO0rFxCbaE32l4SVmzXa1cW.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/mT04weh8FF/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "ตอน 23 - นกกับกระต่าย ปะทะ กะโหลกประสานเสียง",
+                            "image": "https://image.tmdb.org/t/p/original/8kyU47rHE5xEHx6eToMoZZY2SeW.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/Ns92V5mM2b/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "ตอน 24 - แรร์ไอเทมนั้นมีน้ำหนักมากกว่าชีวิต",
+                            "image": "https://image.tmdb.org/t/p/original/cs0JsVUmQWsP3gAstAuH0AxE8yK.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/pAjXBEVK90/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "ตอน 25 - ผู้เบิกความมืดของโลก",
+                            "image": "https://image.tmdb.org/t/p/original/7zv4lXi3YqlCCDtdqO309RWQp2.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/tnwnQfjHPs/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        }
+                    ]
+                },
+                {
+                    "name": "ซับไทย",
+                    "info": "เมื่อนักล่าเกมขยะท้าสู้ในเกมเทพ",
+                    "image": "https://image.tmdb.org/t/p/original/xjhFYCzH9l2j3eH7TVnj4qTam2f.jpg",
+                    "stations": [
+                        {
+                            "name": "Ep. 1 - What Do You Play Games For?",
+                            "image": "https://image.tmdb.org/t/p/original/cwOMKeIPzHO8Op8FezrL3oOHaDT.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/QmdYHq3Xtk/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "Ep. 2 - A Peculiar One",
+                            "image": "https://image.tmdb.org/t/p/original/8qU5suic2xgx54CscaQnEGJw0CU.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/QSoBV4OTM6/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "Ep. 3 - Black Wolf Nightslayer",
+                            "image": "https://image.tmdb.org/t/p/original/9Y6qao7KeBA0UlcdVrmclR3SUPD.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/NJMtwY9BQx/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "Ep. 4 - A Trash Game Realignment of Elevated Tastes",
+                            "image": "https://image.tmdb.org/t/p/original/qdRbZFPYRJoTycMRYCC9afEwkt8.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/HySarNKb5m/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "Ep. 5 - Lo, Thou Art Assailed on All Sides",
+                            "image": "https://image.tmdb.org/t/p/original/801UUNL5prJhGNuO5yE6dkiCHXj.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/VHDNn1Onwp/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "Ep. 6 - The Writing Tool Knight-Queen",
+                            "image": "https://image.tmdb.org/t/p/original/wy656yWsHnqWKVeZfL9XMS2p4CE.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/8cRM5PVRBW/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "Ep. 7 - Remnant of the Divinity: The Aberrant Loser",
+                            "image": "https://image.tmdb.org/t/p/original/wVgQiWOwR38KW2Yg32nxG0oHRs8.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/MrdLRvtAjd/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "Ep. 8 - The 300-Limit Pandemonium",
+                            "image": "https://image.tmdb.org/t/p/original/zudIBME8WHd8K4xp3DTcVAHdwQq.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/jktDgOsAZE/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "Ep. 9 - A Dazzling Sea of Trees",
+                            "image": "https://image.tmdb.org/t/p/original/z4kItR68niGXJ8cWqLuImEydkyP.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/CUvZyM37wW/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "Ep. 10 - Let's Go Tomb Raiding!!",
+                            "image": "https://image.tmdb.org/t/p/original/nen1lUA9HCXC8nIUDEOmXZmLZFZ.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/lfaxHi9iQc/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "Ep. 11 - The Glimmer of Truth",
+                            "image": "https://image.tmdb.org/t/p/original/30kuWcgXImAyx34GdsbINMuyduN.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/t8l36JBKPR/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "Ep. 12 - Regrets Always Lie in the Past",
+                            "image": "https://image.tmdb.org/t/p/original/7NdNyHHGPm6tgTgghiWrxbD5kT0.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/J98HwmBKKG/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "Ep. 13 - Only Resentments About the End of Life Remain",
+                            "image": "https://image.tmdb.org/t/p/original/qqZFExzjqSFMikALqFlsKU7zsis.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/hJE2vBg0dB/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "Ep. 14 - Squish",
+                            "image": "https://image.tmdb.org/t/p/original/reZZzRAJ9DCUrIEv2rb6nbz1bPF.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/kxwUy5o9lP/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "Ep. 15 - Putting Feelings Into a Moment (1)",
+                            "image": "https://image.tmdb.org/t/p/original/28TnUtcCtgaFbut5SLwZysObGGT.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/PRAGBhi1Ge/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "Ep. 16 - Putting Feelings Into a Moment (2)",
+                            "image": "https://image.tmdb.org/t/p/original/3Fm7PCgMZ76OhwMRtdC8E53Na9k.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/biU5ybEGyP/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "Ep. 17 - Putting Feelings Into a Moment (3)",
+                            "image": "https://image.tmdb.org/t/p/original/p90w8NaO1tD2vxgRGWgVPiSxU39.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/NwC2cXaL6/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "Ep. 18 - Putting Feelings Into a Moment (4)",
+                            "image": "https://image.tmdb.org/t/p/original/cCh3PGxqhqq8sFaCGT0ClhmKIBS.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/mGJwQimji7/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "Ep. 19 - The World Progresses, the Heroes Are Revealed",
+                            "image": "https://image.tmdb.org/t/p/original/dSgVDs03axBDfOA04duszylnFEf.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/ptY0k692WO/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "Ep. 20 - Current Situations and Next Steps",
+                            "image": "https://image.tmdb.org/t/p/original/sxkBsV99blbhZF6ze99n52kdHSp.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/CBtKpJwUF/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "Ep. 21 - Errands, Cultivation, and Game Progress",
+                            "image": "https://image.tmdb.org/t/p/original/pNGzb7fV8TdlVSK99rMxo4j85jH.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/iUfpqoiyS/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "Ep. 22 - The Walking Air Purifier",
+                            "image": "https://image.tmdb.org/t/p/original/mRV7YO0rFxCbaE32l4SVmzXa1cW.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/HbchuPDhWT/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "Ep. 23 - Bird and Rabbits VS Chorus of Skeletons",
+                            "image": "https://image.tmdb.org/t/p/original/8kyU47rHE5xEHx6eToMoZZY2SeW.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/LoUIx560MN/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "Ep. 24 - Rare Items, Worth More than Life Itself",
+                            "image": "https://image.tmdb.org/t/p/original/cs0JsVUmQWsP3gAstAuH0AxE8yK.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/wJouPi0wY1/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "Ep. 25 - Those Who Illuminate the World's Darkness",
+                            "image": "https://image.tmdb.org/t/p/original/7zv4lXi3YqlCCDtdqO309RWQp2.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/2Fq3adM3ZK/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Season 2",
+            "image": "https://image.tmdb.org/t/p/original/aCGdpgNkgz66R1winFkTFsMAhlC.jpg",
+            "groups": [
+                {
+                    "name": "พากย์ไทย",
+                    "image": "https://image.tmdb.org/t/p/original/aCGdpgNkgz66R1winFkTFsMAhlC.jpg",
+                    "stations": [
+                        {
+                            "name": "ตอน 1",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FrGRrlGaj%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FrGRrlGaj",
+                            "referer": ""
+                        },
+                        {
+                            "name": "ตอน 2",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FjRwQXJ3I%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FjRwQXJ3I",
+                            "referer": ""
+                        },
+                        {
+                            "name": "ตอน 3",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2F6OmdO4el%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2F6OmdO4el",
+                            "referer": ""
+                        },
+                        {
+                            "name": "ตอน 4",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FKVddB9nK%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FKVddB9nK",
+                            "referer": ""
+                        },
+                        {
+                            "name": "ตอน 5",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FfOV8dBH1%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FfOV8dBH1",
+                            "referer": ""
+                        },
+                        {
+                            "name": "ตอน 6",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2Ffbtkg2Bs%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2Ffbtkg2Bs",
+                            "referer": ""
+                        },
+                        {
+                            "name": "ตอน 7",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FaU1aToYj%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FaU1aToYj",
+                            "referer": ""
+                        },
+                        {
+                            "name": "ตอน 8",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FHRyf1iSf%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FHRyf1iSf",
+                            "referer": ""
+                        },
+                        {
+                            "name": "ตอน 9",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FgZwqCjVp%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FgZwqCjVp",
+                            "referer": ""
+                        },
+                        {
+                            "name": "ตอน 10",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2F1RLlfu4G%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2F1RLlfu4G",
+                            "referer": ""
+                        },
+                        {
+                            "name": "ตอน 11",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2F1Fitu2SG%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2F1Fitu2SG",
+                            "referer": ""
+                        },
+                        {
+                            "name": "ตอน 12",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FGdEY3rK4%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FGdEY3rK4",
+                            "referer": ""
+                        },
+                        {
+                            "name": "ตอน 13",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FUifcMf09%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FUifcMf09",
+                            "referer": ""
+                        },
+                        {
+                            "name": "ตอน 14",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FQATmAevR%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FQATmAevR",
+                            "referer": ""
+                        },
+                        {
+                            "name": "ตอน 15",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FwsPpm334%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FwsPpm334",
+                            "referer": ""
+                        },
+                        {
+                            "name": "ตอน 16",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FHgpdgPrY%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FHgpdgPrY",
+                            "referer": ""
+                        },
+                        {
+                            "name": "ตอน 17",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FYoCAIAHI%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FYoCAIAHI",
+                            "referer": ""
+                        },
+                        {
+                            "name": "ตอน 18",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FIEKYIkZp%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FIEKYIkZp",
+                            "referer": ""
+                        },
+                        {
+                            "name": "ตอน 19",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2F5jXJq99K%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2F5jXJq99K",
+                            "referer": ""
+                        },
+                        {
+                            "name": "ตอน 20",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2F7NsYqUcG%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2F7NsYqUcG",
+                            "referer": ""
+                        },
+                        {
+                            "name": "ตอน 21",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FLqnDlfnI%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FLqnDlfnI",
+                            "referer": ""
+                        },
+                        {
+                            "name": "ตอน 22",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FzZZRXR1A%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FzZZRXR1A",
+                            "referer": ""
+                        },
+                        {
+                            "name": "ตอน 23",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FwGqNlmzg%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FwGqNlmzg",
+                            "referer": ""
+                        },
+                        {
+                            "name": "ตอน 24",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FuT6SySkS%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FuT6SySkS",
+                            "referer": ""
+                        },
+                        {
+                            "name": "ตอน 25",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FvG7y979V%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FvG7y979V",
+                            "referer": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "ซับไทย",
+                    "image": "https://image.tmdb.org/t/p/original/aCGdpgNkgz66R1winFkTFsMAhlC.jpg",
+                    "stations": [
+                        {
+                            "name": "Ep. 1",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FRZZTGfhv%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FRZZTGfhv",
+                            "referer": ""
+                        },
+                        {
+                            "name": "Ep. 2",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FSHuQNHPv%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FSHuQNHPv",
+                            "referer": ""
+                        },
+                        {
+                            "name": "Ep. 3",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FBw67UtWg%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FBw67UtWg",
+                            "referer": ""
+                        },
+                        {
+                            "name": "Ep. 4",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2Fqu1AgiGm%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2Fqu1AgiGm",
+                            "referer": ""
+                        },
+                        {
+                            "name": "Ep. 5",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FmlXVYFfV%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FmlXVYFfV",
+                            "referer": ""
+                        },
+                        {
+                            "name": "Ep. 6",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FtaWLQLoM%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FtaWLQLoM",
+                            "referer": ""
+                        },
+                        {
+                            "name": "Ep. 7",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2F1EKxD0Mr%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2F1EKxD0Mr",
+                            "referer": ""
+                        },
+                        {
+                            "name": "Ep. 8",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FTWz8byCi%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FTWz8byCi",
+                            "referer": ""
+                        },
+                        {
+                            "name": "Ep. 9",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FMK7EOxce%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FMK7EOxce",
+                            "referer": ""
+                        },
+                        {
+                            "name": "Ep. 10",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FqPsLw0ZT%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FqPsLw0ZT",
+                            "referer": ""
+                        },
+                        {
+                            "name": "Ep. 11",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FP50C7EHF%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FP50C7EHF",
+                            "referer": ""
+                        },
+                        {
+                            "name": "Ep. 12",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FdAjhuyGT%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FdAjhuyGT",
+                            "referer": ""
+                        },
+                        {
+                            "name": "Ep. 13",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FAQVXgH9U%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FAQVXgH9U",
+                            "referer": ""
+                        },
+                        {
+                            "name": "Ep. 14",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2Fw72H0Duv%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2Fw72H0Duv",
+                            "referer": ""
+                        },
+                        {
+                            "name": "Ep. 15",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FCjkbWnWB%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FCjkbWnWB",
+                            "referer": ""
+                        },
+                        {
+                            "name": "Ep. 16",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2F8s3griQj%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2F8s3griQj",
+                            "referer": ""
+                        },
+                        {
+                            "name": "Ep. 17",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FjKm7CM80%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FjKm7CM80",
+                            "referer": ""
+                        },
+                        {
+                            "name": "Ep. 18",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2Fn3eFpb2Y%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2Fn3eFpb2Y",
+                            "referer": ""
+                        },
+                        {
+                            "name": "Ep. 19",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FtyJgcfGU%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FtyJgcfGU",
+                            "referer": ""
+                        },
+                        {
+                            "name": "Ep. 20",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2Fk87dT9dW%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2Fk87dT9dW",
+                            "referer": ""
+                        },
+                        {
+                            "name": "Ep. 21",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FWrQWfeYx%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FWrQWfeYx",
+                            "referer": ""
+                        },
+                        {
+                            "name": "Ep. 22",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FhMcxqaHi%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FhMcxqaHi",
+                            "referer": ""
+                        },
+                        {
+                            "name": "Ep. 23",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2F6V08ann0%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2F6V08ann0",
+                            "referer": ""
+                        },
+                        {
+                            "name": "Ep. 24",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FHDeoDMTd%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FHDeoDMTd",
+                            "referer": ""
+                        },
+                        {
+                            "name": "Ep. 25",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FkiYiaeba%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FkiYiaeba",
+                            "referer": ""
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

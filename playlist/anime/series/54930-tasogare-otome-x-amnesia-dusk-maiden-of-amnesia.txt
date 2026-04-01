@@ -1,0 +1,95 @@
+{
+    "name": "Dusk Maiden of Amnesia [คนสืบผี]",
+    "image": "https://image.tmdb.org/t/p/original/v2xEALi1U4foXfLUXB2FkAqo4qC.jpg",
+    "groups": [
+        {
+            "name": "Season 1",
+            "image": "https://image.tmdb.org/t/p/original/oW1tQfJZQcahZeYRU2Y2M88POqM.jpg",
+            "groups": [
+                {
+                    "name": "พากย์ไทย",
+                    "image": "https://image.tmdb.org/t/p/original/oW1tQfJZQcahZeYRU2Y2M88POqM.jpg",
+                    "stations": [
+                        {
+                            "name": "ตอน 1 - Ghost Maiden",
+                            "image": "https://image.tmdb.org/t/p/original/4IUsXBlespCsxWhabGSlGIUQoIG.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2F0iotyN4Z%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2F0iotyN4Z",
+                            "referer": ""
+                        },
+                        {
+                            "name": "ตอน 2 - Maiden of a Chance Meeting",
+                            "image": "https://image.tmdb.org/t/p/original/twxWyVfYtraAU2ls68K7Glh6gUa.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2Fdd0TBhlD%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2Fdd0TBhlD",
+                            "referer": ""
+                        },
+                        {
+                            "name": "ตอน 3 - Maiden of Dusk",
+                            "image": "https://image.tmdb.org/t/p/original/jI4XS5Rt2ooeGekHv5snQri2nBb.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2F0yYPmH3x%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2F0yYPmH3x",
+                            "referer": ""
+                        },
+                        {
+                            "name": "ตอน 4 - Maiden of Dawn",
+                            "image": "https://image.tmdb.org/t/p/original/qQCfszwLFVq6hygDTE6B6xvWv0p.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FVIHmn8NX%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FVIHmn8NX",
+                            "referer": ""
+                        },
+                        {
+                            "name": "ตอน 5 - Maiden of Longing",
+                            "image": "https://image.tmdb.org/t/p/original/kewbgFlGOpGR7dx184B5Lnotfif.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FDCnUR7wg%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FDCnUR7wg",
+                            "referer": ""
+                        },
+                        {
+                            "name": "ตอน 6 - Maiden of Vengeance",
+                            "image": "https://image.tmdb.org/t/p/original/jhtnrzH9OsiMtEdPL2UWcWaB2Nf.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FfrxjwTjI%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FfrxjwTjI",
+                            "referer": ""
+                        },
+                        {
+                            "name": "ตอน 7 - Maiden of Oblivion",
+                            "image": "https://image.tmdb.org/t/p/original/acE4iM1V2hpSieSnG0oIK7Icexq.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2F8Fsdn4oK%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2F8Fsdn4oK",
+                            "referer": ""
+                        },
+                        {
+                            "name": "ตอน 8 - The Maiden of Recollection",
+                            "image": "https://image.tmdb.org/t/p/original/esRodLk129L2TDbVtCjDFh88rOE.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2F5JzEnTaY%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2F5JzEnTaY",
+                            "referer": ""
+                        },
+                        {
+                            "name": "ตอน 9 - Maiden of Hatred",
+                            "image": "https://image.tmdb.org/t/p/original/75mkA04ErG9bByygVuLIh1YaPAV.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FFv9ZHg3C%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FFv9ZHg3C",
+                            "referer": ""
+                        },
+                        {
+                            "name": "ตอน 10 - Maiden of Loss",
+                            "image": "https://image.tmdb.org/t/p/original/3Y7PITYibxtldvCyasUGoGuZNd.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FlHEXPvSp%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FlHEXPvSp",
+                            "referer": ""
+                        },
+                        {
+                            "name": "ตอน 11 - Maiden of Bitter Tears",
+                            "image": "https://image.tmdb.org/t/p/original/agNGdGin8n4euFnemaho5jnAxxi.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FESrWZNWu%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FESrWZNWu",
+                            "referer": ""
+                        },
+                        {
+                            "name": "ตอน 12 - The Dusk Maiden",
+                            "image": "https://image.tmdb.org/t/p/original/ntMpPE9ZIxmg3sCNwl41eshy8q7.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2F0mDFhvFI%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2F0mDFhvFI",
+                            "referer": ""
+                        },
+                        {
+                            "name": "ตอน 13",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2Fgiza8v4a%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2Fgiza8v4a",
+                            "referer": ""
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

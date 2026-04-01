@@ -1,0 +1,336 @@
+{
+    "name": "How a Realist Hero Rebuilt the Kingdom [ยุทธศาสตร์กู้ชาติของราชามือใหม่]",
+    "image": "https://image.tmdb.org/t/p/original/ymbGZbNjHK4uAy3l29jUBvqeXIX.jpg",
+    "groups": [
+        {
+            "name": "Season 1",
+            "image": "https://image.tmdb.org/t/p/original/53M3HbBrzErQBHHMoSJmAMQYrBJ.jpg",
+            "groups": [
+                {
+                    "name": "พากย์ไทย",
+                    "image": "https://image.tmdb.org/t/p/original/53M3HbBrzErQBHHMoSJmAMQYrBJ.jpg",
+                    "stations": [
+                        {
+                            "name": "ตอน 1 - ก่อนอื่นเรามาเริ่มต้นจากผู้กล้ากันเถอะ",
+                            "image": "https://image.tmdb.org/t/p/original/7nvndwO2mVLczu5yIndyHrT9Bxr.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FQA97Zrti%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FQA97Zrti",
+                            "referer": ""
+                        },
+                        {
+                            "name": "ตอน 2 - แค่มีความสามารถก็มีงานให้",
+                            "image": "https://image.tmdb.org/t/p/original/2zYRO3cwiLhNKMiS5mlLMR5WkxQ.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2F3duoa9e9%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2F3duoa9e9",
+                            "referer": ""
+                        },
+                        {
+                            "name": "ตอน 3 - หากจะเป็นข้ารับใช้ ก็จงอย่าเป็นข้ารับใช้ที่ซื่อสัตย์",
+                            "image": "https://image.tmdb.org/t/p/original/hJN080dLP4bhYl2L4wYNIF2xiTa.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2F18hACRbf%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2F18hACRbf",
+                            "referer": ""
+                        },
+                        {
+                            "name": "ตอน 4 - ชักจูงด้วยความอยากอาหาร",
+                            "image": "https://image.tmdb.org/t/p/original/ih6lkpFmidoWYAxR8NyO5BDI48w.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FLS8hbz8E%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FLS8hbz8E",
+                            "referer": ""
+                        },
+                        {
+                            "name": "ตอน 5 - ละทิ้งซึ่งเกียรติยามข้าวยากหมากแพง",
+                            "image": "https://image.tmdb.org/t/p/original/u3XLzGi62vfEeTAaeAFaBDtOOUX.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FoETQxUpi%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FoETQxUpi",
+                            "referer": ""
+                        },
+                        {
+                            "name": "ตอน 6 - นักปราชญ์จะไม่เพิกเฉยต่อเวลาและละทิ้งผลประโยชน์",
+                            "image": "https://image.tmdb.org/t/p/original/f0ACfSmkJzaykmwXHJElNYLtgdG.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FhH6jXNyz%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FhH6jXNyz",
+                            "referer": ""
+                        },
+                        {
+                            "name": "ตอน 7 - คำบอกเล่าของผู้เฒ่าผู้แก่",
+                            "image": "https://image.tmdb.org/t/p/original/6vi8N5KVPqHRhpZwPH1iQnPrUm9.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FIuIWQi5K%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FIuIWQi5K",
+                            "referer": ""
+                        },
+                        {
+                            "name": "ตอน 8 - เสียงป่าสั่นไหว",
+                            "image": "https://image.tmdb.org/t/p/original/jctAKUaIDI3yhfQooXQDK1ke3Y8.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2Frtsj9uS3%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2Frtsj9uS3",
+                            "referer": ""
+                        },
+                        {
+                            "name": "ตอน 9 - ตามใจปรารถนา",
+                            "image": "https://image.tmdb.org/t/p/original/xDT7Nr9BpuiL49W6wAwlgQTwcwd.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FDWKRJ5QB%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FDWKRJ5QB",
+                            "referer": ""
+                        },
+                        {
+                            "name": "ตอน 10 - หาใช่ที่ที่นักรบจะสนุกได้",
+                            "image": "https://image.tmdb.org/t/p/original/gHax3lqHRkF4ik5TrZOdWfhgKXo.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FTn3CRwSl%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FTn3CRwSl",
+                            "referer": ""
+                        },
+                        {
+                            "name": "ตอน 11 - กลยุทธ์หลี่ตายแทนถาว",
+                            "image": "https://image.tmdb.org/t/p/original/zDwrTuQKpVTuiBYxH05bpFGii65.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FXqJXLZQE%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FXqJXLZQE",
+                            "referer": ""
+                        },
+                        {
+                            "name": "ตอน 12 - จะล้อมศัตรูก็ต้องเปิดช่อง",
+                            "image": "https://image.tmdb.org/t/p/original/6mPSyNvGt2ny9wafgmG5QkaykND.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FcVgYzwQT%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FcVgYzwQT",
+                            "referer": ""
+                        },
+                        {
+                            "name": "ตอน 13 - รบชนะร้อยทั้งร้อยหาใช่วิธีการอันประเสริฐ",
+                            "image": "https://image.tmdb.org/t/p/original/fSmqYAup9tZumyDjTYCYnhv5FTq.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FQW0xvT0j%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FQW0xvT0j",
+                            "referer": ""
+                        },
+                        {
+                            "name": "ตอน 14 - อมิโดเนียผู้ขอบารมีจากพยัคฆ์",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2F98n28s6U%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2F98n28s6U",
+                            "referer": "",
+                            "image": "https://image.tmdb.org/t/p/original/1wIk6xN3v9dkKMqzoABaqFc7wng.jpg"
+                        },
+                        {
+                            "name": "ตอน 15 - กลายเป็นเพื่อนที่รู้ใจ",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FH2sOQ7op%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FH2sOQ7op",
+                            "referer": "",
+                            "image": "https://image.tmdb.org/t/p/original/ltaYq40x5436DmdJ31vU22md4dC.jpg"
+                        },
+                        {
+                            "name": "ตอน 16 - การเมืองชั่วร้ายยิ่งกว่าเสือ",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FN5jTHVnt%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FN5jTHVnt",
+                            "referer": "",
+                            "image": "https://image.tmdb.org/t/p/original/x5NEq8nWaCbbMdaIyLc6MU8EQQ9.jpg"
+                        },
+                        {
+                            "name": "ตอน 17 - นักรบยอมตายเพื่อคนที่รู้จักตน",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FBK5k6ai2%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FBK5k6ai2",
+                            "referer": "",
+                            "image": "https://image.tmdb.org/t/p/original/ec2bjlGqA76JFUc3rZHiPjO523g.jpg"
+                        },
+                        {
+                            "name": "ตอน 18 - เงาอสรพิษในจอก",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2F8smM3OWa%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2F8smM3OWa",
+                            "referer": "",
+                            "image": "https://image.tmdb.org/t/p/original/WmSayfVWoFDZb7I20eSoAo1oD8.jpg"
+                        },
+                        {
+                            "name": "ตอน 19 - ตีเหล็กต้องตีตอนร้อน",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2F6JhOhmmK%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2F6JhOhmmK",
+                            "referer": "",
+                            "image": "https://image.tmdb.org/t/p/original/mTqDOzvKh7Oj8OYJ5FyOiZ714dl.jpg"
+                        },
+                        {
+                            "name": "ตอน 20 - เรียนรู้จากอุบายแม่นางไซซี",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FxGuwdG19%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FxGuwdG19",
+                            "referer": "",
+                            "image": "https://image.tmdb.org/t/p/original/nVYRw2qgeRB6viqbPJoJTipdJve.jpg"
+                        },
+                        {
+                            "name": "ตอน 21 - ใช้กุ้งตกปลาไทแต่ได้ปลาฉลามมาแทน",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FD4nUynYO%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FD4nUynYO",
+                            "referer": "",
+                            "image": "https://image.tmdb.org/t/p/original/9KCn3XRe9gx7UpkNs3FFxhq8DS9.jpg"
+                        },
+                        {
+                            "name": "ตอน 22 - คนเราไม่รู้มาแต่เกิด หากไม่เรียนรู้ก็จะเป็นคนเขลา",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2Fx1MF1WOv%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2Fx1MF1WOv",
+                            "referer": "",
+                            "image": "https://image.tmdb.org/t/p/original/psTDbDgCoCLm7LT3GI9SHlV9MTM.jpg"
+                        },
+                        {
+                            "name": "ตอน 23 - การบ้วนปากล้างมือคือพื้นฐานของการป้องกันโรคระบาด",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FA2rDrvHq%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FA2rDrvHq",
+                            "referer": "",
+                            "image": "https://image.tmdb.org/t/p/original/uOk9BNRhR4RreoNUlzXjxjjYR9D.jpg"
+                        },
+                        {
+                            "name": "ตอน 24 - ห่างจากบ้านเกิดมานานหลายปี",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FvPLeiAs3%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FvPLeiAs3",
+                            "referer": "",
+                            "image": "https://image.tmdb.org/t/p/original/eg5bfkTV8tzMUNCG24g7bAvthPS.jpg"
+                        },
+                        {
+                            "name": "ตอน 25 - รู้เขา รู้เรา รบ 100 ครั้ง ก็ไม่มีเตียงหัก",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FfHxPBMOB%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FfHxPBMOB",
+                            "referer": "",
+                            "image": "https://image.tmdb.org/t/p/original/33GMj7USEcuQQhdSHu3Bao6AvgL.jpg"
+                        },
+                        {
+                            "name": "ตอน 26 - หน้าไม่เห็นคนในอดีต หลังไม่เห็นคนในอนาคต",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FdKvT4mUM%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FdKvT4mUM",
+                            "referer": "",
+                            "image": "https://image.tmdb.org/t/p/original/ebmCtFXp5HfCqH4FAkmCPpsBM5n.jpg"
+                        }
+                    ]
+                },
+                {
+                    "name": "ซับไทย",
+                    "image": "https://image.tmdb.org/t/p/original/53M3HbBrzErQBHHMoSJmAMQYrBJ.jpg",
+                    "stations": [
+                        {
+                            "name": "Ep. 1 - First Begin with a Hero",
+                            "image": "https://image.tmdb.org/t/p/original/7nvndwO2mVLczu5yIndyHrT9Bxr.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FhBq0qBnP%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FhBq0qBnP",
+                            "referer": ""
+                        },
+                        {
+                            "name": "Ep. 2 - If You Possess an Aptitude, We'll Make Use of It",
+                            "image": "https://image.tmdb.org/t/p/original/2zYRO3cwiLhNKMiS5mlLMR5WkxQ.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FHMtqdTT2%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FHMtqdTT2",
+                            "referer": ""
+                        },
+                        {
+                            "name": "Ep. 3 - Let Not Me Be a Loyal Minister",
+                            "image": "https://image.tmdb.org/t/p/original/hJN080dLP4bhYl2L4wYNIF2xiTa.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2Ff8RPXrXX%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2Ff8RPXrXX",
+                            "referer": ""
+                        },
+                        {
+                            "name": "Ep. 4 - The Forefinger Twitches",
+                            "image": "https://image.tmdb.org/t/p/original/ih6lkpFmidoWYAxR8NyO5BDI48w.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2F6yvbNw8q%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2F6yvbNw8q",
+                            "referer": ""
+                        },
+                        {
+                            "name": "Ep. 5 - Well Fed, Well Regarded",
+                            "image": "https://image.tmdb.org/t/p/original/u3XLzGi62vfEeTAaeAFaBDtOOUX.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2F40QkeYnP%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2F40QkeYnP",
+                            "referer": ""
+                        },
+                        {
+                            "name": "Ep. 6 - The Wise Man Never Forsaketh an Advantage",
+                            "image": "https://image.tmdb.org/t/p/original/f0ACfSmkJzaykmwXHJElNYLtgdG.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FnPJIOrVb%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FnPJIOrVb",
+                            "referer": ""
+                        },
+                        {
+                            "name": "Ep. 7 - Thus Saith the Elder",
+                            "image": "https://image.tmdb.org/t/p/original/6vi8N5KVPqHRhpZwPH1iQnPrUm9.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FYqCxNmWU%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FYqCxNmWU",
+                            "referer": ""
+                        },
+                        {
+                            "name": "Ep. 8 - The Forest in Labour",
+                            "image": "https://image.tmdb.org/t/p/original/jctAKUaIDI3yhfQooXQDK1ke3Y8.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FMqWxIQY2%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FMqWxIQY2",
+                            "referer": ""
+                        },
+                        {
+                            "name": "Ep. 9 - Contrary to Wishes",
+                            "image": "https://image.tmdb.org/t/p/original/xDT7Nr9BpuiL49W6wAwlgQTwcwd.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2F9n7KgpA8%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2F9n7KgpA8",
+                            "referer": ""
+                        },
+                        {
+                            "name": "Ep. 10 - No Place of Joy Hath a Soldier",
+                            "image": "https://image.tmdb.org/t/p/original/gHax3lqHRkF4ik5TrZOdWfhgKXo.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FCWemHBTI%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FCWemHBTI",
+                            "referer": ""
+                        },
+                        {
+                            "name": "Ep. 11 - Sacrifice the Plum Tree to Preserve the Peach Tree",
+                            "image": "https://image.tmdb.org/t/p/original/zDwrTuQKpVTuiBYxH05bpFGii65.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FnYtDElvK%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FnYtDElvK",
+                            "referer": ""
+                        },
+                        {
+                            "name": "Ep. 12 - When You Surround an Army, Leave an Outlet Free",
+                            "image": "https://image.tmdb.org/t/p/original/6mPSyNvGt2ny9wafgmG5QkaykND.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FGCRpdMRv%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FGCRpdMRv",
+                            "referer": ""
+                        },
+                        {
+                            "name": "Ep. 13 - To Fight and Conquer in All Our Battles Is Not Supreme Excellence",
+                            "image": "https://image.tmdb.org/t/p/original/fSmqYAup9tZumyDjTYCYnhv5FTq.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FwfNf52Vm%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FwfNf52Vm",
+                            "referer": ""
+                        },
+                        {
+                            "name": "Ep. 14 - Amidonia in a Lion's Skin",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2F41gkPmMu%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2F41gkPmMu",
+                            "referer": "",
+                            "image": "https://image.tmdb.org/t/p/original/1wIk6xN3v9dkKMqzoABaqFc7wng.jpg"
+                        },
+                        {
+                            "name": "Ep. 15 - Becoming Good Friends Who Never Offend",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FlYZjQngf%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FlYZjQngf",
+                            "referer": "",
+                            "image": "https://image.tmdb.org/t/p/original/ltaYq40x5436DmdJ31vU22md4dC.jpg"
+                        },
+                        {
+                            "name": "Ep. 16 - Tyranny Is More Terrible than Tigers",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FiTVETjxI%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FiTVETjxI",
+                            "referer": "",
+                            "image": "https://image.tmdb.org/t/p/original/x5NEq8nWaCbbMdaIyLc6MU8EQQ9.jpg"
+                        },
+                        {
+                            "name": "Ep. 17 - A Warrior Will Die for One Who Understands Him",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2F7n5UzGnC%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2F7n5UzGnC",
+                            "referer": "",
+                            "image": "https://image.tmdb.org/t/p/original/ec2bjlGqA76JFUc3rZHiPjO523g.jpg"
+                        },
+                        {
+                            "name": "Ep. 18 - Seeing Snake Shadows in Every Cup",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FL3gh6q6W%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FL3gh6q6W",
+                            "referer": "",
+                            "image": "https://image.tmdb.org/t/p/original/WmSayfVWoFDZb7I20eSoAo1oD8.jpg"
+                        },
+                        {
+                            "name": "Ep. 19 - Strike While the Iron Is Hot",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FmZE16LAm%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FmZE16LAm",
+                            "referer": "",
+                            "image": "https://image.tmdb.org/t/p/original/mTqDOzvKh7Oj8OYJ5FyOiZ714dl.jpg"
+                        },
+                        {
+                            "name": "Ep. 20 - Aping the Frown of Beauty",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FeLFeQps2%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FeLFeQps2",
+                            "referer": "",
+                            "image": "https://image.tmdb.org/t/p/original/nVYRw2qgeRB6viqbPJoJTipdJve.jpg"
+                        },
+                        {
+                            "name": "Ep. 21 - Using Shrimp as Bait to Catch Sea Bream, but Instead Catching a Shark",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2Fns3bLPgj%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2Fns3bLPgj",
+                            "referer": "",
+                            "image": "https://image.tmdb.org/t/p/original/9KCn3XRe9gx7UpkNs3FFxhq8DS9.jpg"
+                        },
+                        {
+                            "name": "Ep. 22 - Those Without Wisdom Are Fools",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2F3sHGbFHy%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2F3sHGbFHy",
+                            "referer": "",
+                            "image": "https://image.tmdb.org/t/p/original/psTDbDgCoCLm7LT3GI9SHlV9MTM.jpg"
+                        },
+                        {
+                            "name": "Ep. 23 - Gargling and Hand Washing Are the Basis of Disease Prevention",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2Fb69OSdY1%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2Fb69OSdY1",
+                            "referer": "",
+                            "image": "https://image.tmdb.org/t/p/original/uOk9BNRhR4RreoNUlzXjxjjYR9D.jpg"
+                        },
+                        {
+                            "name": "Ep. 24 - Away from My Hometown for So Many Years",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2F6ubg4zAo%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2F6ubg4zAo",
+                            "referer": "",
+                            "image": "https://image.tmdb.org/t/p/original/eg5bfkTV8tzMUNCG24g7bAvthPS.jpg"
+                        },
+                        {
+                            "name": "Ep. 25 - Know Your Enemy and Know Yourself, and Your Union Shall Not Be Endangered",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2Frdg0BKku%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2Frdg0BKku",
+                            "referer": "",
+                            "image": "https://image.tmdb.org/t/p/original/33GMj7USEcuQQhdSHu3Bao6AvgL.jpg"
+                        },
+                        {
+                            "name": "Ep. 26 - Ahead, I See No Ancestors; Behind, I Find No Followers",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FUEKpGHUq%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FUEKpGHUq",
+                            "referer": "",
+                            "image": "https://image.tmdb.org/t/p/original/ebmCtFXp5HfCqH4FAkmCPpsBM5n.jpg"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

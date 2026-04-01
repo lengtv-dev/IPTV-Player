@@ -1,0 +1,168 @@
+{
+    "name": "Wistoria: Wand and Sword [ตำนานดาบและคทาแห่งวิสตอเรีย]",
+    "image": "https://image.tmdb.org/t/p/original/gxYKhO0GuPAeCb3llknWu53bYYS.jpg",
+    "groups": [
+        {
+            "name": "Season 1",
+            "image": "https://image.tmdb.org/t/p/original/5n0IZQA9MiXn5JBKZibtNhhFSAZ.jpg",
+            "groups": [
+                {
+                    "name": "พากย์ไทย",
+                    "image": "https://image.tmdb.org/t/p/original/5n0IZQA9MiXn5JBKZibtNhhFSAZ.jpg",
+                    "stations": [
+                        {
+                            "name": "ตอน 1 - เหมือนกับดาบที่ฟาดฟัน",
+                            "image": "https://image.tmdb.org/t/p/original/ieLlWMtF5bi7DlyJITf21k6Cu3P.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FpP9tz4Pp%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FpP9tz4Pp",
+                            "referer": ""
+                        },
+                        {
+                            "name": "ตอน 2 - ไม่มีทางย่อท้อ",
+                            "image": "https://image.tmdb.org/t/p/original/9LpMgZDv72ZJjuejWndwQWU1ILk.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FkPS68p0v%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FkPS68p0v",
+                            "referer": ""
+                        },
+                        {
+                            "name": "ตอน 3 - Order&Watcher",
+                            "image": "https://image.tmdb.org/t/p/original/7t1iPH7vjBBKTTpNKZi4hBDBEps.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FKTQoDATf%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FKTQoDATf",
+                            "referer": ""
+                        },
+                        {
+                            "name": "ตอน 4 - คืนก่อนเทศกาลใหญ่",
+                            "image": "https://image.tmdb.org/t/p/original/7oiqWAFQv4vlkuABNvBdz3FIUUu.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FZZtopwj4%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FZZtopwj4",
+                            "referer": ""
+                        },
+                        {
+                            "name": "ตอน 5 - ยิงพลุให้สัญญาณ",
+                            "image": "https://image.tmdb.org/t/p/original/4QBbhrpCMm335ntCEpqZNI8cyxY.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2F2F9uBY19%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2F2F9uBY19",
+                            "referer": ""
+                        },
+                        {
+                            "name": "ตอน 6 - ระหว่างศักดิ์ศรีและความเร่าร้อน",
+                            "image": "https://image.tmdb.org/t/p/original/hvZzyGam9CqZGO773jDkylmO6y2.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FIzVEWZZP%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FIzVEWZZP",
+                            "referer": ""
+                        },
+                        {
+                            "name": "ตอน 7 - เอล แกส ฟรอส",
+                            "image": "https://image.tmdb.org/t/p/original/myPtGXeEHEtaaT0ZMt9UhDVyjmm.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FYrv0sf8n%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FYrv0sf8n",
+                            "referer": ""
+                        },
+                        {
+                            "name": "ตอน 8 - ออกเดตกันไหม",
+                            "image": "https://image.tmdb.org/t/p/original/rmVsK0myQRoRwTtXtA26wAa5diD.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2F9vELQBeu%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2F9vELQBeu",
+                            "referer": ""
+                        },
+                        {
+                            "name": "ตอน 9 - เริ่มการลงสนาม",
+                            "image": "https://image.tmdb.org/t/p/original/p6wYSWB7BiIUi7WFFRagSAuNKTr.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FwU6tHovw%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FwU6tHovw",
+                            "referer": ""
+                        },
+                        {
+                            "name": "ตอน 10 - ความฝันของพวกเรา",
+                            "image": "https://image.tmdb.org/t/p/original/8flSVODuQtO0UmkCPWbTGA1qAtL.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FnyJOodva%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FnyJOodva",
+                            "referer": ""
+                        },
+                        {
+                            "name": "ตอน 11 - ชื่อที่แท้จริงของผู้ขี้ขลาด",
+                            "image": "https://image.tmdb.org/t/p/original/lEWHb3qmE040Wb5ncCvf3y2BCh2.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FAM8pBqLz%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FAM8pBqLz",
+                            "referer": ""
+                        },
+                        {
+                            "name": "ตอน 12 - คทาและดาบ",
+                            "image": "https://image.tmdb.org/t/p/original/2fxclTqjg9gf2Bn4NxtpQGo6wsk.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FxFLm4Yge%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FxFLm4Yge",
+                            "referer": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "ซับไทย",
+                    "image": "https://image.tmdb.org/t/p/original/5n0IZQA9MiXn5JBKZibtNhhFSAZ.jpg",
+                    "stations": [
+                        {
+                            "name": "Ep. 1 - Like a Lone Sword",
+                            "image": "https://image.tmdb.org/t/p/original/ieLlWMtF5bi7DlyJITf21k6Cu3P.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FYcADZSHq%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FYcADZSHq",
+                            "referer": ""
+                        },
+                        {
+                            "name": "Ep. 2 - As Though Undaunted",
+                            "image": "https://image.tmdb.org/t/p/original/9LpMgZDv72ZJjuejWndwQWU1ILk.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FxS0fWGta%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FxS0fWGta",
+                            "referer": ""
+                        },
+                        {
+                            "name": "Ep. 3 - Order & Watcher",
+                            "image": "https://image.tmdb.org/t/p/original/7t1iPH7vjBBKTTpNKZi4hBDBEps.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FmGatN1mA%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FmGatN1mA",
+                            "referer": ""
+                        },
+                        {
+                            "name": "Ep. 4 - The Eve of the Grand Festival",
+                            "image": "https://image.tmdb.org/t/p/original/7oiqWAFQv4vlkuABNvBdz3FIUUu.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FOumcXuZB%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FOumcXuZB",
+                            "referer": ""
+                        },
+                        {
+                            "name": "Ep. 5 - Raise the Starting Pistol",
+                            "image": "https://image.tmdb.org/t/p/original/4QBbhrpCMm335ntCEpqZNI8cyxY.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FeaJsFik0%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FeaJsFik0",
+                            "referer": ""
+                        },
+                        {
+                            "name": "Ep. 6 - Between Pride and Passion",
+                            "image": "https://image.tmdb.org/t/p/original/hvZzyGam9CqZGO773jDkylmO6y2.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FHjn6mpkg%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FHjn6mpkg",
+                            "referer": ""
+                        },
+                        {
+                            "name": "Ep. 7 - Twelve Secret Ice Magics, El Glace Frosse",
+                            "image": "https://image.tmdb.org/t/p/original/myPtGXeEHEtaaT0ZMt9UhDVyjmm.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FvbaHefPz%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FvbaHefPz",
+                            "referer": ""
+                        },
+                        {
+                            "name": "Ep. 8 - Shall we date?",
+                            "image": "https://image.tmdb.org/t/p/original/rmVsK0myQRoRwTtXtA26wAa5diD.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2Fx1OhuzOh%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2Fx1OhuzOh",
+                            "referer": ""
+                        },
+                        {
+                            "name": "Ep. 9 - Praxis Begins",
+                            "image": "https://image.tmdb.org/t/p/original/p6wYSWB7BiIUi7WFFRagSAuNKTr.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2F9sv3YuR4%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2F9sv3YuR4",
+                            "referer": ""
+                        },
+                        {
+                            "name": "Ep. 10 - Our Dream",
+                            "image": "https://image.tmdb.org/t/p/original/8flSVODuQtO0UmkCPWbTGA1qAtL.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FzelpKWje%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FzelpKWje",
+                            "referer": ""
+                        },
+                        {
+                            "name": "Ep. 11 - The True Name of Cowards",
+                            "image": "https://image.tmdb.org/t/p/original/lEWHb3qmE040Wb5ncCvf3y2BCh2.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2Ft4grsSsi%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2Ft4grsSsi",
+                            "referer": ""
+                        },
+                        {
+                            "name": "Ep. 12 - Wand and Sword",
+                            "image": "https://image.tmdb.org/t/p/original/2fxclTqjg9gf2Bn4NxtpQGo6wsk.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2Fa7snHZq5%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2Fa7snHZq5",
+                            "referer": ""
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

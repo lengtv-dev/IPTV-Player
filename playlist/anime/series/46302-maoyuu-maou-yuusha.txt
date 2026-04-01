@@ -1,0 +1,90 @@
+{
+    "name": "Maoyu: Archenemy & Hero [มาโอยุ จอมมารผู้กล้าจับคู่กู้โลก]",
+    "image": "https://image.tmdb.org/t/p/original/nrYpyvYhfOD4DT58BvYGIhP4Ezv.jpg",
+    "groups": [
+        {
+            "name": "Season 1",
+            "image": "https://image.tmdb.org/t/p/original/nrYpyvYhfOD4DT58BvYGIhP4Ezv.jpg",
+            "groups": [
+                {
+                    "name": "พากย์ไทย",
+                    "image": "https://image.tmdb.org/t/p/original/nrYpyvYhfOD4DT58BvYGIhP4Ezv.jpg",
+                    "stations": [
+                        {
+                            "name": "ตอน 1 - You Will Be Mine, Hero. I Refuse!",
+                            "image": "https://image.tmdb.org/t/p/original/9p6q1kHNtumQN3iNDcAR2MJSdgD.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FpVLuW4FR%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FpVLuW4FR",
+                            "referer": ""
+                        },
+                        {
+                            "name": "ตอน 2 - Please Make Us Human",
+                            "image": "https://image.tmdb.org/t/p/original/8dXqSC1fvGWkuDhBT2RxE9eaZMW.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FKoEjj5cX%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FKoEjj5cX",
+                            "referer": ""
+                        },
+                        {
+                            "name": "ตอน 3 - Where Have You Been?!",
+                            "image": "https://image.tmdb.org/t/p/original/z7rnMcZsiN5cbonPSlcU8EC2sOl.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FqllKlfTg%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FqllKlfTg",
+                            "referer": ""
+                        },
+                        {
+                            "name": "ตอน 4 - If That Happens, I'll Take a Bite Out of the Hero!",
+                            "image": "https://image.tmdb.org/t/p/original/3EvdgbIEWCeVum4gJIWSxsiOfCs.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FxRdGhERN%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FxRdGhERN",
+                            "referer": ""
+                        },
+                        {
+                            "name": "ตอน 5 - You Smell Good, Demon King. And I Feel Safe in Your Arms, Hero.",
+                            "image": "https://image.tmdb.org/t/p/original/uNYd91NbG6KfipOQ0jaN0NFUadV.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FtmKOef7y%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FtmKOef7y",
+                            "referer": ""
+                        },
+                        {
+                            "name": "ตอน 6 - Welcome Back, Hero! Yeah, Old Man. I'm Back!",
+                            "image": "https://image.tmdb.org/t/p/original/f7ZZ3a58inN9vcffiCIT8Gq0jjC.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FAEwrw7Zh%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FAEwrw7Zh",
+                            "referer": ""
+                        },
+                        {
+                            "name": "ตอน 7 - I'll Be Back Soon, We'll See Each Other Soon.",
+                            "image": "https://image.tmdb.org/t/p/original/3BSQXk82uqWiG8IfFGBCbn8GryN.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FCLuaQliM%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FCLuaQliM",
+                            "referer": ""
+                        },
+                        {
+                            "name": "ตอน 8 - Take This Sword, My Lord",
+                            "image": "https://image.tmdb.org/t/p/original/qhHMs4vB2uo5fAzVDOelRJQN4e9.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2Fbg6FhUFc%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2Fbg6FhUFc",
+                            "referer": ""
+                        },
+                        {
+                            "name": "ตอน 9 - I Am Human",
+                            "image": "https://image.tmdb.org/t/p/original/kbkduKGeqxqJGVsOrNU7IYnSGob.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FROeozivY%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FROeozivY",
+                            "referer": ""
+                        },
+                        {
+                            "name": "ตอน 10 - So Now Their Plans Are Finally Coming to Fruition?",
+                            "image": "https://image.tmdb.org/t/p/original/fH0ODYBfTnAQc2dxw9oFeUBuT2x.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FmCp5qgf1%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FmCp5qgf1",
+                            "referer": ""
+                        },
+                        {
+                            "name": "ตอน 11 - I Just Destroy and Kill, Without Creating Anything",
+                            "image": "https://image.tmdb.org/t/p/original/MIFUVDzASM9PqJci9KiQzGXrCV.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FULZBjfDU%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FULZBjfDU",
+                            "referer": ""
+                        },
+                        {
+                            "name": "ตอน 12 - I'm Back My Hero. You Sleep Too Much, My Demon King",
+                            "image": "https://image.tmdb.org/t/p/original/zCLNcnObFMJ3sj6GzMZ7F6jFBbY.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FKR2OaCJl%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FKR2OaCJl",
+                            "referer": ""
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

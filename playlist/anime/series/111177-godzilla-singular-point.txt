@@ -1,0 +1,96 @@
+{
+    "name": "Godzilla Singular Point [ก็อดซิลล่า ปฐมบทวิบัติโลก]",
+    "image": "https://image.tmdb.org/t/p/original/thWc7mYiEFFdLyG2fqkeqmL9nrB.jpg",
+    "groups": [
+        {
+            "name": "Season 1",
+            "image": "https://image.tmdb.org/t/p/original/1EbhtIvtcE54tnwSiLoifLRdQs2.jpg",
+            "groups": [
+                {
+                    "name": "พากย์ไทย",
+                    "image": "https://image.tmdb.org/t/p/original/1EbhtIvtcE54tnwSiLoifLRdQs2.jpg",
+                    "stations": [
+                        {
+                            "name": "ตอน 1 - ลำนำแห่งการเดินทาง",
+                            "image": "https://image.tmdb.org/t/p/original/9xoTUioqUESxSYG7mfkfnX4P3Io.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/uJKR5Ror/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "ตอน 2 - เล่นสนุก",
+                            "image": "https://image.tmdb.org/t/p/original/dzIKRAOIftOZZv5BeX9QFuuQsz6.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/3CkMmM36/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "ตอน 3 - ฝูงมฤตยู",
+                            "image": "https://image.tmdb.org/t/p/original/2ZzO1y4UlTIe0nLJUFqHEzFUMrR.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/9r8lqll0/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "ตอน 4 - พเนจร",
+                            "image": "https://image.tmdb.org/t/p/original/4GPLh0HeI10q2AjWPaygPf4isKK.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/aZZKb6q/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "ตอน 5 - นักทฤษฎี",
+                            "image": "https://image.tmdb.org/t/p/original/ow13qRWTWIORy4BguzJT1DxNusn.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/mKqJaHYP/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "ตอน 6 - หนักแน่น",
+                            "image": "https://image.tmdb.org/t/p/original/dudWOaGE4cuBHo0UhhdPdPneNCG.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/P1F4fLXP/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "ตอน 7 - อำนาจสูงสุด",
+                            "image": "https://image.tmdb.org/t/p/original/lE9rT3RGHzKqvaxeqj1dLiJ20gr.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/LN7mFeL1/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "ตอน 8 - ปะติดปะต่อ",
+                            "image": "https://image.tmdb.org/t/p/original/qF8kyrqp8B614spdbmYnvZ7ue3m.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/7dDTJeCS/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "ตอน 9 - ทะลุกลางอก",
+                            "image": "https://image.tmdb.org/t/p/original/8yUdnPVxT8HoHsGwHYvCn2Rp79G.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/5b5A1Ctd/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "ตอน 10 - ถอดความหมาย",
+                            "image": "https://image.tmdb.org/t/p/original/vdkR87PSAUJzKpy09e7GkvQsfcF.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/5LdbDM4O/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "ตอน 11 - ตั้งตัวใหม่",
+                            "image": "https://image.tmdb.org/t/p/original/uweGbSS1Hu6WCEbFHr2nJvah6TP.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/PzKaoipH/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "ตอน 12 - นักสำรวจ",
+                            "image": "https://image.tmdb.org/t/p/original/3MuVTarOd15koF9HFtXpaE5oqTB.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/e2rRVNbo/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "ตอน 13 - ด้วยกัน",
+                            "image": "https://image.tmdb.org/t/p/original/hpxrWLOPcyuiMpF75JJCYQ1Xm7h.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/tC3oiHn0/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

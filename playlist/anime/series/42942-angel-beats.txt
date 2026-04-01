@@ -1,0 +1,101 @@
+{
+    "name": "Angel Beats! [แองเจิลบีทส์! แผนพิชิตนางฟ้า]",
+    "image": "https://image.tmdb.org/t/p/original/wz1PuXrg5ERQvyXKex3cGDie2hj.jpg",
+    "groups": [
+        {
+            "name": "Season 1",
+            "image": "https://image.tmdb.org/t/p/original/8PAnzwHqp0cO2EYWpYGxLAAW4CD.jpg",
+            "groups": [
+                {
+                    "name": "พากย์ไทย",
+                    "image": "https://image.tmdb.org/t/p/original/8PAnzwHqp0cO2EYWpYGxLAAW4CD.jpg",
+                    "stations": [
+                        {
+                            "name": "ตอน 1 - Departure",
+                            "image": "https://image.tmdb.org/t/p/original/seOnRGCNCN8FR58a6VgEltscSvp.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2F3GE6z5iM%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2F3GE6z5iM",
+                            "referer": ""
+                        },
+                        {
+                            "name": "ตอน 2 - Guild",
+                            "image": "https://image.tmdb.org/t/p/original/wZZTqUxFAplf7dKKwdIWU1LGYd4.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FplCloPW5%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FplCloPW5",
+                            "referer": ""
+                        },
+                        {
+                            "name": "ตอน 3 - My Song",
+                            "image": "https://image.tmdb.org/t/p/original/npyiZDN1tpAac31QCNtLTAmverL.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2Fyf7boA03%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2Fyf7boA03",
+                            "referer": ""
+                        },
+                        {
+                            "name": "ตอน 4 - Day Game",
+                            "image": "https://image.tmdb.org/t/p/original/u59Hy3ghStbpkKtjNSPdbZd9yIq.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FBFbDw1GR%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FBFbDw1GR",
+                            "referer": ""
+                        },
+                        {
+                            "name": "ตอน 5 - Favorite Flavor",
+                            "image": "https://image.tmdb.org/t/p/original/6UQK0QWpuDPcjY4yS3jTIW9erv7.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FVF8yF0eW%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FVF8yF0eW",
+                            "referer": ""
+                        },
+                        {
+                            "name": "ตอน 6 - Family Affair",
+                            "image": "https://image.tmdb.org/t/p/original/pVEBrP1FKcMyiQBZyaEP7CXz1Oi.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2Fl07VrPJm%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2Fl07VrPJm",
+                            "referer": ""
+                        },
+                        {
+                            "name": "ตอน 7 - Alive",
+                            "image": "https://image.tmdb.org/t/p/original/v5qsXlHOPzBpthAL0Z2aHpiq2jy.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FpW6BC5gx%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FpW6BC5gx",
+                            "referer": ""
+                        },
+                        {
+                            "name": "ตอน 8 - Dancer in the Dark",
+                            "image": "https://image.tmdb.org/t/p/original/3VXmqw9lMETGWoulUGf9WJkBm4Q.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2Fk67x1AUW%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2Fk67x1AUW",
+                            "referer": ""
+                        },
+                        {
+                            "name": "ตอน 9 - In Your Memory",
+                            "image": "https://image.tmdb.org/t/p/original/thDLv8fBSsQr03QtYqCj0iNQeDU.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2Fv5UtcwQf%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2Fv5UtcwQf",
+                            "referer": ""
+                        },
+                        {
+                            "name": "ตอน 10 - Goodbye Days",
+                            "image": "https://image.tmdb.org/t/p/original/e10GjZ5ACGtBheCVh4KxKn0PT3q.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FMEW1s0Hv%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FMEW1s0Hv",
+                            "referer": ""
+                        },
+                        {
+                            "name": "ตอน 11 - Change the World",
+                            "image": "https://image.tmdb.org/t/p/original/7OqcK6YHbPIE14Jk55Kv9ROkJn1.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FeDkjXT6r%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FeDkjXT6r",
+                            "referer": ""
+                        },
+                        {
+                            "name": "ตอน 12 - Knockin' on Heaven's Door",
+                            "image": "https://image.tmdb.org/t/p/original/xAa0RvxFt0dRtyMTYGKRoDKyR6z.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FCQKuheBq%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FCQKuheBq",
+                            "referer": ""
+                        },
+                        {
+                            "name": "ตอน 13 - Graduation",
+                            "image": "https://image.tmdb.org/t/p/original/yjTLgi8JrocMNXTTXNLF9YDMRh3.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2F9nArAuA9%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2F9nArAuA9",
+                            "referer": ""
+                        },
+                        {
+                            "name": "ตอน 14",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FMPVG7Jbt%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FMPVG7Jbt",
+                            "referer": ""
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

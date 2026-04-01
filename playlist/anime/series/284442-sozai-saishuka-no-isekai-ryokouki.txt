@@ -1,0 +1,168 @@
+{
+    "name": "A Gatherer's Adventure in Isekai [บันทึกการเดินทางต่างโลกของนักเก็บวัสดุ]",
+    "image": "https://image.tmdb.org/t/p/original/AtpIf9wnT6IaHoG31XsdqZEEf80.jpg",
+    "groups": [
+        {
+            "name": "Season 1",
+            "image": "https://image.tmdb.org/t/p/original/nsnVbDggV2JXQLSvjeCQTdMKOHP.jpg",
+            "groups": [
+                {
+                    "name": "พากย์ไทย",
+                    "image": "https://image.tmdb.org/t/p/original/nsnVbDggV2JXQLSvjeCQTdMKOHP.jpg",
+                    "stations": [
+                        {
+                            "name": "ตอน 1 - A Fallen Drop",
+                            "image": "https://image.tmdb.org/t/p/original/k6tWw4nldEnmR4IliHCkPtM07Ja.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FzeQe4Pec%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FzeQe4Pec",
+                            "referer": ""
+                        },
+                        {
+                            "name": "ตอน 2 - Dinner With No One Else",
+                            "image": "https://image.tmdb.org/t/p/original/4b8sr7EkBAG10rodY3QOqrjvvXR.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2F0a3XKCEr%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2F0a3XKCEr",
+                            "referer": ""
+                        },
+                        {
+                            "name": "ตอน 3 - Hometown And Journey",
+                            "image": "https://image.tmdb.org/t/p/original/ksjoAz1H1ivf6cOkdB9oOUgpJpc.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FGvKSvwsS%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FGvKSvwsS",
+                            "referer": ""
+                        },
+                        {
+                            "name": "ตอน 4 - The Demon King Descends",
+                            "image": "https://image.tmdb.org/t/p/original/9AbB2eAu6OtNO8rPkHcUG6dKdYh.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2Foy2ab55Z%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2Foy2ab55Z",
+                            "referer": ""
+                        },
+                        {
+                            "name": "ตอน 5 - Two Bodyguards",
+                            "image": "https://image.tmdb.org/t/p/original/xi8VGWpncSL5T42KzWJomXqktJN.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FgpaYxrW2%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FgpaYxrW2",
+                            "referer": ""
+                        },
+                        {
+                            "name": "ตอน 6 - The Request of the Feudal Lord",
+                            "image": "https://image.tmdb.org/t/p/original/V3KSuptXwc7FXJsAlOYxhKhhDn.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2F0Jaoc8TM%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2F0Jaoc8TM",
+                            "referer": ""
+                        },
+                        {
+                            "name": "ตอน 7 - Divine Flower",
+                            "image": "https://image.tmdb.org/t/p/original/dk8RQTT6vAxq3hvupDjSMqp5ZoO.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FQwTEvyZr%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FQwTEvyZr",
+                            "referer": ""
+                        },
+                        {
+                            "name": "ตอน 8 - A Step Towards the Future",
+                            "image": "https://image.tmdb.org/t/p/original/pVIpd9JYCbTFWJWtJXef3tPQicw.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2Fz3FgUF7c%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2Fz3FgUF7c",
+                            "referer": ""
+                        },
+                        {
+                            "name": "ตอน 9 - An Unexpected Visitor",
+                            "image": "https://image.tmdb.org/t/p/original/lTKOeq5QuFSDoe799epCW7uxH7M.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FOPkhXFiy%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FOPkhXFiy",
+                            "referer": ""
+                        },
+                        {
+                            "name": "ตอน 10 - The Darkness of Brolite",
+                            "image": "https://image.tmdb.org/t/p/original/6iwk07DD8JCtJvBGVW2kINQF3X7.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FD3a9aeeK%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FD3a9aeeK",
+                            "referer": ""
+                        },
+                        {
+                            "name": "ตอน 11 - Cave Of Danger",
+                            "image": "https://image.tmdb.org/t/p/original/4i4Nqe8fUki9AklmlZwcfIPG9jX.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FNE0zpOmf%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FNE0zpOmf",
+                            "referer": ""
+                        },
+                        {
+                            "name": "ตอน 12 - A World We've Never Seen",
+                            "image": "https://image.tmdb.org/t/p/original/m0odsEKoPHibdYINL0hSxRpllui.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FbRlamW9h%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FbRlamW9h",
+                            "referer": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "ซับไทย",
+                    "image": "https://image.tmdb.org/t/p/original/nsnVbDggV2JXQLSvjeCQTdMKOHP.jpg",
+                    "stations": [
+                        {
+                            "name": "Ep. 1 - A Fallen Drop",
+                            "image": "https://image.tmdb.org/t/p/original/k6tWw4nldEnmR4IliHCkPtM07Ja.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FrWskYPOT%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FrWskYPOT",
+                            "referer": ""
+                        },
+                        {
+                            "name": "Ep. 2 - Dinner With No One Else",
+                            "image": "https://image.tmdb.org/t/p/original/4b8sr7EkBAG10rodY3QOqrjvvXR.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2Fvu5x4gTN%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2Fvu5x4gTN",
+                            "referer": ""
+                        },
+                        {
+                            "name": "Ep. 3 - Hometown And Journey",
+                            "image": "https://image.tmdb.org/t/p/original/ksjoAz1H1ivf6cOkdB9oOUgpJpc.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FMFOd9Iby%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FMFOd9Iby",
+                            "referer": ""
+                        },
+                        {
+                            "name": "Ep. 4 - The Demon King Descends",
+                            "image": "https://image.tmdb.org/t/p/original/9AbB2eAu6OtNO8rPkHcUG6dKdYh.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FK5JSeJ61%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FK5JSeJ61",
+                            "referer": ""
+                        },
+                        {
+                            "name": "Ep. 5 - Two Bodyguards",
+                            "image": "https://image.tmdb.org/t/p/original/xi8VGWpncSL5T42KzWJomXqktJN.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FPoHeLaBu%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FPoHeLaBu",
+                            "referer": ""
+                        },
+                        {
+                            "name": "Ep. 6 - The Request of the Feudal Lord",
+                            "image": "https://image.tmdb.org/t/p/original/V3KSuptXwc7FXJsAlOYxhKhhDn.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FBkAidxjY%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FBkAidxjY",
+                            "referer": ""
+                        },
+                        {
+                            "name": "Ep. 7 - Divine Flower",
+                            "image": "https://image.tmdb.org/t/p/original/dk8RQTT6vAxq3hvupDjSMqp5ZoO.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FgxtQPWN8%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FgxtQPWN8",
+                            "referer": ""
+                        },
+                        {
+                            "name": "Ep. 8 - A Step Towards the Future",
+                            "image": "https://image.tmdb.org/t/p/original/pVIpd9JYCbTFWJWtJXef3tPQicw.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FTPToA2A8%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FTPToA2A8",
+                            "referer": ""
+                        },
+                        {
+                            "name": "Ep. 9 - An Unexpected Visitor",
+                            "image": "https://image.tmdb.org/t/p/original/lTKOeq5QuFSDoe799epCW7uxH7M.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FB1NEixSn%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FB1NEixSn",
+                            "referer": ""
+                        },
+                        {
+                            "name": "Ep. 10 - The Darkness of Brolite",
+                            "image": "https://image.tmdb.org/t/p/original/6iwk07DD8JCtJvBGVW2kINQF3X7.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FX8B9HSig%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FX8B9HSig",
+                            "referer": ""
+                        },
+                        {
+                            "name": "Ep. 11 - Cave Of Danger",
+                            "image": "https://image.tmdb.org/t/p/original/4i4Nqe8fUki9AklmlZwcfIPG9jX.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FNw9hQpxu%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FNw9hQpxu",
+                            "referer": ""
+                        },
+                        {
+                            "name": "Ep. 12 - A World We've Never Seen",
+                            "image": "https://image.tmdb.org/t/p/original/m0odsEKoPHibdYINL0hSxRpllui.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FJanIE910%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FJanIE910",
+                            "referer": ""
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

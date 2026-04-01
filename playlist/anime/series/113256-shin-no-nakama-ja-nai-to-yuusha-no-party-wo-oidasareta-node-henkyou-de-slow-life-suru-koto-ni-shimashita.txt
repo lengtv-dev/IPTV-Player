@@ -1,0 +1,180 @@
+{
+    "name": "Banished from the Hero's Party, I Decided to Live a Quiet Life in the Countryside [ผมโดนกลุ่มผู้กล้าขับไสเลยต้องไปสโลว์ไลฟ์ที่ชายแดน]",
+    "image": "https://image.tmdb.org/t/p/original/hk5qqvJLRBDaPYBc8lKkSYQrR1c.jpg",
+    "groups": [
+        {
+            "name": "Season 1",
+            "image": "https://image.tmdb.org/t/p/original/ayQzpP6rrQ15OUFmies7kMQf1LO.jpg",
+            "groups": [
+                {
+                    "name": "พากย์ไทย",
+                    "image": "https://image.tmdb.org/t/p/original/ayQzpP6rrQ15OUFmies7kMQf1LO.jpg",
+                    "stations": [
+                        {
+                            "name": "ตอน 1 - You're Not a True Comrade",
+                            "image": "https://image.tmdb.org/t/p/original/rWAvB1BOuZzf8taHLUE7w9K1ULT.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/Vp8VVxsp/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "ตอน 2 - The Princess Who Didn't Join the Hero's Party",
+                            "image": "https://image.tmdb.org/t/p/original/cJiTi2o63xuoqgoD4NWna0azFx3.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/apvZicNF/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "ตอน 3 - Let's Start Our Quiet Life Together",
+                            "image": "https://image.tmdb.org/t/p/original/gY0LwTq3jico0ga8otN6XOIK4zy.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/5XGx5XEk/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "ตอน 4 - Of Mead and Motives",
+                            "image": "https://image.tmdb.org/t/p/original/hXlRFysVbo6OBxhJu3zV5prGJTm.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/0YvtAVV/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "ตอน 5 - The Amber Ring",
+                            "image": "https://image.tmdb.org/t/p/original/l0Wr94GvEmiqammt42pPFBhvwmS.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/lrbGklDO/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "ตอน 6 - The Rampage Begins",
+                            "image": "https://image.tmdb.org/t/p/original/vwKLY9r0XMl0JIU4tOLVMItkWOQ.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/oxco0ZLm/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "ตอน 7 - The Chaos After the Storm",
+                            "image": "https://image.tmdb.org/t/p/original/6xwBrfib4jtnLH8T7NUy8NDrrKF.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/B2dxUSIN/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "ตอน 8 - The Man Who Would Be a Hero",
+                            "image": "https://image.tmdb.org/t/p/original/eEW65bE6BOkW3N07UeDejJhH6l5.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/q4Vy1Cq9/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "ตอน 9 - Days of Peace and Ease",
+                            "image": "https://image.tmdb.org/t/p/original/nn0OhNw49ENSTFdF77p0GPBwoT7.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/GhAg00Cn/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "ตอน 10 - Saving the Hero",
+                            "image": "https://image.tmdb.org/t/p/original/1S0O8v1ULLGXiZ1EUiyfaIYTgxg.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/FfWhR2A1/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "ตอน 11 - A Gathering of Champions",
+                            "image": "https://image.tmdb.org/t/p/original/80QgQPtufA63Nbx2exRZg5gYt1Z.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/tFofmbXr/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "ตอน 12 - A Parting of Ways",
+                            "image": "https://image.tmdb.org/t/p/original/ckSIT7WwTvtIvqcmd4NSiAgcZX1.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/WKYSfPjx/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "ตอน 13 - The Guide",
+                            "image": "https://image.tmdb.org/t/p/original/ouyzTu834aPl0yQm89c1gKtnEfS.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/ZoWdYd3m/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        }
+                    ]
+                },
+                {
+                    "name": "ซับไทย",
+                    "image": "https://image.tmdb.org/t/p/original/ayQzpP6rrQ15OUFmies7kMQf1LO.jpg",
+                    "stations": [
+                        {
+                            "name": "Ep. 1 - You're Not a True Comrade",
+                            "image": "https://image.tmdb.org/t/p/original/rWAvB1BOuZzf8taHLUE7w9K1ULT.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/yBLgaTAQ/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "Ep. 2 - The Princess Who Didn't Join the Hero's Party",
+                            "image": "https://image.tmdb.org/t/p/original/cJiTi2o63xuoqgoD4NWna0azFx3.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/KMZCSEXy/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "Ep. 3 - Let's Start Our Quiet Life Together",
+                            "image": "https://image.tmdb.org/t/p/original/gY0LwTq3jico0ga8otN6XOIK4zy.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/BV5raayZ/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "Ep. 4 - Of Mead and Motives",
+                            "image": "https://image.tmdb.org/t/p/original/hXlRFysVbo6OBxhJu3zV5prGJTm.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/Gp52303N/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "Ep. 5 - The Amber Ring",
+                            "image": "https://image.tmdb.org/t/p/original/l0Wr94GvEmiqammt42pPFBhvwmS.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/DldEfWFi/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "Ep. 6 - The Rampage Begins",
+                            "image": "https://image.tmdb.org/t/p/original/vwKLY9r0XMl0JIU4tOLVMItkWOQ.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/oODNG1tw/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "Ep. 7 - The Chaos After the Storm",
+                            "image": "https://image.tmdb.org/t/p/original/6xwBrfib4jtnLH8T7NUy8NDrrKF.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/utgP0vij/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "Ep. 8 - The Man Who Would Be a Hero",
+                            "image": "https://image.tmdb.org/t/p/original/eEW65bE6BOkW3N07UeDejJhH6l5.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/KkWx6jKD/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "Ep. 9 - Days of Peace and Ease",
+                            "image": "https://image.tmdb.org/t/p/original/nn0OhNw49ENSTFdF77p0GPBwoT7.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/7HoERdLD/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "Ep. 10 - Saving the Hero",
+                            "image": "https://image.tmdb.org/t/p/original/1S0O8v1ULLGXiZ1EUiyfaIYTgxg.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/cIlUXRnS/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "Ep. 11 - A Gathering of Champions",
+                            "image": "https://image.tmdb.org/t/p/original/80QgQPtufA63Nbx2exRZg5gYt1Z.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/ZmGdMMqN/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "Ep. 12 - A Parting of Ways",
+                            "image": "https://image.tmdb.org/t/p/original/ckSIT7WwTvtIvqcmd4NSiAgcZX1.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/S9d4WOT/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        },
+                        {
+                            "name": "Ep. 13 - The Guide",
+                            "image": "https://image.tmdb.org/t/p/original/ouyzTu834aPl0yQm89c1gKtnEfS.jpg",
+                            "url": "https://hls.animeindy.com:8443/vid/CHgRzgfS/video.mp4/playlist.m3u8",
+                            "referer": "https://indy-anime.net/"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

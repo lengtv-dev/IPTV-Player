@@ -1,0 +1,640 @@
+{
+    "name": "A Certain Scientific Railgun [เรลกัน แฟ้มลับคดีวิทยาศาสตร์]",
+    "image": "https://image.tmdb.org/t/p/original/dZt1dqw0K4JGhwcqTh8yExHYK9w.jpg",
+    "groups": [
+        {
+            "name": "Season 1",
+            "image": "https://image.tmdb.org/t/p/original/oCkEJ0cSE6YuxUgecajBMQAc2h4.jpg",
+            "groups": [
+                {
+                    "name": "พากย์ไทย",
+                    "image": "https://image.tmdb.org/t/p/original/oCkEJ0cSE6YuxUgecajBMQAc2h4.jpg",
+                    "stations": [
+                        {
+                            "name": "ตอน 1 - Electromaster",
+                            "image": "https://image.tmdb.org/t/p/original/sQhU1Qw991RwBPX1USWYOEdO8lf.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2F6Tibbfs7%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2F6Tibbfs7",
+                            "referer": ""
+                        },
+                        {
+                            "name": "ตอน 2 - When Working Under a Hot Sun, Rehydration Is Essential",
+                            "image": "https://image.tmdb.org/t/p/original/lI8Adi0mmCmz7sCIJdJR4XcOa6L.jpg",
+                            "url": "https://fairyanime.net/watch/mjdDnHavfR/",
+                            "referer": "https://fairyanime.net/watch/mjdDnHavfR/"
+                        },
+                        {
+                            "name": "ตอน 3 - Tokiwadai Is Targeted",
+                            "image": "https://image.tmdb.org/t/p/original/eVPrf0L3yVL0WmArGxyeWRZ4AHv.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FBkncRCmc%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FBkncRCmc",
+                            "referer": ""
+                        },
+                        {
+                            "name": "ตอน 4 - Urban Legends",
+                            "image": "https://image.tmdb.org/t/p/original/kh6zqRBKgXhmyvzTEJnWOCb1oPH.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2F33R0tOAp%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2F33R0tOAp",
+                            "referer": ""
+                        },
+                        {
+                            "name": "ตอน 5 - A Certain Pair of New Trainees",
+                            "image": "https://image.tmdb.org/t/p/original/ay3DddmNq5t73RCg56hfKSqijuX.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FV7B7nE9v%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FV7B7nE9v",
+                            "referer": ""
+                        },
+                        {
+                            "name": "ตอน 6 - Everyone is Proactive When it Comes to This",
+                            "image": "https://image.tmdb.org/t/p/original/2yawu4PnJGswxX0aHNR8zqmyzzl.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FWf70AHgC%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FWf70AHgC",
+                            "referer": ""
+                        },
+                        {
+                            "name": "ตอน 7 - Abilities and Powers",
+                            "image": "https://image.tmdb.org/t/p/original/lHzQBZI7E4eHnZqITxwzDYpl9MJ.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2F0NklONib%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2F0NklONib",
+                            "referer": ""
+                        },
+                        {
+                            "name": "ตอน 8 - Level Upper",
+                            "image": "https://image.tmdb.org/t/p/original/bNYU8nRsf8U9M8nggj9HX23OroC.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FpSyFGAlN%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FpSyFGAlN",
+                            "referer": ""
+                        },
+                        {
+                            "name": "ตอน 9 - Majority Report",
+                            "image": "https://image.tmdb.org/t/p/original/8op5Y340tMs3ohR4qwK585hH2kR.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FXMMsImpo%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FXMMsImpo",
+                            "referer": ""
+                        },
+                        {
+                            "name": "ตอน 10 - Silent Majority",
+                            "image": "https://image.tmdb.org/t/p/original/oCOxiJhnvKiAN5oaBD5WAc0sGHT.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FdN1042FK%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FdN1042FK",
+                            "referer": ""
+                        },
+                        {
+                            "name": "ตอน 11 - Dr. Kiyama",
+                            "image": "https://image.tmdb.org/t/p/original/mP0rgcql3gLdptgry6wMJfhHbWk.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FS9uLWSTK%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FS9uLWSTK",
+                            "referer": ""
+                        },
+                        {
+                            "name": "ตอน 12 - AIM Burst",
+                            "image": "https://image.tmdb.org/t/p/original/oDwLc9Scg7DxS1ldMz99gnceLQU.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FB4Zmh1hq%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FB4Zmh1hq",
+                            "referer": ""
+                        },
+                        {
+                            "name": "ตอน 13 - A Bikini Divides the Eyeline Between Top and Bottom, But a One-piece Shows Off the Figure, So They Only Flatter the Slender",
+                            "image": "https://image.tmdb.org/t/p/original/kY2WESFVQ7DVpf1cQmQ3ILlW3tU.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FMAB13aci%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FMAB13aci",
+                            "referer": ""
+                        },
+                        {
+                            "name": "ตอน 14 - Special Workshop",
+                            "image": "https://image.tmdb.org/t/p/original/2mhNcIPoyQnMtrsMiiMxukR63Ce.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2Feahls8DZ%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2Feahls8DZ",
+                            "referer": ""
+                        },
+                        {
+                            "name": "ตอน 15 - Skill Out",
+                            "image": "https://image.tmdb.org/t/p/original/exf1CM0WW1PjN9P3XglZcieXoS5.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2Fa1OndPfM%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2Fa1OndPfM",
+                            "referer": ""
+                        },
+                        {
+                            "name": "ตอน 16 - Academy City",
+                            "image": "https://image.tmdb.org/t/p/original/oEbxndfnK9ckUtjslgCEGN0tHsa.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FwDPtlSGO%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FwDPtlSGO",
+                            "referer": ""
+                        },
+                        {
+                            "name": "ตอน 17 - Tsuzuri's Summer Vacation",
+                            "image": "https://image.tmdb.org/t/p/original/sXEXmQvMbSuW5h9hnBdrZ3idPaW.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2F7F02j3OZ%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2F7F02j3OZ",
+                            "referer": ""
+                        },
+                        {
+                            "name": "ตอน 18 - Asunaro Park",
+                            "image": "https://image.tmdb.org/t/p/original/4GRRizgw8ce3ROTwnTnEm8RoaFB.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2F2jwJ3hW4%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2F2jwJ3hW4",
+                            "referer": ""
+                        },
+                        {
+                            "name": "ตอน 19 - Midsummer Festival",
+                            "image": "https://image.tmdb.org/t/p/original/xddolC0B0zGzdswLGMTCKMzu2s8.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FJ95rZtmS%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FJ95rZtmS",
+                            "referer": ""
+                        },
+                        {
+                            "name": "ตอน 20 - Poltergeist",
+                            "image": "https://image.tmdb.org/t/p/original/qaf8l8YzOQppPoVqWnuYLEur8An.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2F5QUffI9u%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2F5QUffI9u",
+                            "referer": ""
+                        },
+                        {
+                            "name": "ตอน 21 - Voices",
+                            "image": "https://image.tmdb.org/t/p/original/6EFZSugqhZfm6mWbPb0Uz5pnyb3.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FZRLkuVMq%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FZRLkuVMq",
+                            "referer": ""
+                        },
+                        {
+                            "name": "ตอน 22 - Level 6",
+                            "image": "https://image.tmdb.org/t/p/original/zAxwMO4Ft6kQUpf8N3iwcOPLMIs.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FRDOWMoBj%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FRDOWMoBj",
+                            "referer": ""
+                        },
+                        {
+                            "name": "ตอน 23 - What Is It You See in Your Eyes Right Now?",
+                            "image": "https://image.tmdb.org/t/p/original/yn0ANhn5X4Oq7tPqS7rUHIEfRug.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FKtrTb2Bz%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FKtrTb2Bz",
+                            "referer": ""
+                        },
+                        {
+                            "name": "ตอน 24 - Dear My Friends",
+                            "image": "https://image.tmdb.org/t/p/original/1OHZBRxmtwRRhUMW20cySsTuYy4.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2F2FYSViZn%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2F2FYSViZn",
+                            "referer": ""
+                        },
+                        {
+                            "name": "ตอน 25",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FXe9klbDz%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FXe9klbDz",
+                            "referer": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "ซับไทย",
+                    "image": "https://image.tmdb.org/t/p/original/oCkEJ0cSE6YuxUgecajBMQAc2h4.jpg",
+                    "stations": [
+                        {
+                            "name": "Ep. 1 - Electromaster",
+                            "image": "https://image.tmdb.org/t/p/original/sQhU1Qw991RwBPX1USWYOEdO8lf.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FyYCCGjwJ%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FyYCCGjwJ",
+                            "referer": ""
+                        },
+                        {
+                            "name": "Ep. 2 - When Working Under a Hot Sun, Rehydration Is Essential",
+                            "image": "https://image.tmdb.org/t/p/original/lI8Adi0mmCmz7sCIJdJR4XcOa6L.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FyDda7Csl%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FyDda7Csl",
+                            "referer": ""
+                        },
+                        {
+                            "name": "Ep. 3 - Tokiwadai Is Targeted",
+                            "image": "https://image.tmdb.org/t/p/original/eVPrf0L3yVL0WmArGxyeWRZ4AHv.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FkYtpwJyK%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FkYtpwJyK",
+                            "referer": ""
+                        },
+                        {
+                            "name": "Ep. 4 - Urban Legends",
+                            "image": "https://image.tmdb.org/t/p/original/kh6zqRBKgXhmyvzTEJnWOCb1oPH.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FiEwImH7K%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FiEwImH7K",
+                            "referer": ""
+                        },
+                        {
+                            "name": "Ep. 5 - A Certain Pair of New Trainees",
+                            "image": "https://image.tmdb.org/t/p/original/ay3DddmNq5t73RCg56hfKSqijuX.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FLy7PEmum%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FLy7PEmum",
+                            "referer": ""
+                        },
+                        {
+                            "name": "Ep. 6 - Everyone is Proactive When it Comes to This",
+                            "image": "https://image.tmdb.org/t/p/original/2yawu4PnJGswxX0aHNR8zqmyzzl.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FAt76Z9Du%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FAt76Z9Du",
+                            "referer": ""
+                        },
+                        {
+                            "name": "Ep. 7 - Abilities and Powers",
+                            "image": "https://image.tmdb.org/t/p/original/lHzQBZI7E4eHnZqITxwzDYpl9MJ.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FvDllIeL3%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FvDllIeL3",
+                            "referer": ""
+                        },
+                        {
+                            "name": "Ep. 8 - Level Upper",
+                            "image": "https://image.tmdb.org/t/p/original/bNYU8nRsf8U9M8nggj9HX23OroC.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FzfykeflU%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FzfykeflU",
+                            "referer": ""
+                        },
+                        {
+                            "name": "Ep. 9 - Majority Report",
+                            "image": "https://image.tmdb.org/t/p/original/8op5Y340tMs3ohR4qwK585hH2kR.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FrYGNzoRU%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FrYGNzoRU",
+                            "referer": ""
+                        },
+                        {
+                            "name": "Ep. 10 - Silent Majority",
+                            "image": "https://image.tmdb.org/t/p/original/oCOxiJhnvKiAN5oaBD5WAc0sGHT.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FZgPvznHI%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FZgPvznHI",
+                            "referer": ""
+                        },
+                        {
+                            "name": "Ep. 11 - Dr. Kiyama",
+                            "image": "https://image.tmdb.org/t/p/original/mP0rgcql3gLdptgry6wMJfhHbWk.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FRZqGTkdE%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FRZqGTkdE",
+                            "referer": ""
+                        },
+                        {
+                            "name": "Ep. 12 - AIM Burst",
+                            "image": "https://image.tmdb.org/t/p/original/oDwLc9Scg7DxS1ldMz99gnceLQU.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FOo5RVS1Q%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FOo5RVS1Q",
+                            "referer": ""
+                        },
+                        {
+                            "name": "Ep. 13 - A Bikini Divides the Eyeline Between Top and Bottom, But a One-piece Shows Off the Figure, So They Only Flatter the Slender",
+                            "image": "https://image.tmdb.org/t/p/original/kY2WESFVQ7DVpf1cQmQ3ILlW3tU.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FCihF0sJm%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FCihF0sJm",
+                            "referer": ""
+                        },
+                        {
+                            "name": "Ep. 14 - Special Workshop",
+                            "image": "https://image.tmdb.org/t/p/original/2mhNcIPoyQnMtrsMiiMxukR63Ce.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FYsT9JPkG%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FYsT9JPkG",
+                            "referer": ""
+                        },
+                        {
+                            "name": "Ep. 15 - Skill Out",
+                            "image": "https://image.tmdb.org/t/p/original/exf1CM0WW1PjN9P3XglZcieXoS5.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FYht3NutR%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FYht3NutR",
+                            "referer": ""
+                        },
+                        {
+                            "name": "Ep. 16 - Academy City",
+                            "image": "https://image.tmdb.org/t/p/original/oEbxndfnK9ckUtjslgCEGN0tHsa.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2Frn6bnmYD%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2Frn6bnmYD",
+                            "referer": ""
+                        },
+                        {
+                            "name": "Ep. 17 - Tsuzuri's Summer Vacation",
+                            "image": "https://image.tmdb.org/t/p/original/sXEXmQvMbSuW5h9hnBdrZ3idPaW.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FiyUx81FI%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FiyUx81FI",
+                            "referer": ""
+                        },
+                        {
+                            "name": "Ep. 18 - Asunaro Park",
+                            "image": "https://image.tmdb.org/t/p/original/4GRRizgw8ce3ROTwnTnEm8RoaFB.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2F9YtvxG1u%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2F9YtvxG1u",
+                            "referer": ""
+                        },
+                        {
+                            "name": "Ep. 19 - Midsummer Festival",
+                            "image": "https://image.tmdb.org/t/p/original/xddolC0B0zGzdswLGMTCKMzu2s8.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2F9Ye6TODw%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2F9Ye6TODw",
+                            "referer": ""
+                        },
+                        {
+                            "name": "Ep. 20 - Poltergeist",
+                            "image": "https://image.tmdb.org/t/p/original/qaf8l8YzOQppPoVqWnuYLEur8An.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FO9zdPKoX%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FO9zdPKoX",
+                            "referer": ""
+                        },
+                        {
+                            "name": "Ep. 21 - Voices",
+                            "image": "https://image.tmdb.org/t/p/original/6EFZSugqhZfm6mWbPb0Uz5pnyb3.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FpJ9ZGQiN%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FpJ9ZGQiN",
+                            "referer": ""
+                        },
+                        {
+                            "name": "Ep. 22 - Level 6",
+                            "image": "https://image.tmdb.org/t/p/original/zAxwMO4Ft6kQUpf8N3iwcOPLMIs.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FhRqXIvha%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FhRqXIvha",
+                            "referer": ""
+                        },
+                        {
+                            "name": "Ep. 23 - What Is It You See in Your Eyes Right Now?",
+                            "image": "https://image.tmdb.org/t/p/original/yn0ANhn5X4Oq7tPqS7rUHIEfRug.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FmxZo2zrj%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FmxZo2zrj",
+                            "referer": ""
+                        },
+                        {
+                            "name": "Ep. 24 - Dear My Friends",
+                            "image": "https://image.tmdb.org/t/p/original/1OHZBRxmtwRRhUMW20cySsTuYy4.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FrfD55mD6%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FrfD55mD6",
+                            "referer": ""
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Season 2",
+            "image": "https://image.tmdb.org/t/p/original/ynkT3BfoYgwalKEFfDrgApqcFhl.jpg",
+            "groups": [
+                {
+                    "name": "พากย์ไทย",
+                    "image": "https://image.tmdb.org/t/p/original/ynkT3BfoYgwalKEFfDrgApqcFhl.jpg",
+                    "stations": [
+                        {
+                            "name": "ตอน 1 - Railgun",
+                            "image": "https://image.tmdb.org/t/p/original/nonGkxM0Lk2hcEWSu190onovrMz.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2F1WexSelv%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2F1WexSelv",
+                            "referer": ""
+                        },
+                        {
+                            "name": "ตอน 2 - Critical",
+                            "image": "https://image.tmdb.org/t/p/original/aNeKaFwFitxIz3r1EFA4Lplxa72.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2F2Q1OcLKr%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2F2Q1OcLKr",
+                            "referer": ""
+                        },
+                        {
+                            "name": "ตอน 3 - Project Radio Noise",
+                            "image": "https://image.tmdb.org/t/p/original/hfqkbWCgiYE48JZBGqJ9AJF8wzq.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2Fq2yNCGIb%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2Fq2yNCGIb",
+                            "referer": ""
+                        },
+                        {
+                            "name": "ตอน 4 - Sisters",
+                            "image": "https://image.tmdb.org/t/p/original/iqRdjG7lcOIpSMwOAwaLS1rQKIr.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FWhd5oFFH%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FWhd5oFFH",
+                            "referer": ""
+                        },
+                        {
+                            "name": "ตอน 5 - Project Level 6 Shift",
+                            "image": "https://image.tmdb.org/t/p/original/o3MBG1WVVKUlRyNkVDDkShtokCC.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2F1QxKBKBP%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2F1QxKBKBP",
+                            "referer": ""
+                        },
+                        {
+                            "name": "ตอน 6 - I... Can See All of You",
+                            "image": "https://image.tmdb.org/t/p/original/p0po1GhLGVWHXKNHypvB5Yw9pkm.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FXDKaT5jY%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FXDKaT5jY",
+                            "referer": ""
+                        },
+                        {
+                            "name": "ตอน 7 - I... I Want to Be of Help To You, Sissy",
+                            "image": "https://image.tmdb.org/t/p/original/cpKPp7PYaNJOmiyrXw3QAxjxsEB.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2Fd4fjRXWy%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2Fd4fjRXWy",
+                            "referer": ""
+                        },
+                        {
+                            "name": "ตอน 8 - ITEM",
+                            "image": "https://image.tmdb.org/t/p/original/q10TUI8ahpWkpAOqyrtCmhrP8SS.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FaypecSox%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FaypecSox",
+                            "referer": ""
+                        },
+                        {
+                            "name": "ตอน 9 - AIM Stalker",
+                            "image": "https://image.tmdb.org/t/p/original/aUyQwQLjtbNALxzBavGBuvBf3GW.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2Fa0wl0waS%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2Fa0wl0waS",
+                            "referer": ""
+                        },
+                        {
+                            "name": "ตอน 10 - Meltdowner",
+                            "image": "https://image.tmdb.org/t/p/original/tYBwjQlUGqb9FRfKpFqXJOiuz9z.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FUGWjOHcj%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FUGWjOHcj",
+                            "referer": ""
+                        },
+                        {
+                            "name": "ตอน 11 - The Vending Machine",
+                            "image": "https://image.tmdb.org/t/p/original/bc5dPtf9tu5q8R6eHSsy7pHRJv9.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2F3a4yc8Lh%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2F3a4yc8Lh",
+                            "referer": ""
+                        },
+                        {
+                            "name": "ตอน 12 - Tree Diagram",
+                            "image": "https://image.tmdb.org/t/p/original/cktumWtZPl0SZf4cFJsbXzByx8y.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2F3ZDVb9wJ%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2F3ZDVb9wJ",
+                            "referer": ""
+                        },
+                        {
+                            "name": "ตอน 13 - Accelerator",
+                            "image": "https://image.tmdb.org/t/p/original/gPybFveZ4D96JqrFQokMtzfDlCu.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FnhKyHAiO%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FnhKyHAiO",
+                            "referer": ""
+                        },
+                        {
+                            "name": "ตอน 14 - The Promise",
+                            "image": "https://image.tmdb.org/t/p/original/iVeKYC1IpGrcmeMXSuiYENGwpY7.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2F3jbbC4Da%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2F3jbbC4Da",
+                            "referer": ""
+                        },
+                        {
+                            "name": "ตอน 15 - Kamijo Toma",
+                            "image": "https://image.tmdb.org/t/p/original/aMVo6EvEZ0DCDy0LowbAIfNbN0G.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FoJNFCLf7%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FoJNFCLf7",
+                            "referer": ""
+                        },
+                        {
+                            "name": "ตอน 16 - Sisterhood",
+                            "image": "https://image.tmdb.org/t/p/original/lJayfnT3Gs0wjtfCcBWuUkObUeU.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FRScGdwO1%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FRScGdwO1",
+                            "referer": ""
+                        },
+                        {
+                            "name": "ตอน 17 - Study Group",
+                            "image": "https://image.tmdb.org/t/p/original/8MGU1vIJzeOdZD73GbM8JTyyc0C.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2F8ppD5vob%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2F8ppD5vob",
+                            "referer": ""
+                        },
+                        {
+                            "name": "ตอน 18 - Moving",
+                            "image": "https://image.tmdb.org/t/p/original/m9GAovU3wRw1WEdqGjeXCE69cJx.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2Fg03ctBCi%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2Fg03ctBCi",
+                            "referer": ""
+                        },
+                        {
+                            "name": "ตอน 19 - Academic Reach Assembly",
+                            "image": "https://image.tmdb.org/t/p/original/7M0x4ZfB9S3X6SuMfYKUyCbi31l.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2F1CR77JVv%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2F1CR77JVv",
+                            "referer": ""
+                        },
+                        {
+                            "name": "ตอน 20 - Febri",
+                            "image": "https://image.tmdb.org/t/p/original/fXHLdSyEFX1PR6COzkhjvibKZaQ.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FAah4PwXO%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FAah4PwXO",
+                            "referer": ""
+                        },
+                        {
+                            "name": "ตอน 21 - Darkness",
+                            "image": "https://image.tmdb.org/t/p/original/yQM7jPEZkBguxUhYVJOWkuFnizt.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FDFWQmosx%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FDFWQmosx",
+                            "referer": ""
+                        },
+                        {
+                            "name": "ตอน 22 - STUDY",
+                            "image": "https://image.tmdb.org/t/p/original/dFYq9pjVB1umohiGsFzVED3CdG0.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FtGGXHYng%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FtGGXHYng",
+                            "referer": ""
+                        },
+                        {
+                            "name": "ตอน 23 - Silent Party",
+                            "image": "https://image.tmdb.org/t/p/original/wf43QpHQsLVJ0VCv4eE3EtqZX2j.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FhiMA8sQP%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FhiMA8sQP",
+                            "referer": ""
+                        },
+                        {
+                            "name": "ตอน 24 - Eternal Party",
+                            "image": "https://image.tmdb.org/t/p/original/nmXDTTrP64UTwqPOWtkwLxHvFdc.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2Fdv4sZ7FI%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2Fdv4sZ7FI",
+                            "referer": ""
+                        },
+                        {
+                            "name": "ตอน 25",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FQFl05jGE%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FQFl05jGE",
+                            "referer": ""
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Season 3",
+            "image": "https://image.tmdb.org/t/p/original/n7uqQXmFPqKDCmZ1TB7mcjYqsWV.jpg",
+            "groups": [
+                {
+                    "name": "ซับไทย",
+                    "image": "https://image.tmdb.org/t/p/original/n7uqQXmFPqKDCmZ1TB7mcjYqsWV.jpg",
+                    "stations": [
+                        {
+                            "name": "Ep. 1 - Super-powered (Level 5)",
+                            "image": "https://image.tmdb.org/t/p/original/ywWHgTysv9KcyIpPLQA19xF64Wc.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FIhzUwhyO%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FIhzUwhyO",
+                            "referer": ""
+                        },
+                        {
+                            "name": "Ep. 2 - The Daihasei Festival",
+                            "image": "https://image.tmdb.org/t/p/original/8XJlVgS4WzA4PJpkC8fezmeaxgJ.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FCkQxIKCG%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FCkQxIKCG",
+                            "referer": ""
+                        },
+                        {
+                            "name": "Ep. 3 - Balloon Hunter",
+                            "image": "https://image.tmdb.org/t/p/original/1DOdZ9hmuLmoKlQSKlKrLMf4Was.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FGmXnX0Hn%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FGmXnX0Hn",
+                            "referer": ""
+                        },
+                        {
+                            "name": "Ep. 4 - Tampering",
+                            "image": "https://image.tmdb.org/t/p/original/hMW61FAsv4SKn00370tHy3kYPfm.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FzTxZeh47%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FzTxZeh47",
+                            "referer": ""
+                        },
+                        {
+                            "name": "Ep. 5 - Trust",
+                            "image": "https://image.tmdb.org/t/p/original/878PMTkvrv1gGj7uXsapAvo75le.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FPP8VMQVw%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FPP8VMQVw",
+                            "referer": ""
+                        },
+                        {
+                            "name": "Ep. 6 - The Battle Begins",
+                            "image": "https://image.tmdb.org/t/p/original/wLJqmN3eegQ52qaHtehtnnhG4GZ.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FS8jHdc9B%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FS8jHdc9B",
+                            "referer": ""
+                        },
+                        {
+                            "name": "Ep. 7 - Auribus oculi fideliores sunt",
+                            "image": "https://image.tmdb.org/t/p/original/nlsRFmCzhcrg8aFrCTkBjK59WhW.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2F98iKTVh2%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2F98iKTVh2",
+                            "referer": ""
+                        },
+                        {
+                            "name": "Ep. 8 - Railgun ✕ Mental Out",
+                            "image": "https://image.tmdb.org/t/p/original/2vUA4R43gSErvuU0BQmjvmpKq8c.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FtuytZYBk%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FtuytZYBk",
+                            "referer": ""
+                        },
+                        {
+                            "name": "Ep. 9 - Kozaku Mitori",
+                            "image": "https://image.tmdb.org/t/p/original/2eKPMVcAPimKWrhdXJHjiB307ou.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FVvqnxIrt%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FVvqnxIrt",
+                            "referer": ""
+                        },
+                        {
+                            "name": "Ep. 10 - Clone Dolly",
+                            "image": "https://image.tmdb.org/t/p/original/3JJgTN8BB5IrK9mdVj2sTzwKChj.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2Fytb68UfL%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2Fytb68UfL",
+                            "referer": ""
+                        },
+                        {
+                            "name": "Ep. 11 - Joining the Battle",
+                            "image": "https://image.tmdb.org/t/p/original/dHGlrPR5TltETAFSEnB207XhV3j.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2Fb4b1hnSW%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2Fb4b1hnSW",
+                            "referer": ""
+                        },
+                        {
+                            "name": "Ep. 12 - Exterior",
+                            "image": "https://image.tmdb.org/t/p/original/46rqldyGyV9JIZnEJmQBW3pEdTk.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FDVe7v8cH%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FDVe7v8cH",
+                            "referer": ""
+                        },
+                        {
+                            "name": "Ep. 13 - SYSTEM (Those Who Arrive at Heaven's Will in an Only Human Body)",
+                            "image": "https://image.tmdb.org/t/p/original/hkWLQMBlK5Q9jnqfXveL6v1CkWv.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FWDjnD8bC%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FWDjnD8bC",
+                            "referer": ""
+                        },
+                        {
+                            "name": "Ep. 14 - Dragon Strike (Jaw of the Dragon King)",
+                            "image": "https://image.tmdb.org/t/p/original/mG1fTdg0KgdNZoxVzJ8VlCvUZwV.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2Ftvzs4GD9%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2Ftvzs4GD9",
+                            "referer": ""
+                        },
+                        {
+                            "name": "Ep. 15 - Promise",
+                            "image": "https://image.tmdb.org/t/p/original/t5yb8Ajsqhma8gEeWA7wHg8gUn3.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FHWcdGPyX%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FHWcdGPyX",
+                            "referer": ""
+                        },
+                        {
+                            "name": "Ep. 16 - Dream Ranker",
+                            "image": "https://image.tmdb.org/t/p/original/bouz87STLOYgRMyu6GeUdLGQSh2.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FHBGjHEWO%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FHBGjHEWO",
+                            "referer": ""
+                        },
+                        {
+                            "name": "Ep. 17 - Precognition",
+                            "image": "https://image.tmdb.org/t/p/original/1NzwmetdaAL4P7BkUibobOAjRYc.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2Fm2WOSqq5%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2Fm2WOSqq5",
+                            "referer": ""
+                        },
+                        {
+                            "name": "Ep. 18 - Bust  Upper",
+                            "image": "https://image.tmdb.org/t/p/original/5lkgWfOFgaol9Tmdfd5S2nWXkg9.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FY3PLWe2n%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FY3PLWe2n",
+                            "referer": ""
+                        },
+                        {
+                            "name": "Ep. 19 - Strange Coincidence",
+                            "image": "https://image.tmdb.org/t/p/original/gNj9t9D189EwWSzb9Elctvbe49Z.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FlRUl6V60%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FlRUl6V60",
+                            "referer": ""
+                        },
+                        {
+                            "name": "Ep. 20 - Ha Det Bra",
+                            "image": "https://image.tmdb.org/t/p/original/vDaeihJmOS4OE7e4PeR25ulCqlb.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2Fh3HhNrMG%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2Fh3HhNrMG",
+                            "referer": ""
+                        },
+                        {
+                            "name": "Ep. 21 - Doppelganger",
+                            "image": "https://image.tmdb.org/t/p/original/9V7h5rbASm3ja9FRd5To7F6J9k.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FsafwbI0p%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FsafwbI0p",
+                            "referer": ""
+                        },
+                        {
+                            "name": "Ep. 22 - Scavenger",
+                            "image": "https://image.tmdb.org/t/p/original/nD5ZfQj7iikofVtDIYIpb4vGKih.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2Fr4OxI75L%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2Fr4OxI75L",
+                            "referer": ""
+                        },
+                        {
+                            "name": "Ep. 23 - Possession",
+                            "image": "https://image.tmdb.org/t/p/original/8vQZhZhDggIpV7O7Xm3suOa4Inq.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FgCC7EuEx%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FgCC7EuEx",
+                            "referer": ""
+                        },
+                        {
+                            "name": "Ep. 24 - Diffusion",
+                            "image": "https://image.tmdb.org/t/p/original/MKYsfXIgLX8mJke6Xb8OwpEVbX.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FjwrMC9N4%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FjwrMC9N4",
+                            "referer": ""
+                        },
+                        {
+                            "name": "Ep. 25 - My Dear Friends",
+                            "image": "https://image.tmdb.org/t/p/original/d4LG0LHEzGGga0S8aQfTRNVe65c.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FsKSKuNNZ%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FsKSKuNNZ",
+                            "referer": ""
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

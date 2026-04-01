@@ -1,0 +1,168 @@
+{
+    "name": "The Strongest Magician in the Demon Lord's Army Was a Human [จอมเวทมนุษย์ในกองทัพจอมมาร]",
+    "image": "https://image.tmdb.org/t/p/original/1ANATsXdWWJzsSI5GKp1cot6jRe.jpg",
+    "groups": [
+        {
+            "name": "Season 1",
+            "image": "https://image.tmdb.org/t/p/original/frCl8eWd4y4nUT6etOOILmz8Ozm.jpg",
+            "groups": [
+                {
+                    "name": "พากย์ไทย",
+                    "image": "https://image.tmdb.org/t/p/original/frCl8eWd4y4nUT6etOOILmz8Ozm.jpg",
+                    "stations": [
+                        {
+                            "name": "ตอน 1 - หัวหน้ากองพลอมตะ ไอค์",
+                            "image": "https://image.tmdb.org/t/p/original/opcqmO0abfOyeggfGR5CdFiAaEh.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FxzKqi5zN%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FxzKqi5zN",
+                            "referer": ""
+                        },
+                        {
+                            "name": "ตอน 2 - หัวหน้ากองอัศวินกุหลาบขาว อลิสเทีย",
+                            "image": "https://image.tmdb.org/t/p/original/m8YBslE30D5rYTVblclpTuannvC.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FXX0teZUG%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FXX0teZUG",
+                            "referer": ""
+                        },
+                        {
+                            "name": "ตอน 3 - คนทรยศ",
+                            "image": "https://image.tmdb.org/t/p/original/vshvVzVlgrfuCXdG0IwL1S7K8j9.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FIoBY1Dym%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FIoBY1Dym",
+                            "referer": ""
+                        },
+                        {
+                            "name": "ตอน 4 - ประลอง",
+                            "image": "https://image.tmdb.org/t/p/original/kSfiu48yYmTMzWBoS4QBHWRWtus.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FHx80tmEi%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FHx80tmEi",
+                            "referer": ""
+                        },
+                        {
+                            "name": "ตอน 5 - ความทะเยอทะยาน",
+                            "image": "https://image.tmdb.org/t/p/original/vutvazwX6bIN3BlEuYprYwhb4ae.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FCQywVyWH%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FCQywVyWH",
+                            "referer": ""
+                        },
+                        {
+                            "name": "ตอน 6 - ราชาแห่งดวาฟว์",
+                            "image": "https://image.tmdb.org/t/p/original/zZdsBVsGJJRPhIB6FRT93QornE6.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FBnOBKCIe%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FBnOBKCIe",
+                            "referer": ""
+                        },
+                        {
+                            "name": "ตอน 7 - War Begins",
+                            "image": "https://image.tmdb.org/t/p/original/m7nxq4a5ff5U8BLwiViASDGFcQr.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FeSr8HSQh%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FeSr8HSQh",
+                            "referer": ""
+                        },
+                        {
+                            "name": "ตอน 8 - The Final Battle at Ivalias",
+                            "image": "https://image.tmdb.org/t/p/original/1JfGNbNFHvC4kstduMbUwBmgkIR.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FRBQyGcLn%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FRBQyGcLn",
+                            "referer": ""
+                        },
+                        {
+                            "name": "ตอน 9 - Negotiations",
+                            "image": "https://image.tmdb.org/t/p/original/4nYPQe6Y3pvHdD36b4pLrIYfDRI.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FHLvZUnMh%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FHLvZUnMh",
+                            "referer": ""
+                        },
+                        {
+                            "name": "ตอน 10 - Pirates",
+                            "image": "https://image.tmdb.org/t/p/original/54toDEwFuTzvn5X8uXzYUFXEBK1.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2F0aXBhxMk%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2F0aXBhxMk",
+                            "referer": ""
+                        },
+                        {
+                            "name": "ตอน 11 - Cefiro is Defeated",
+                            "image": "https://image.tmdb.org/t/p/original/hp1RsUQKxPyqVteNDAp620NrbJ4.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FapzGlhV0%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FapzGlhV0",
+                            "referer": ""
+                        },
+                        {
+                            "name": "ตอน 12 - General E. Rudle",
+                            "image": "https://image.tmdb.org/t/p/original/wYVsvynK7DFXC5ksMLuom5GWn6I.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2Fabtjh2XE%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2Fabtjh2XE",
+                            "referer": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "ซับไทย",
+                    "image": "https://image.tmdb.org/t/p/original/frCl8eWd4y4nUT6etOOILmz8Ozm.jpg",
+                    "stations": [
+                        {
+                            "name": "Ep. 1 - Ike, Commander of the Undying Brigade",
+                            "image": "https://image.tmdb.org/t/p/original/opcqmO0abfOyeggfGR5CdFiAaEh.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FvVtViqKh%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FvVtViqKh",
+                            "referer": ""
+                        },
+                        {
+                            "name": "Ep. 2 - Alistair, Leader of the White Rose Knights",
+                            "image": "https://image.tmdb.org/t/p/original/m8YBslE30D5rYTVblclpTuannvC.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FnLx2TmOd%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FnLx2TmOd",
+                            "referer": ""
+                        },
+                        {
+                            "name": "Ep. 3 - Traitor",
+                            "image": "https://image.tmdb.org/t/p/original/vshvVzVlgrfuCXdG0IwL1S7K8j9.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FLGqWli6V%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FLGqWli6V",
+                            "referer": ""
+                        },
+                        {
+                            "name": "Ep. 4 - Duel",
+                            "image": "https://image.tmdb.org/t/p/original/kSfiu48yYmTMzWBoS4QBHWRWtus.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FSDkznUeS%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FSDkznUeS",
+                            "referer": ""
+                        },
+                        {
+                            "name": "Ep. 5 - Ambition",
+                            "image": "https://image.tmdb.org/t/p/original/vutvazwX6bIN3BlEuYprYwhb4ae.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FG0j0vOo1%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FG0j0vOo1",
+                            "referer": ""
+                        },
+                        {
+                            "name": "Ep. 6 - Dwarf King",
+                            "image": "https://image.tmdb.org/t/p/original/zZdsBVsGJJRPhIB6FRT93QornE6.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FnRLM8kw3%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FnRLM8kw3",
+                            "referer": ""
+                        },
+                        {
+                            "name": "Ep. 7 - War Begins",
+                            "image": "https://image.tmdb.org/t/p/original/m7nxq4a5ff5U8BLwiViASDGFcQr.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FjWnGyCCn%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FjWnGyCCn",
+                            "referer": ""
+                        },
+                        {
+                            "name": "Ep. 8 - The Final Battle at Ivalias",
+                            "image": "https://image.tmdb.org/t/p/original/1JfGNbNFHvC4kstduMbUwBmgkIR.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FDcJUe3Jk%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FDcJUe3Jk",
+                            "referer": ""
+                        },
+                        {
+                            "name": "Ep. 9 - Negotiations",
+                            "image": "https://image.tmdb.org/t/p/original/4nYPQe6Y3pvHdD36b4pLrIYfDRI.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FnLVG4uJ4%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FnLVG4uJ4",
+                            "referer": ""
+                        },
+                        {
+                            "name": "Ep. 10 - Pirates",
+                            "image": "https://image.tmdb.org/t/p/original/54toDEwFuTzvn5X8uXzYUFXEBK1.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FxtTUkvza%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FxtTUkvza",
+                            "referer": ""
+                        },
+                        {
+                            "name": "Ep. 11 - Cefiro is Defeated",
+                            "image": "https://image.tmdb.org/t/p/original/hp1RsUQKxPyqVteNDAp620NrbJ4.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2Fsc8zDf5S%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2Fsc8zDf5S",
+                            "referer": ""
+                        },
+                        {
+                            "name": "Ep. 12 - General E. Rudle",
+                            "image": "https://image.tmdb.org/t/p/original/wYVsvynK7DFXC5ksMLuom5GWn6I.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Fanime.tonytonychopper.net%2Ffile2%2FTGl25rAj%2F&referer=https%3A%2F%2Fanime.tonytonychopper.net%2Fv2%2FTGl25rAj",
+                            "referer": ""
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
