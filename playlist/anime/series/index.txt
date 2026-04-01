@@ -374,6 +374,11 @@
       "image": "https://image.tmdb.org/t/p/original/3Uf8L7wl4dokMukJ855cBLVxQj5.jpg"
     },
     {
+      "url": "https://raw.githubusercontent.com/natajrak/IPTV-Player/refs/heads/main/playlist/anime/series/kanchigai-no-atelier-meister.txt",
+      "name": "The Unaware Atelier Meister [ปรมาจารย์แห่งอาเทลิเย่ร์ผู้ไม่รู้ตัว]",
+      "image": "https://image.tmdb.org/t/p/original/OPJ7k6DMm1o3A0kIXysgrqVT5w.jpg"
+    },
+    {
       "url": "https://raw.githubusercontent.com/natajrak/IPTV-Player/refs/heads/main/playlist/anime/series/Mizu-Zokusei-no-Mahoutsukai.txt",
       "name": "The Water Magician [จอมเวทแห่งสายน้ำ]",
       "image": "https://image.tmdb.org/t/p/original/9GWz3D9aBgtn6pMiu3DTZL3h5ua.jpg"
