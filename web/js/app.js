@@ -16,6 +16,7 @@ const PLAYER_ICON_PAUSE = `<i class="fi fi-sr-pause" aria-hidden="true"></i>`;
 const EPISODES_ICON = `<i class="fi fi-rr-list" aria-hidden="true"></i>`;
 const TV_FOCUSABLE_SELECTOR = [
   "button:not([disabled]):not(.hidden)",
+  "#search-input:not([disabled])",
   ".card[tabindex='0']",
   ".ep-card[tabindex='0']",
   ".search-item[tabindex='0']",
@@ -48,6 +49,8 @@ let crossSeasonIndex = -1;
 let crossSeasonSeasons = [];
 let epPanelSeasonFilter = "";
 let currentSeasonTitle = "";
+let playerNoticeTimer = null;
+let searchDownLastAt = 0;
 let activeSearchIdx = -1;
 let preSearchState = null;   // saved state before search
 let searchReturnState = null;
@@ -67,6 +70,7 @@ const playerOverlay = document.getElementById("player-overlay");
 const playerVideo   = document.getElementById("player-video");
 const playerBack    = document.getElementById("player-back");
 const playerTitle   = document.getElementById("player-title");
+const playerNotice  = document.getElementById("player-notice");
 const playerSeek    = document.getElementById("player-seek");
 const playerTime    = document.getElementById("player-time");
 
@@ -117,6 +121,13 @@ logo.addEventListener("keydown", (e) => {
 
 window.addEventListener("keydown", (e) => {
   if (isTypingTarget(e.target)) return;
+
+  if (!playerOverlay.classList.contains("hidden")) {
+    if (handlePlayerKeyboardShortcuts(e)) {
+      e.preventDefault();
+      return;
+    }
+  }
 
   if (isTVBackKey(e) && handleTVBack()) {
     e.preventDefault();
@@ -307,15 +318,30 @@ searchInput.addEventListener("input", async () => {
 searchInput.addEventListener("keydown", (e) => {
   const items = searchResults.querySelectorAll(".search-item");
   if (e.key === "ArrowDown") {
+    const now = Date.now();
+    if (now - searchDownLastAt <= 200) {
+      e.preventDefault();
+      searchDownLastAt = 0;
+      activeSearchIdx = -1;
+      closeSearch();
+      searchInput.blur();
+      requestAnimationFrame(() => moveTVFocus("ArrowDown"));
+      return;
+    }
+    searchDownLastAt = now;
     e.preventDefault();
     activeSearchIdx = Math.min(activeSearchIdx + 1, items.length - 1);
     updateActiveSearch(items);
   } else if (e.key === "ArrowUp") {
+    searchDownLastAt = 0;
     e.preventDefault();
     activeSearchIdx = Math.max(activeSearchIdx - 1, -1);
     updateActiveSearch(items);
   } else if (e.key === "Enter" && activeSearchIdx >= 0) {
+    searchDownLastAt = 0;
     items[activeSearchIdx]?.click();
+  } else {
+    searchDownLastAt = 0;
   }
 });
 
@@ -466,6 +492,84 @@ function focusTVElement(el) {
   el.scrollIntoView({ block: "nearest", inline: "nearest" });
 }
 
+function getFocusZone(el) {
+  if (!el) return "other";
+  if (el.classList?.contains("card")) return "card";
+  if (el.closest?.("#pagination")) return "pagination";
+  if (el.closest?.(".section-header")) return "section";
+  if (el.closest?.("#app-header")) return "header";
+  if (el.closest?.("#search-results")) return "search";
+  return "other";
+}
+
+function hasDirectionalCandidate(current, candidates, directionKey) {
+  const currentRect = current.getBoundingClientRect();
+  const currentCenter = {
+    x: currentRect.left + currentRect.width / 2,
+    y: currentRect.top + currentRect.height / 2,
+  };
+
+  return candidates.some((el) => {
+    if (el === current) return false;
+    const rect = el.getBoundingClientRect();
+    const center = {
+      x: rect.left + rect.width / 2,
+      y: rect.top + rect.height / 2,
+    };
+    const dx = center.x - currentCenter.x;
+    const dy = center.y - currentCenter.y;
+    if (directionKey === "ArrowRight") return dx > 2;
+    if (directionKey === "ArrowLeft") return dx < -2;
+    if (directionKey === "ArrowDown") return dy > 2;
+    if (directionKey === "ArrowUp") return dy < -2;
+    return false;
+  });
+}
+
+function getDirectionalCandidates(current, directionKey, elements) {
+  const zone = getFocusZone(current);
+  const cards = elements.filter((el) => getFocusZone(el) === "card");
+  const paginations = elements.filter((el) => getFocusZone(el) === "pagination");
+  const sections = elements.filter((el) => getFocusZone(el) === "section");
+  const headers = elements.filter((el) => getFocusZone(el) === "header");
+
+  if (zone === "card") {
+    if (directionKey === "ArrowLeft" || directionKey === "ArrowRight" || directionKey === "ArrowDown") {
+      if (directionKey === "ArrowDown" && !hasDirectionalCandidate(current, cards, directionKey)) {
+        return [...paginations, ...cards];
+      }
+      return cards;
+    }
+    if (directionKey === "ArrowUp") {
+      if (hasDirectionalCandidate(current, cards, directionKey)) return cards;
+      return [...sections, ...headers, ...cards];
+    }
+  }
+
+  if (zone === "pagination") {
+    if (directionKey === "ArrowLeft" || directionKey === "ArrowRight") return paginations;
+    if (directionKey === "ArrowDown") return paginations;
+    if (directionKey === "ArrowUp") {
+      if (hasDirectionalCandidate(current, cards, directionKey)) return cards;
+      return [...cards, ...sections, ...headers];
+    }
+  }
+
+  if (zone === "section") {
+    if (directionKey === "ArrowLeft" || directionKey === "ArrowRight") return sections;
+    if (directionKey === "ArrowDown") return [...cards, ...paginations, ...sections];
+    if (directionKey === "ArrowUp") return [...headers, ...sections];
+  }
+
+  if (zone === "header") {
+    if (directionKey === "ArrowLeft" || directionKey === "ArrowRight") return headers;
+    if (directionKey === "ArrowDown") return [...sections, ...cards, ...paginations];
+    if (directionKey === "ArrowUp") return headers;
+  }
+
+  return elements;
+}
+
 function moveTVFocus(directionKey) {
   const elements = getTVFocusableElements();
   if (!elements.length) return;
@@ -476,13 +580,16 @@ function moveTVFocus(directionKey) {
     return;
   }
 
+  const directionalCandidates = getDirectionalCandidates(current, directionKey, elements);
+  const scanElements = directionalCandidates.length ? directionalCandidates : elements;
+
   const currentRect = current.getBoundingClientRect();
   const currentCenter = { x: currentRect.left + currentRect.width / 2, y: currentRect.top + currentRect.height / 2 };
 
   let best = null;
   let bestScore = Number.POSITIVE_INFINITY;
 
-  elements.forEach((el) => {
+  scanElements.forEach((el) => {
     if (el === current) return;
     const rect = el.getBoundingClientRect();
     const center = { x: rect.left + rect.width / 2, y: rect.top + rect.height / 2 };
@@ -899,9 +1006,42 @@ function openPlayer(stations, index, inheritedReferer, languageTitle = "") {
   document.body.style.overflow = "hidden";
   updateVolumeUI();
   showPlayerUI();
+  hidePlayerNotice();
 
   playEpisode(index, inheritedReferer);
   queueFocusRefresh();
+}
+
+function isLocalPlaybackOrigin() {
+  const host = String(window.location.hostname || "").toLowerCase();
+  return host === "localhost" || host === "127.0.0.1";
+}
+
+function isAnimeKimiProxyUrl(url) {
+  try {
+    const parsed = new URL(String(url || ""), window.location.href);
+    return /(^|\.)anime-kimi\.com$/i.test(parsed.hostname) && /hls_proxy\.php$/i.test(parsed.pathname);
+  } catch (_) {
+    return false;
+  }
+}
+
+function showPlayerNotice(message, ms = 7000) {
+  if (!playerNotice) return;
+  clearTimeout(playerNoticeTimer);
+  playerNotice.textContent = message;
+  playerNotice.classList.remove("hidden");
+  if (ms > 0) {
+    playerNoticeTimer = setTimeout(() => {
+      playerNotice.classList.add("hidden");
+    }, ms);
+  }
+}
+
+function hidePlayerNotice() {
+  if (!playerNotice) return;
+  clearTimeout(playerNoticeTimer);
+  playerNotice.classList.add("hidden");
 }
 
 function playEpisode(index, inheritedReferer) {
@@ -929,13 +1069,21 @@ function playEpisode(index, inheritedReferer) {
   cancelUpnext();
   destroyHls();
   resetProgress();
+  hidePlayerNotice();
 
-  if (Hls.isSupported() && url.includes(".m3u8")) {
+  if (isAnimeKimiProxyUrl(url) && !isLocalPlaybackOrigin()) {
+    showPlayerNotice("แหล่งวิดีโอนี้ถูกบล็อกเมื่อเปิดจากโดเมนนี้ กรุณาใช้ localhost/127.0.0.1 หรือเปลี่ยน source", 0);
+    return;
+  }
+
+  const isHlsUrl = /\.m3u8($|\?)/i.test(String(url || ""));
+  const hasHlsRuntime = typeof Hls !== "undefined";
+
+  if (hasHlsRuntime && Hls.isSupported() && isHlsUrl) {
     hls = new Hls({
       xhrSetup: referer
         ? (xhr) => {
             try {
-              // Browsers forbid manually setting `Referer`; ignore when blocked.
               xhr.setRequestHeader("Referer", referer);
             } catch (_) {}
           }
@@ -943,7 +1091,12 @@ function playEpisode(index, inheritedReferer) {
     });
     hls.loadSource(url);
     hls.attachMedia(playerVideo);
-    hls.on(Hls.Events.MANIFEST_PARSED, () => playerVideo.play().catch(err => { if (err.name !== "AbortError") console.error(err); }));
+    hls.on(Hls.Events.MANIFEST_PARSED, () => playerVideo.play().catch(err => {
+      if (err.name !== "AbortError") console.error(err);
+      if (err.name === "NotSupportedError") {
+        showPlayerNotice("เล่นวิดีโอไม่ได้จากแหล่งนี้บนโดเมนปัจจุบัน (NotSupportedError)");
+      }
+    }));
     hls.on(Hls.Events.ERROR, (_event, data) => {
       if (!data?.fatal) return;
       if (data.type === Hls.ErrorTypes.NETWORK_ERROR) {
@@ -954,17 +1107,91 @@ function playEpisode(index, inheritedReferer) {
         hls.recoverMediaError();
         return;
       }
-      // Last fallback: try native media pipeline.
       destroyHls();
       playerVideo.src = url;
-      playerVideo.play().catch(() => {});
+      playerVideo.play().catch((err) => {
+        if (err?.name === "NotSupportedError") {
+          showPlayerNotice("เล่นวิดีโอไม่ได้จากแหล่งนี้บนโดเมนปัจจุบัน (NotSupportedError)");
+        }
+      });
     });
   } else {
+    if (isHlsUrl && !hasHlsRuntime) {
+      console.warn("HLS runtime is missing. Falling back to native video playback.");
+    } else if (isHlsUrl && hasHlsRuntime && !Hls.isSupported()) {
+      console.warn("HLS.js is loaded but Media Source Extensions are not supported in this browser.");
+    }
     playerVideo.src = url;
-    playerVideo.play().catch(err => { if (err.name !== "AbortError") console.error(err); });
+    playerVideo.play().catch(err => {
+      if (err.name !== "AbortError") console.error(err);
+      if (err.name === "NotSupportedError") {
+        showPlayerNotice("เล่นวิดีโอไม่ได้จากแหล่งนี้บนโดเมนปัจจุบัน (NotSupportedError)");
+      }
+    });
   }
 
   playerVideo.onended = () => scheduleNext();
+}
+
+function seekBySeconds(delta) {
+  const duration = Number(playerVideo.duration);
+  const current = Number(playerVideo.currentTime) || 0;
+  if (Number.isFinite(duration) && duration > 0) {
+    playerVideo.currentTime = Math.min(duration, Math.max(0, current + delta));
+    return;
+  }
+  playerVideo.currentTime = Math.max(0, current + delta);
+}
+
+function adjustVolumeBy(delta) {
+  const next = Math.min(1, Math.max(0, (Number(playerVideo.volume) || 0) + delta));
+  playerVideo.volume = next;
+  playerVideo.muted = next === 0;
+  updateVolumeUI();
+}
+
+function handlePlayerKeyboardShortcuts(e) {
+  if (e.ctrlKey && e.key === "ArrowRight") {
+    const target = resolveAdjacentEpisode(1);
+    if (!target) return true;
+    if (target.type === "local") playEpisode(target.index, inheritedRefererCache);
+    else playEpisodeFromQueue(target.queueIndex);
+    return true;
+  }
+
+  if (e.ctrlKey && e.key === "ArrowLeft") {
+    const target = resolveAdjacentEpisode(-1);
+    if (!target) return true;
+    if (target.type === "local") playEpisode(target.index, inheritedRefererCache);
+    else playEpisodeFromQueue(target.queueIndex);
+    return true;
+  }
+
+  if (e.key === "ArrowRight") {
+    seekBySeconds(5);
+    showPlayerUI();
+    return true;
+  }
+
+  if (e.key === "ArrowLeft") {
+    seekBySeconds(-5);
+    showPlayerUI();
+    return true;
+  }
+
+  if (e.key === "ArrowUp") {
+    adjustVolumeBy(0.05);
+    showPlayerUI();
+    return true;
+  }
+
+  if (e.key === "ArrowDown") {
+    adjustVolumeBy(-0.05);
+    showPlayerUI();
+    return true;
+  }
+
+  return false;
 }
 
 /* ===== Player Controls ===== */
@@ -994,6 +1221,11 @@ btnNextEp.addEventListener("click", () => {
 
 playerVideo.addEventListener("play",  () => { btnPlayPause.innerHTML = PLAYER_ICON_PAUSE; showPlayerUI(); });
 playerVideo.addEventListener("pause", () => { btnPlayPause.innerHTML = PLAYER_ICON_PLAY; showPlayerUI(); });
+playerVideo.addEventListener("error", () => {
+  if (isAnimeKimiProxyUrl(playerVideo.currentSrc || playerVideo.src) && !isLocalPlaybackOrigin()) {
+    showPlayerNotice("แหล่งวิดีโอนี้ถูกบล็อกเมื่อเปิดจากโดเมนนี้ กรุณาใช้ localhost/127.0.0.1 หรือเปลี่ยน source");
+  }
+});
 
 playerVideo.addEventListener("timeupdate", () => {
   if (!playerVideo.duration) return;
@@ -1288,6 +1520,7 @@ function cancelUpnext() {
 function closePlayer() {
   cancelUpnext();
   destroyHls();
+  hidePlayerNotice();
   playerVideo.pause();
   playerVideo.src = "";
   playerVideo.onended = null;

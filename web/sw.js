@@ -2,7 +2,7 @@ const CACHE_NAME = "bkl-play";
 const APP_SHELL = [
   "./",
   "./index.html",
-  "./css/style.css?v=3",
+  "./css/style.css",
   "./js/app.js",
   "./images/logo/logo.png",
   "./images/logo/logo-dark.png",
@@ -58,8 +58,8 @@ self.addEventListener("fetch", (event) => {
     return;
   }
 
-  // Always prefer latest playlist data, then fallback to cache.
-  if (url.pathname.includes("https://raw.githubusercontent.com/natajrak/IPTV-Player/refs/heads/main/playlist/")) {
+  // Network-first for app shell assets so GitHub Pages updates are picked up quickly.
+  if (url.pathname.endsWith("/index.html") || url.pathname.endsWith("/js/app.js") || url.pathname.endsWith("/css/style.css")) {
     event.respondWith(
       fetch(req)
         .then((res) => {
