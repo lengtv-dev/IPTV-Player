@@ -455,6 +455,7 @@ async function runUpdateMeta() {
 
   const outputFile = customOutput.endsWith(".txt") ? customOutput : `${customOutput}.txt`;
   const resolvedOutput = resolvePlaylistFile(outputFile);
+  if (resolvedOutput !== outputFile) console.log(`📂 พบไฟล์: ${resolvedOutput}`);
   const outputPath = path.resolve(PLAYLIST_DIR, resolvedOutput);
   if (!fs.existsSync(outputPath)) { console.error(`❌ ไม่พบไฟล์: ${outputPath}`); process.exit(1); }
 
