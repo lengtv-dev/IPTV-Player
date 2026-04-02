@@ -1,12 +1,16 @@
 {
-  "groups": [
-    {
-      "name": "Black Clover: Sword Of The Wizard King แบล็คโคลเวอร์ ดาบแห่งจักรพรรดิเวทมนตร์",
-      "image": "https://m.media-amazon.com/images/M/MV5BOGIxZjZlZjUtODM0OC00NDJlLWI5ZjItNDg3MGJmODVmZWNhXkEyXkFqcGc@._V1_FMjpg_UY2222_.jpg",
-      "url": "https://raw.githubusercontent.com/natajrak/IPTV-Player/refs/heads/main/playlist/anime/movies/812225-black-clover-sword-of-the-wizard-king.txt"
-    }
-  ],
-  "name": "The Movies",
-  "image": "https://drive.google.com/uc?id=1GkjBby5-kQSRwuCa36KptBkb80vqOXyx",
-  "url": "https://raw.githubusercontent.com/natajrak/IPTV-Player/refs/heads/main/playlist/anime/movies/index.txt"
+    "name": "The Movies",
+    "url": "https://raw.githubusercontent.com/natajrak/IPTV-Player/refs/heads/main/playlist/anime/movies/index.txt",
+    "groups": [
+        {
+            "url": "https://raw.githubusercontent.com/natajrak/IPTV-Player/refs/heads/main/playlist/anime/movies/steins-gate.txt",
+            "name": "Steins;Gate [สไตนส์ เกท ฝ่าวิกฤตพิชิตกาลเวลา]",
+            "image": "https://image.tmdb.org/t/p/original/A0wwQHhg3pgg831G43DVoxnDNsQ.jpg"
+        },
+        {
+            "url": "https://raw.githubusercontent.com/natajrak/IPTV-Player/refs/heads/main/playlist/anime/movies/mahouka-koukou-no-rettousei.txt",
+            "name": "The Irregular at Magic High School The Movie [พี่น้องปริศนาโรงเรียนมหาเวท มูฟวี่]",
+            "image": "https://image.tmdb.org/t/p/original/iUttStQFPGp8rCXn7JYfC5IIlQF.jpg"
+        }
+    ]
 }

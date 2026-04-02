@@ -1,0 +1,90 @@
+{
+    "name": "Jack-of-All-Trades, Party of None [เก่งรอบด้านแต่ไร้ทีเด็ด เลยถูกเฉดหัวจากปาร์ตี้ผู้กล้า]",
+    "image": "https://image.tmdb.org/t/p/original/qRvICaz6LJXz96DaYcpTjQf6QN8.jpg",
+    "groups": [
+        {
+            "name": "Season 1",
+            "image": "https://image.tmdb.org/t/p/original/rbh55bFult3aQW1WsbilSieBS13.jpg",
+            "groups": [
+                {
+                    "name": "พากย์ไทย",
+                    "image": "https://image.tmdb.org/t/p/original/rbh55bFult3aQW1WsbilSieBS13.jpg",
+                    "stations": [
+                        {
+                            "name": "ตอน 1 - The Jack-of-All-Trades Becomes a Swordsman Once More",
+                            "image": "https://image.tmdb.org/t/p/original/wROf1bhwICvF3bZI1NpxAwtEDx7.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Ffiles.akuma-player.xyz%2Fview%2Fa87df8c4-90fe-536d-9cc9-47f82245ac91&referer=https%3A%2F%2Fakuma-player.xyz%2F",
+                            "referer": "https://akuma-player.xyz/"
+                        },
+                        {
+                            "name": "ตอน 2 - No Going Back for the Jack-of-All-Trades",
+                            "image": "https://image.tmdb.org/t/p/original/m6Qxn7kXAxpatBd8YsAXJy0SrDe.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Ffiles.akuma-player.xyz%2Fview%2F754b93ff-8855-5928-9477-15cd93110c73&referer=https%3A%2F%2Fakuma-player.xyz%2F",
+                            "referer": "https://akuma-player.xyz/"
+                        },
+                        {
+                            "name": "ตอน 3 - The Jack-of-All-Trades Voices His Ideal",
+                            "image": "https://image.tmdb.org/t/p/original/vWeeKsVrbywDeW0M5NcRBMgjg5U.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Ffiles.akuma-player.xyz%2Fview%2F2565e17a-f7ee-527a-802c-4fff2960423e&referer=https%3A%2F%2Fakuma-player.xyz%2F",
+                            "referer": "https://akuma-player.xyz/"
+                        },
+                        {
+                            "name": "ตอน 4 - The Heroes Party Looks Back",
+                            "image": "https://image.tmdb.org/t/p/original/w9bP8Fq5Ja0IG3jefmHW1925R2F.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Ffiles.akuma-player.xyz%2Fview%2Fb87c5e06-01cd-549f-b4cc-a6f62d90eb37&referer=https%3A%2F%2Fakuma-player.xyz%2F",
+                            "referer": "https://akuma-player.xyz/"
+                        },
+                        {
+                            "name": "ตอน 5 - The Jack-of-All-Trades' Bad Feeling Comes True",
+                            "image": "https://image.tmdb.org/t/p/original/qTEAJIS0uUEqfnwtkxahrdDhpVq.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Ffiles.akuma-player.xyz%2Fview%2Fb1cadafb-014d-513e-baca-e21756b57936&referer=https%3A%2F%2Fakuma-player.xyz%2F",
+                            "referer": "https://akuma-player.xyz/"
+                        },
+                        {
+                            "name": "ตอน 6 - The Jack-of-All-Trades Overcomes His Limits",
+                            "image": "https://image.tmdb.org/t/p/original/4FOID0avym99YyctbwtHctW5Rtu.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Ffiles.akuma-player.xyz%2Fview%2F393e7727-729b-5a02-9394-2221e4f3b4e6&referer=https%3A%2F%2Fakuma-player.xyz%2F",
+                            "referer": "https://akuma-player.xyz/"
+                        },
+                        {
+                            "name": "ตอน 7 - The Jack-of-All-Trades Follows His Feelings",
+                            "image": "https://image.tmdb.org/t/p/original/f6oiP5uOgDAATSS6rt65G2tbx12.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Ffiles.akuma-player.xyz%2Fview%2Fbc5dde4d-2879-5ec2-9712-2dad22c89a2b&referer=https%3A%2F%2Fakuma-player.xyz%2F",
+                            "referer": "https://akuma-player.xyz/"
+                        },
+                        {
+                            "name": "ตอน 8 - The Jack-of-All-Trades Fights With Everyone",
+                            "image": "https://image.tmdb.org/t/p/original/vTrxODNyk3e6ThJ6jzPQCIHZqSB.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Ffiles.akuma-player.xyz%2Fview%2Fa30a31f1-6b58-5a02-b1ae-8564f3c7d74d&referer=https%3A%2F%2Fakuma-player.xyz%2F",
+                            "referer": "https://akuma-player.xyz/"
+                        },
+                        {
+                            "name": "ตอน 9 - The Jack-of-All-Trades has a Bad Feeling",
+                            "image": "https://image.tmdb.org/t/p/original/zPyMvtwLr6ei2TPWOvpQYFzPfQQ.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Ffiles.akuma-player.xyz%2Fview%2Fac99dbce-85f2-5b61-bc56-60eec3e6fb21&referer=https%3A%2F%2Fakuma-player.xyz%2F",
+                            "referer": "https://akuma-player.xyz/"
+                        },
+                        {
+                            "name": "ตอน 10 - The Jack-of-All-Trades Makes Them Train Hard",
+                            "image": "https://image.tmdb.org/t/p/original/M2uqAUdR5iWuPY71eExsxsHknk.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Ffiles.akuma-player.xyz%2Fview%2F2d05e5c4-4a50-5a30-ba85-918080bd1e8c&referer=https%3A%2F%2Fakuma-player.xyz%2F",
+                            "referer": "https://akuma-player.xyz/"
+                        },
+                        {
+                            "name": "ตอน 11 - The Jack-of-All-Trades Fears For His Friends",
+                            "image": "https://image.tmdb.org/t/p/original/eV910o3n8ye3mxbNmerBhoKBZ8N.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Ffiles.akuma-player.xyz%2Fview%2F289d5b70-34b5-5bfb-b081-ef3316f5b3f4&referer=https%3A%2F%2Fakuma-player.xyz%2F",
+                            "referer": "https://akuma-player.xyz/"
+                        },
+                        {
+                            "name": "ตอน 12 - The Jack-of-All-Trades Protects His Comrades",
+                            "image": "https://image.tmdb.org/t/p/original/2J6HQ42JaMlYp4lHWfnoIWtFEmO.jpg",
+                            "url": "https://shy-haze-2452.natajrak-p.workers.dev/?url=https%3A%2F%2Ffiles.akuma-player.xyz%2Fview%2F52f5d509-e18e-50d4-9f0c-31ceb193488b&referer=https%3A%2F%2Fakuma-player.xyz%2F",
+                            "referer": "https://akuma-player.xyz/"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

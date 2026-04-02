@@ -1,0 +1,12 @@
+{
+    "name": "ภาค 2",
+    "image": "https://image.tmdb.org/t/p/original/dfx7vKFcfMfKqMXphH2qZlLa83R.jpg",
+    "stations": [
+        {
+            "name": "ซับไทย",
+            "image": "https://image.tmdb.org/t/p/original/dfx7vKFcfMfKqMXphH2qZlLa83R.jpg",
+            "url": "https://hls.animeindy.com:8443/vid/1S7b4FjM/video.mp4/playlist.m3u8",
+            "referer": "https://indy-anime.net/"
+        }
+    ]
+}

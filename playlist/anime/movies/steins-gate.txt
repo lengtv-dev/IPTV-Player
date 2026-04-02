@@ -1,0 +1,12 @@
+{
+    "name": "Steins;Gate [สไตนส์ เกท ฝ่าวิกฤตพิชิตกาลเวลา]",
+    "image": "https://image.tmdb.org/t/p/original/A0wwQHhg3pgg831G43DVoxnDNsQ.jpg",
+    "groups": [
+        {
+            "name": "Steins;Gate 0: Valentine's of Crystal Polymorphism -Bittersweet Intermedio- [結晶多形のヴァレンティヌス Bittersweet Intermedio]",
+            "image": "https://image.tmdb.org/t/p/original/A0wwQHhg3pgg831G43DVoxnDNsQ.jpg",
+            "url": "https://raw.githubusercontent.com/natajrak/IPTV-Player/refs/heads/main/playlist/anime/movies/1545882-steins-gate.txt",
+            "badge": "ภาค 1"
+        }
+    ]
+}

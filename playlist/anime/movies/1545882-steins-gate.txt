@@ -1,0 +1,12 @@
+{
+    "name": "ภาค 1",
+    "image": "https://image.tmdb.org/t/p/original/A0wwQHhg3pgg831G43DVoxnDNsQ.jpg",
+    "stations": [
+        {
+            "name": "พากย์ไทย",
+            "image": "https://image.tmdb.org/t/p/original/A0wwQHhg3pgg831G43DVoxnDNsQ.jpg",
+            "url": "https://hls.animeindy.com:8443/vid/QRgMsKIQ/video.mp4/playlist.m3u8",
+            "referer": "https://indy-anime.net/"
+        }
+    ]
+}

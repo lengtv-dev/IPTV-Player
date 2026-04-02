@@ -1,0 +1,18 @@
+{
+    "name": "The Irregular at Magic High School The Movie [พี่น้องปริศนาโรงเรียนมหาเวท มูฟวี่]",
+    "image": "https://image.tmdb.org/t/p/original/iUttStQFPGp8rCXn7JYfC5IIlQF.jpg",
+    "groups": [
+        {
+            "name": "The Irregular at Magic High School: The Girl Who Summons the Stars [พี่น้องปริศนาโรงเรียนมหาเวท มูฟวี่]",
+            "image": "https://image.tmdb.org/t/p/original/iUttStQFPGp8rCXn7JYfC5IIlQF.jpg",
+            "url": "https://raw.githubusercontent.com/natajrak/IPTV-Player/refs/heads/main/playlist/anime/movies/431821-mahouka-koukou-no-rettousei.txt",
+            "badge": "ภาค 1"
+        },
+        {
+            "name": "The Irregular at Magic High School THE MOVIE - Yotsuba Succession Arc",
+            "image": "https://image.tmdb.org/t/p/original/dfx7vKFcfMfKqMXphH2qZlLa83R.jpg",
+            "url": "https://raw.githubusercontent.com/natajrak/IPTV-Player/refs/heads/main/playlist/anime/movies/1310387-mahouka-koukou-no-rettousei.txt",
+            "badge": "ภาค 2"
+        }
+    ]
+}

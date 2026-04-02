@@ -229,6 +229,11 @@
       "image": "https://image.tmdb.org/t/p/original/k3DboKiicC4ZbJe50sjG1fGdMGX.jpg"
     },
     {
+      "url": "https://raw.githubusercontent.com/natajrak/IPTV-Player/refs/heads/main/playlist/anime/series/285166-yuusha-party-wo-oidasareta-kiyoubinbou.txt",
+      "name": "Jack-of-All-Trades, Party of None [เก่งรอบด้านแต่ไร้ทีเด็ด เลยถูกเฉดหัวจากปาร์ตี้ผู้กล้า]",
+      "image": "https://image.tmdb.org/t/p/original/qRvICaz6LJXz96DaYcpTjQf6QN8.jpg"
+    },
+    {
       "url": "https://raw.githubusercontent.com/natajrak/IPTV-Player/refs/heads/main/playlist/anime/series/60846-rogu-horaizun.txt",
       "name": "Log Horizon [รวมพลคนติดอยู่ในเกมส์]",
       "image": "https://image.tmdb.org/t/p/original/xLGdRuWCn2AlByL5Y9OLB3ZwItg.jpg"
