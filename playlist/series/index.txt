@@ -1,6 +1,6 @@
 {
-  "name": "Series",
-  "image": "https://raw.githubusercontent.com/natajrak/IPTV-Player/refs/heads/main/web/images/covers/cover-series.png",
+  "name": "TV",
+  "image": "https://beta.m-fixer.net/uploads/tv_image/efl-sky-bet-league-two.png",
   "imageScale": "centerCrop",
   "groups": [
 
