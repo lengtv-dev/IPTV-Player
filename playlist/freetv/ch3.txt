@@ -1,1 +1,13 @@
 
+{
+    "name": "freetv",
+    "image": "https://api.bananamuffin.org/images/png/hd-ch3.png",
+    "groups": [
+        {
+            "name": "Ch3",
+            "image": "https://api.bananamuffin.org/images/png/hd-ch3.png",
+            "url": "",
+            "badge": "ภาค 1"
+        }
+    ]
+}
