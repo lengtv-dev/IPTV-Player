@@ -1,0 +1,1557 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IPTV Player Portal - Live Streaming</title>
+    <!-- ใช้ Tailwind CSS สำหรับจัดหน้าจอ -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- ใช้ Hls.js สำหรับเล่นสตรีมไฟล์ .m3u8 -->
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+    <style>
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        body { background-color: #0b0f19; }
+    </style>
+</head>
+<body class="text-gray-100 font-sans min-h-screen flex flex-col">
+
+    <!-- ================= 1. ส่วนหัวของเว็บ (Navbar) ================= -->
+    <header class="bg-gray-950/80 backdrop-blur-md border-b border-gray-800 sticky top-0 z-40 px-6 py-4 flex items-center justify-between">
+        <div class="flex items-center gap-4">
+            <span class="text-2xl font-black text-red-500 tracking-wider">DOOTV PORTAL</span>
+            <span class="text-xs bg-gray-800 text-gray-400 px-2.5 py-1 rounded-full border border-gray-700">M3U Playlist Player</span>
+        </div>
+        <div class="text-sm text-gray-400">
+            จำนวนช่องทั้งหมด: <span id="total-channels" class="text-white font-bold">0</span> ช่อง
+        </div>
+    </header>
+
+    <!-- ================= 2. พื้นที่เนื้อหาหลัก (Main Content) ================= -->
+    <main class="flex-1 flex flex-col lg:flex-row overflow-hidden h-[calc(100vh-73px)]">
+        
+        <!-- ฝั่งซ้าย: เครื่องเล่นวิดีโอ (Video Player) -->
+        <div class="w-full lg:w-2/3 bg-black flex flex-col justify-center relative border-b lg:border-b-0 lg:border-r border-gray-900">
+            <div class="aspect-video w-full bg-black flex items-center justify-center relative shadow-inner">
+                <video id="video-player" controls autoplay class="w-full h-full object-contain"></video>
+            </div>
+            
+            <!-- รายละเอียดของช่องที่กำลังรับชม -->
+            <div class="p-5 bg-gray-950/60 border-t border-gray-900 flex items-center gap-4">
+                <img id="current-logo" src="https://placehold.co/150?text=TV" alt="Logo" class="h-16 w-16 object-contain bg-gray-900 rounded-xl p-1.5 border border-gray-800 transition-all">
+                <div class="min-w-0 flex-1">
+                    <span id="current-group" class="text-[10px] uppercase font-bold text-red-500 tracking-widest block mb-0.5">กรุณาเลือกช่อง</span>
+                    <h2 id="current-title" class="text-xl font-bold text-gray-100 truncate">ยินดีต้อนรับสู่ระบบสตรีมมิ่ง</h2>
+                    <p id="current-url" class="text-xs text-gray-500 mt-1 truncate">เลือกรายการด้านขวาเพื่อเริ่มต้นความบันเทิง</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ฝั่งขวา: แท็บหมวดหมู่ และรายชื่อช่องตาม M3U -->
+        <div class="w-full lg:w-1/3 flex flex-col bg-gray-950/20 h-full">
+            <!-- แถบเลือกหมวดหมู่ย่อย (Group Title) ที่ดึงมาจาก M3U -->
+            <div class="p-4 border-b border-gray-900 bg-gray-950/40">
+                <span class="text-xs uppercase font-bold text-gray-400 block mb-2 tracking-wider">📁 หมวดหมู่รายการ</span>
+                <div id="category-tabs" class="flex gap-2 overflow-x-auto no-scrollbar pb-1">
+                    <button class="whitespace-nowrap px-4 py-1.5 rounded-full text-xs font-semibold bg-white text-gray-950 font-bold">ทั้งหมด</button>
+                </div>
+            </div>
+
+            <!-- กล่องแสดงรายชื่อช่อง -->
+            <div class="flex-1 overflow-y-auto p-4 space-y-2" id="channel-list">
+                <!-- รายการช่องจะถูกสร้างขึ้นตรงนี้ด้วย JavaScript -->
+            </div>
+        </div>
+
+    </main>
+
+    <script>
+        // ================= 📄 ข้อมูล Playlist M3U ที่คุณให้มา =================
+        const m3uData = `#EXTM3U url=""
+
+#EXTINF: -1 tvg-id="อัพเดท" tvg-logo="https://dooball66aj.com/wp-content/uploads/2020/04/icon4.png" group-title="อัพเดททุก24ชม" tvg-name="เกี่ยวกับ",อัพเดท 24ชม
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/1913/playlist.m3u8
+
+
+#EXTINF:-1 tvg-id="1231" tvg-name="Realmadrid TV" tvg-logo="https://343live.com/upload/1231.jpg" group-title="ทั่วไป",Realmadrid TV
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/1231_backup/playlist.m3u8
+#EXTINF:-1 tvg-id="1239" tvg-name="MUTV" tvg-logo="https://343live.com/upload/1239.jpg" group-title="กีฬา",MUTV
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/1239/playlist.m3u8
+#EXTINF:-1 tvg-id="1257" tvg-name="BG Sports 4" tvg-logo="https://343live.com/upload/1257.jpg" group-title="กีฬา",BG Sports 4
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/1257/playlist.m3u8
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/1257_backup/playlist.m3u8
+#EXTINF:-1 tvg-id="1258" tvg-name="BG Sports 3" tvg-logo="https://343live.com/upload/1258.jpg" group-title="กีฬา",BG Sports 3
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/1258/playlist.m3u8
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/1258_backup/playlist.m3u8
+#EXTINF:-1 tvg-id="1259" tvg-name="BG Sports 2" tvg-logo="https://343live.com/upload/1259.jpg" group-title="กีฬา",BG Sports 2
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/1259/playlist.m3u8
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/1259_backup/playlist.m3u8
+#EXTINF:-1 tvg-id="1260" tvg-name="BG Sports 1" tvg-logo="https://343live.com/upload/1260.jpg" group-title="กีฬา",BG Sports 1
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/1260/playlist.m3u8
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/1260_backup/playlist.m3u8
+#EXTINF:-1 tvg-id="1368" tvg-name="Eurosport" tvg-logo="https://343live.com/upload/1368.jpg" group-title="กีฬา",Eurosport
+
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/1368/playlist.m3u8
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/1368_backup/playlist.m3u8
+#EXTINF:-1 tvg-id="1373" tvg-name="RED BULL" tvg-logo="https://343live.com/upload/1373.jpg" group-title="กีฬา",RED BULL
+
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/1373/playlist.m3u8
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/1373_backup/playlist.m3u8
+#EXTINF:-1 tvg-id="1389" tvg-name="Ball Thai 1" tvg-logo="https://343live.com/upload/1389.jpg" group-title="ทั่วไป",Ball Thai 1
+
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/1389/playlist.m3u8
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/1389_backup/playlist.m3u8
+#EXTINF:-1 tvg-id="1404" tvg-name="TV5MONDE" tvg-logo="https://343live.com/upload/1404.jpg" group-title="ทั่วไป",TV5MONDE
+
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/1404/playlist.m3u8
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/1404_backup/playlist.m3u8
+#EXTINF:-1 tvg-id="1416" tvg-name="Cool Channel" tvg-logo="https://343live.com/upload/1416.jpg" group-title="ทั่วไป",Cool Channel
+
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/1416/playlist.m3u8
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/1416_backup/playlist.m3u8
+#EXTINF:-1 tvg-id="1418" tvg-name="Fashion TV" tvg-logo="https://343live.com/upload/1418.jpg" group-title="เพลง / ดนตรี",Fashion TV
+
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/1418/playlist.m3u8
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/1418_backup/playlist.m3u8
+#EXTINF:-1 tvg-id="1431" tvg-name="Premier Sports" tvg-logo="https://343live.com/upload/1431.jpg" group-title="กีฬา",Premier Sports
+
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/1431/playlist.m3u8
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/1431_backup/playlist.m3u8
+#EXTINF:-1 tvg-id="1432" tvg-name="Play Sports 75" tvg-logo="https://343live.com/upload/1432.jpg" group-title="กีฬา",Play Sports 75
+
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/1432/playlist.m3u8
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/1432_backup/playlist.m3u8
+#EXTINF:-1 tvg-id="1433" tvg-name="Play Sports 74" tvg-logo="https://343live.com/upload/1433.jpg" group-title="กีฬา",Play Sports 74
+
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/1433/playlist.m3u8
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/1433_backup/playlist.m3u8
+#EXTINF:-1 tvg-id="1438" tvg-name="Play Sports 64" tvg-logo="https://343live.com/upload/1438.jpg" group-title="กีฬา",Play Sports 64
+
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/1438/playlist.m3u8
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/1438_backup/playlist.m3u8
+#EXTINF:-1 tvg-id="1439" tvg-name="Play Sports 48" tvg-logo="https://343live.com/upload/1439.jpg" group-title="กีฬา",Play Sports 48
+
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/1439/playlist.m3u8
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/1439_backup/playlist.m3u8
+#EXTINF:-1 tvg-id="1440" tvg-name="Play Sports 58" tvg-logo="https://343live.com/upload/1440.jpg" group-title="กีฬา",Play Sports 58
+
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/1440/playlist.m3u8
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/1440_backup/playlist.m3u8
+#EXTINF:-1 tvg-id="1441" tvg-name="Play Sports 57" tvg-logo="https://343live.com/upload/1441.jpg" group-title="กีฬา",Play Sports 57
+
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/1441/playlist.m3u8
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/1441_backup/playlist.m3u8
+#EXTINF:-1 tvg-id="1450" tvg-name="NBT Channel" tvg-logo="https://343live.com/upload/1450.jpg" group-title="ทั่วไป",NBT Channel
+
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/1450/playlist.m3u8
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/1450_backup/playlist.m3u8
+#EXTINF:-1 tvg-id="1475" tvg-name="Play Sports 73" tvg-logo="https://343live.com/upload/1475.jpg" group-title="กีฬา",Play Sports 73
+
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/1475/playlist.m3u8
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/1475_backup/playlist.m3u8
+#EXTINF:-1 tvg-id="1476" tvg-name="Play Sports 72" tvg-logo="https://343live.com/upload/1476.jpg" group-title="กีฬา",Play Sports 72
+
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/1476/playlist.m3u8
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/1476_backup/playlist.m3u8
+#EXTINF:-1 tvg-id="1477" tvg-name="Play Sports 71" tvg-logo="https://343live.com/upload/1477.jpg" group-title="กีฬา",Play Sports 71
+
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/1477/playlist.m3u8
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/1477_backup/playlist.m3u8
+#EXTINF:-1 tvg-id="1478" tvg-name="Play Sports 69" tvg-logo="https://343live.com/upload/1478.jpg" group-title="กีฬา",Play Sports 69
+
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/1478/playlist.m3u8
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/1478_backup/playlist.m3u8
+#EXTINF:-1 tvg-id="1479" tvg-name="Play Sports 66" tvg-logo="https://343live.com/upload/1479.jpg" group-title="กีฬา",Play Sports 66
+
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/1479/playlist.m3u8
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/1479_backup/playlist.m3u8
+#EXTINF:-1 tvg-id="1480" tvg-name="Play Sports 63" tvg-logo="https://343live.com/upload/1480.jpg" group-title="กีฬา",Play Sports 63
+
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/1480/playlist.m3u8
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/1480_backup/playlist.m3u8
+#EXTINF:-1 tvg-id="1481" tvg-name="Play Sports 62" tvg-logo="https://343live.com/upload/1481.jpg" group-title="กีฬา",Play Sports 62
+
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/1481/playlist.m3u8
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/1481_backup/playlist.m3u8
+#EXTINF:-1 tvg-id="1482" tvg-name="Play Sports 61" tvg-logo="https://343live.com/upload/1482.jpg" group-title="กีฬา",Play Sports 61
+
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/1482/playlist.m3u8
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/1482_backup/playlist.m3u8
+#EXTINF:-1 tvg-id="1483" tvg-name="Play Sports 56" tvg-logo="https://343live.com/upload/1483.jpg" group-title="กีฬา",Play Sports 56
+
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/1483/playlist.m3u8
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/1483_backup/playlist.m3u8
+#EXTINF:-1 tvg-id="1484" tvg-name="Play Sports 55" tvg-logo="https://343live.com/upload/1484.jpg" group-title="กีฬา",Play Sports 55
+
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/1484/playlist.m3u8
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/1484_backup/playlist.m3u8
+#EXTINF:-1 tvg-id="1485" tvg-name="Play Sports 41" tvg-logo="https://343live.com/upload/1485.jpg" group-title="กีฬา",Play Sports 41
+
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/1485/playlist.m3u8
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/1485_backup/playlist.m3u8
+#EXTINF:-1 tvg-id="1486" tvg-name="Mono MAX 10" tvg-logo="https://343live.com/upload/1486.jpg" group-title="เพลง / ดนตรี",Mono MAX 10
+
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/1486/playlist.m3u8
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/1486_backup/playlist.m3u8
+#EXTINF:-1 tvg-id="1487" tvg-name="Mono MAX 9" tvg-logo="https://343live.com/upload/1487.jpg" group-title="เพลง / ดนตรี",Mono MAX 9
+
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/1487/playlist.m3u8
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/1487_backup/playlist.m3u8
+#EXTINF:-1 tvg-id="1488" tvg-name="Mono MAX 8" tvg-logo="https://343live.com/upload/1488.jpg" group-title="เพลง / ดนตรี",Mono MAX 8
+
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/1488/playlist.m3u8
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/1488_backup/playlist.m3u8
+#EXTINF:-1 tvg-id="1489" tvg-name="Mono MAX 7" tvg-logo="https://343live.com/upload/1489.jpg" group-title="เพลง / ดนตรี",Mono MAX 7
+
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/1489/playlist.m3u8
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/1489_backup/playlist.m3u8
+#EXTINF:-1 tvg-id="1490" tvg-name="Mono MAX 6" tvg-logo="https://343live.com/upload/1490.jpg" group-title="เพลง / ดนตรี",Mono MAX 6
+
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/1490/playlist.m3u8
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/1490_backup/playlist.m3u8
+#EXTINF:-1 tvg-id="1491" tvg-name="Mono MAX 5" tvg-logo="https://343live.com/upload/1491.jpg" group-title="เพลง / ดนตรี",Mono MAX 5
+
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/1491/playlist.m3u8
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/1491_backup/playlist.m3u8
+#EXTINF:-1 tvg-id="1492" tvg-name="Mono MAX 4" tvg-logo="https://343live.com/upload/1492.jpg" group-title="เพลง / ดนตรี",Mono MAX 4
+
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/1492/playlist.m3u8
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/1492_backup/playlist.m3u8
+#EXTINF:-1 tvg-id="1493" tvg-name="Mono MAX 3" tvg-logo="https://343live.com/upload/1493.jpg" group-title="เพลง / ดนตรี",Mono MAX 3
+
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/1493/playlist.m3u8
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/1493_backup/playlist.m3u8
+#EXTINF:-1 tvg-id="1494" tvg-name="Mono MAX 2" tvg-logo="https://343live.com/upload/1494.jpg" group-title="เพลง / ดนตรี",Mono MAX 2
+
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/1494/playlist.m3u8
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/1494_backup/playlist.m3u8
+#EXTINF:-1 tvg-id="1495" tvg-name="Mono MAX 1" tvg-logo="https://343live.com/upload/1495.jpg" group-title="เพลง / ดนตรี",Mono MAX 1
+
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/1495/playlist.m3u8
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/1495_backup/playlist.m3u8
+#EXTINF:-1 tvg-id="1496" tvg-name="TLC" tvg-logo="https://343live.com/upload/1496.jpg" group-title="ทั่วไป",TLC
+
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/1496/playlist.m3u8
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/1496_backup/playlist.m3u8
+#EXTINF:-1 tvg-id="1497" tvg-name="RT News" tvg-logo="https://343live.com/upload/1497.jpg" group-title="ข่าว",RT News
+
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/1497/playlist.m3u8
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/1497_backup/playlist.m3u8
+#EXTINF:-1 tvg-id="1498" tvg-name="W-sport" tvg-logo="https://343live.com/upload/1498.jpg" group-title="กีฬา",W-sport
+
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/1498/playlist.m3u8
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/1498_backup/playlist.m3u8
+#EXTINF:-1 tvg-id="1546" tvg-name="Discovery Channel" tvg-logo="https://343live.com/upload/1546.jpg" group-title="สารคดี",Discovery Channel
+
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/1546/playlist.m3u8
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/1546_backup/playlist.m3u8
+#EXTINF:-1 tvg-id="1600" tvg-name="ABC Australia" tvg-logo="https://343live.com/upload/1600.jpg" group-title="ทั่วไป",ABC Australia
+
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/1600/playlist.m3u8
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/1600_backup/playlist.m3u8
+#EXTINF:-1 tvg-id="1606" tvg-name="Discovery Asia" tvg-logo="https://343live.com/upload/1606.jpg" group-title="สารคดี",Discovery Asia
+
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/1606/playlist.m3u8
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/1606_backup/playlist.m3u8
+#EXTINF:-1 tvg-id="1642" tvg-name="Rama Channel" tvg-logo="https://343live.com/upload/1642.jpg" group-title="ทั่วไป",Rama Channel
+
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/1642/playlist.m3u8
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/1642_backup/playlist.m3u8
+#EXTINF:-1 tvg-id="1664" tvg-name="PPTV HD" tvg-logo="https://343live.com/upload/1664.jpg" group-title="ข่าว",PPTV HD
+
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/1664/playlist.m3u8
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/1664_backup/playlist.m3u8
+#EXTINF:-1 tvg-id="1667" tvg-name="History Channel" tvg-logo="https://343live.com/upload/1667.jpg" group-title="สารคดี",History Channel
+
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/1667/playlist.m3u8
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/1667_backup/playlist.m3u8
+#EXTINF:-1 tvg-id="1689" tvg-name="BBC Lifestyle" tvg-logo="https://343live.com/upload/1689.jpg" group-title="ข่าว",BBC Lifestyle
+
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/1689/playlist.m3u8
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/1689_backup/playlist.m3u8
+#EXTINF:-1 tvg-id="1698" tvg-name="Thai PBS" tvg-logo="https://343live.com/upload/1698.jpg" group-title="ทั่วไป",Thai PBS
+
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/1698/playlist.m3u8
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/1698_backup/playlist.m3u8
+#EXTINF:-1 tvg-id="1730" tvg-name="Top News" tvg-logo="https://343live.com/upload/1730.jpg" group-title="ข่าว",Top News
+
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/1730/playlist.m3u8
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/1730_backup/playlist.m3u8
+#EXTINF:-1 tvg-id="1845" tvg-name="Food Network" tvg-logo="https://343live.com/upload/1845.jpg" group-title="ทั่วไป",Food Network
+
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/1845/playlist.m3u8
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/1845_backup/playlist.m3u8
+#EXTINF:-1 tvg-id="1854" tvg-name="Asian Food Network" tvg-logo="https://343live.com/upload/1854.jpg" group-title="ภาพยนตร์ / ซีรีส์",Asian Food Network
+
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/1854/playlist.m3u8
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/1854_backup/playlist.m3u8
+#EXTINF:-1 tvg-id="1873" tvg-name="True Asian More" tvg-logo="https://343live.com/upload/1873.jpg" group-title="ภาพยนตร์ / ซีรีส์",True Asian More
+
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/1873/playlist.m3u8
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/1873_backup/playlist.m3u8
+#EXTINF:-1 tvg-id="1874" tvg-name="True Thai Film" tvg-logo="https://343live.com/upload/1874.jpg" group-title="ภาพยนตร์ / ซีรีส์",True Thai Film
+
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/1874/playlist.m3u8
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/1874_backup/playlist.m3u8
+#EXTINF:-1 tvg-id="1875" tvg-name="True Movie Hits" tvg-logo="https://343live.com/upload/1875.jpg" group-title="ภาพยนตร์ / ซีรีส์",True Movie Hits
+
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/1875/playlist.m3u8
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/1875_backup/playlist.m3u8
+#EXTINF:-1 tvg-id="1877" tvg-name="True Film 1" tvg-logo="https://343live.com/upload/1877.jpg" group-title="ภาพยนตร์ / ซีรีส์",True Film 1
+
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/1877/playlist.m3u8
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/1877_backup/playlist.m3u8
+#EXTINF:-1 tvg-id="1913" tvg-name="Celestial Classic Movies (CCM)" tvg-logo="https://343live.com/upload/1913.jpg" group-title="ภาพยนตร์ / ซีรีส์",Celestial Classic Movies (CCM)
+
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/1913/playlist.m3u8
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/1913_backup/playlist.m3u8
+#EXTINF:-1 tvg-id="1915" tvg-name="True Film Asia" tvg-logo="https://343live.com/upload/1915.jpg" group-title="ภาพยนตร์ / ซีรีส์",True Film Asia
+
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/1915/playlist.m3u8
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/1915_backup/playlist.m3u8
+#EXTINF:-1 tvg-id="1916" tvg-name="True Series" tvg-logo="https://343live.com/upload/1916.jpg" group-title="ภาพยนตร์ / ซีรีส์",True Series
+
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/1916/playlist.m3u8
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/1916_backup/playlist.m3u8
+#EXTINF:-1 tvg-id="2017" tvg-name="True Premier HD 4" tvg-logo="https://343live.com/upload/2017.jpg" group-title="กีฬา",True Premier HD 4
+
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/2017/playlist.m3u8
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/2017_backup/playlist.m3u8
+#EXTINF:-1 tvg-id="2018" tvg-name="True Premier HD 3" tvg-logo="https://343live.com/upload/2018.jpg" group-title="กีฬา",True Premier HD 3
+
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/2018/playlist.m3u8
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/2018_backup/playlist.m3u8
+#EXTINF:-1 tvg-id="2023" tvg-name="SPOTV 2" tvg-logo="https://343live.com/upload/2023.jpg" group-title="ทั่วไป",SPOTV 2
+
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/2023/playlist.m3u8
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/2023_backup/playlist.m3u8
+#EXTINF:-1 tvg-id="2027" tvg-name="SPOTV 1" tvg-logo="https://343live.com/upload/2027.jpg" group-title="ทั่วไป",SPOTV 1
+
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/2027/playlist.m3u8
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/2027_backup/playlist.m3u8
+#EXTINF:-1 tvg-id="2029" tvg-name="Nickelodeon" tvg-logo="https://343live.com/upload/2029.jpg" group-title="เด็ก / การ์ตูน",Nickelodeon
+
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/2029/playlist.m3u8
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/2029_backup/playlist.m3u8
+#EXTINF:-1 tvg-id="2056" tvg-name="True X-Zyte" tvg-logo="https://343live.com/upload/2056.jpg" group-title="ทั่วไป",True X-Zyte
+
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/2056/playlist.m3u8
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/2056_backup/playlist.m3u8
+#EXTINF:-1 tvg-id="2100" tvg-name="CGTN" tvg-logo="https://343live.com/upload/2100.jpg" group-title="ข่าว",CGTN
+
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/2100/playlist.m3u8
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/2100_backup/playlist.m3u8
+#EXTINF:-1 tvg-id="2101" tvg-name="True Tennis" tvg-logo="https://343live.com/upload/2101.jpg" group-title="กีฬา",True Tennis
+
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/2101/playlist.m3u8
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/2101_backup/playlist.m3u8
+#EXTINF:-1 tvg-id="2145" tvg-name="Deutsche Welle DW" tvg-logo="https://343live.com/upload/2145.jpg" group-title="ข่าว",Deutsche Welle DW
+
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/2145/playlist.m3u8
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/2145_backup/playlist.m3u8
+#EXTINF:-1 tvg-id="2347" tvg-name="DreamWorks" tvg-logo="https://343live.com/upload/2347.jpg" group-title="เด็ก / การ์ตูน",DreamWorks
+
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/2347/playlist.m3u8
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/2347_backup/playlist.m3u8
+#EXTINF:-1 tvg-id="2650" tvg-name="AXN HD" tvg-logo="https://343live.com/upload/2650.jpg" group-title="ภาพยนตร์ / ซีรีส์",AXN HD
+
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/2650/playlist.m3u8
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/2650_backup/playlist.m3u8
+#EXTINF:-1 tvg-id="2739" tvg-name="Warner TV" tvg-logo="https://343live.com/upload/2739.jpg" group-title="ภาพยนตร์ / ซีรีส์",Warner TV
+
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/2739/playlist.m3u8
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/2739_backup/playlist.m3u8
+#EXTINF:-1 tvg-id="2814" tvg-name="Bloomberg" tvg-logo="https://343live.com/upload/2814.jpg" group-title="ข่าว",Bloomberg
+
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/2814/playlist.m3u8
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/2814_backup/playlist.m3u8
+#EXTINF:-1 tvg-id="2815" tvg-name="CINEMAX" tvg-logo="https://343live.com/upload/2815.jpg" group-title="ภาพยนตร์ / ซีรีส์",CINEMAX
+
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/2815/playlist.m3u8
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/2815_backup/playlist.m3u8
+#EXTINF:-1 tvg-id="2816" tvg-name="HBO Family" tvg-logo="https://343live.com/upload/2816.jpg" group-title="ภาพยนตร์ / ซีรีส์",HBO Family
+
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/2816/playlist.m3u8
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/2816_backup/playlist.m3u8
+#EXTINF:-1 tvg-id="2818" tvg-name="HBO Signature" tvg-logo="https://343live.com/upload/2818.jpg" group-title="ภาพยนตร์ / ซีรีส์",HBO Signature
+
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/2818/playlist.m3u8
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/2818_backup/playlist.m3u8
+#EXTINF:-1 tvg-id="2819" tvg-name="HBO Hits" tvg-logo="https://343live.com/upload/2819.jpg" group-title="ภาพยนตร์ / ซีรีส์",HBO Hits
+
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/2819/playlist.m3u8
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/2819_backup/playlist.m3u8
+#EXTINF:-1 tvg-id="2820" tvg-name="HBO" tvg-logo="https://343live.com/upload/2820.jpg" group-title="ภาพยนตร์ / ซีรีส์",HBO
+
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/2820/playlist.m3u8
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/2820_backup/playlist.m3u8
+#EXTINF:-1 tvg-id="2821" tvg-name="3BB Asian" tvg-logo="https://343live.com/upload/2821.jpg" group-title="ภาพยนตร์ / ซีรีส์",3BB Asian
+
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/2821/playlist.m3u8
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/2821_backup/playlist.m3u8
+#EXTINF:-1 tvg-id="2823" tvg-name="Mono29 Plus" tvg-logo="https://343live.com/upload/2823.jpg" group-title="เพลง / ดนตรี",Mono29 Plus
+
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/2823/playlist.m3u8
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/2823_backup/playlist.m3u8
+#EXTINF:-1 tvg-id="2824" tvg-name="Mono29 Music Station" tvg-logo="https://343live.com/upload/2824.jpg" group-title="เพลง / ดนตรี",Mono29 Music Station
+
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/2824/playlist.m3u8
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/2824_backup/playlist.m3u8
+#EXTINF:-1 tvg-id="2829" tvg-name="True Sport 7" tvg-logo="https://343live.com/upload/2829.jpg" group-title="กีฬา",True Sport 7
+
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/2829/playlist.m3u8
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/2829_backup/playlist.m3u8
+#EXTINF:-1 tvg-id="2875" tvg-name="Nick Jr." tvg-logo="https://343live.com/upload/2875.jpg" group-title="ทั่วไป",Nick Jr.
+
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/2875/playlist.m3u8
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/2875_backup/playlist.m3u8
+#EXTINF:-1 tvg-id="2888" tvg-name="True Sport 5" tvg-logo="https://343live.com/upload/2888.jpg" group-title="กีฬา",True Sport 5
+
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/2888/playlist.m3u8
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/2888_backup/playlist.m3u8
+#EXTINF:-1 tvg-id="2889" tvg-name="True Sport 4" tvg-logo="https://343live.com/upload/2889.jpg" group-title="กีฬา",True Sport 4
+
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/2889/playlist.m3u8
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/2889_backup/playlist.m3u8
+#EXTINF:-1 tvg-id="2890" tvg-name="True Sport 3" tvg-logo="https://343live.com/upload/2890.jpg" group-title="กีฬา",True Sport 3
+
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/2890/playlist.m3u8
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/2890_backup/playlist.m3u8
+#EXTINF:-1 tvg-id="2891" tvg-name="True Sport 2" tvg-logo="https://343live.com/upload/2891.jpg" group-title="กีฬา",True Sport 2
+
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/2891/playlist.m3u8
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/2891_backup/playlist.m3u8
+#EXTINF:-1 tvg-id="2892" tvg-name="True Sport 1" tvg-logo="https://343live.com/upload/2892.jpg" group-title="กีฬา",True Sport 1
+
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/2892/playlist.m3u8
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/2892_backup/playlist.m3u8
+#EXTINF:-1 tvg-id="2929" tvg-name="Rock Entertainment" tvg-logo="https://343live.com/upload/2929.jpg" group-title="ข่าว",Rock Entertainment
+
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/2929/playlist.m3u8
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/2929_backup/playlist.m3u8
+#EXTINF:-1 tvg-id="2930" tvg-name="Rock Action" tvg-logo="https://343live.com/upload/2930.jpg" group-title="ภาพยนตร์ / ซีรีส์",Rock Action
+
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/2930/playlist.m3u8
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/2930_backup/playlist.m3u8
+#EXTINF:-1 tvg-id="3026" tvg-name="CBS News (CBSN)" tvg-logo="https://343live.com/upload/3026.jpg" group-title="ข่าว",CBS News (CBSN)
+
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/3026/playlist.m3u8
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/3026_backup/playlist.m3u8
+#EXTINF:-1 tvg-id="4337" tvg-name="Euronews" tvg-logo="https://343live.com/upload/4337.jpg" group-title="ข่าว",Euronews
+
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/4337/playlist.m3u8
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/4337_backup/playlist.m3u8
+#EXTINF:-1 tvg-id="6328" tvg-name="Amarin TV" tvg-logo="https://343live.com/upload/6328.jpg" group-title="ทั่วไป",Amarin TV
+
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/6328/playlist.m3u8
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/6328_backup/playlist.m3u8
+#EXTINF:-1 tvg-id="6330" tvg-name="ไทยรัฐ TV HD" tvg-logo="https://343live.com/upload/6330.jpg" group-title="ทั่วไป",ไทยรัฐ TV HD
+
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/6330/playlist.m3u8
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/6330_backup/playlist.m3u8
+#EXTINF:-1 tvg-id="6332" tvg-name="MCOT HD" tvg-logo="https://343live.com/upload/6332.jpg" group-title="ทั่วไป",MCOT HD
+
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/6332/playlist.m3u8
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/6332_backup/playlist.m3u8
+#EXTINF:-1 tvg-id="6333" tvg-name="MONO 29" tvg-logo="https://343live.com/upload/6333.jpg" group-title="เพลง / ดนตรี",MONO 29
+
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/6333/playlist.m3u8
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/6333_backup/playlist.m3u8
+#EXTINF:-1 tvg-id="6335" tvg-name="Workpoint TV" tvg-logo="https://343live.com/upload/6335.jpg" group-title="ทั่วไป",Workpoint TV
+
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/6335/playlist.m3u8
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/6335_backup/playlist.m3u8
+#EXTINF:-1 tvg-id="6336" tvg-name="GMM 25" tvg-logo="https://343live.com/upload/6336.jpg" group-title="ทั่วไป",GMM 25
+
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/6336/playlist.m3u8
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/6336_backup/playlist.m3u8
+#EXTINF:-1 tvg-id="6337" tvg-name="True4U" tvg-logo="https://343live.com/upload/6337.jpg" group-title="ทั่วไป",True4U
+
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/6337/playlist.m3u8
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/6337_backup/playlist.m3u8
+#EXTINF:-1 tvg-id="6339" tvg-name="Nation" tvg-logo="https://343live.com/upload/6339.jpg" group-title="ข่าว",Nation
+
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/6339/playlist.m3u8
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/6339_backup/playlist.m3u8
+#EXTINF:-1 tvg-id="6345" tvg-name="TNN 16" tvg-logo="https://343live.com/upload/6345.jpg" group-title="ข่าว",TNN 16
+
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/6345/playlist.m3u8
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/6345_backup/playlist.m3u8
+#EXTINF:-1 tvg-id="6638" tvg-name="BBC World News" tvg-logo="https://343live.com/upload/6638.jpg" group-title="ข่าว",BBC World News
+
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/6638/playlist.m3u8
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/6638_backup/playlist.m3u8
+#EXTINF:-1 tvg-id="6639" tvg-name="CNN" tvg-logo="https://343live.com/upload/6639.jpg" group-title="ข่าว",CNN
+
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/6639/playlist.m3u8
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/6639_backup/playlist.m3u8
+#EXTINF:-1 tvg-id="7161" tvg-name="7 HD" tvg-logo="https://343live.com/upload/7161.jpg" group-title="ทั่วไป",7 HD
+
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/7161/playlist.m3u8
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/7161_backup/playlist.m3u8
+#EXTINF:-1 tvg-id="7203" tvg-name="Golf +" tvg-logo="https://343live.com/upload/7203.jpg" group-title="กีฬา",Golf +
+
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/7203/playlist.m3u8
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/7203_backup/playlist.m3u8
+#EXTINF:-1 tvg-id="7347" tvg-name="ช่อง 5 HD" tvg-logo="https://343live.com/upload/7347.jpg" group-title="ทั่วไป",ช่อง 5 HD
+
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/7347/playlist.m3u8
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/7347_backup/playlist.m3u8
+#EXTINF:-1 tvg-id="7348" tvg-name="ช่อง 3 HD" tvg-logo="https://343live.com/upload/7348.jpg" group-title="ทั่วไป",ช่อง 3 HD
+
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/7348/playlist.m3u8
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/7348_backup/playlist.m3u8
+#EXTINF:-1 tvg-id="7415" tvg-name="beIN SPORTS 10" tvg-logo="https://343live.com/upload/7415.jpg" group-title="กีฬา",beIN SPORTS 10
+
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/7415/playlist.m3u8
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/7415_backup/playlist.m3u8
+#EXTINF:-1 tvg-id="7416" tvg-name="beIN SPORTS 9" tvg-logo="https://343live.com/upload/7416.jpg" group-title="กีฬา",beIN SPORTS 9
+
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/7416/playlist.m3u8
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/7416_backup/playlist.m3u8
+#EXTINF:-1 tvg-id="7417" tvg-name="beIN SPORTS 8" tvg-logo="https://343live.com/upload/7417.jpg" group-title="กีฬา",beIN SPORTS 8
+
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/7417/playlist.m3u8
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/7417_backup/playlist.m3u8
+#EXTINF:-1 tvg-id="7418" tvg-name="beIN SPORTS 7" tvg-logo="https://343live.com/upload/7418.jpg" group-title="กีฬา",beIN SPORTS 7
+
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/7418/playlist.m3u8
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/7418_backup/playlist.m3u8
+#EXTINF:-1 tvg-id="7419" tvg-name="beIN SPORTS 6" tvg-logo="https://343live.com/upload/7419.jpg" group-title="กีฬา",beIN SPORTS 6
+
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/7419/playlist.m3u8
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/7419_backup/playlist.m3u8
+#EXTINF:-1 tvg-id="7420" tvg-name="beIN SPORTS 5" tvg-logo="https://343live.com/upload/7420.jpg" group-title="กีฬา",beIN SPORTS 5
+
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/7420/playlist.m3u8
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/7420_backup/playlist.m3u8
+#EXTINF:-1 tvg-id="7421" tvg-name="beIN SPORTS 4" tvg-logo="https://343live.com/upload/7421.jpg" group-title="กีฬา",beIN SPORTS 4
+
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/7421/playlist.m3u8
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/7421_backup/playlist.m3u8
+#EXTINF:-1 tvg-id="7422" tvg-name="beIN SPORTS 3" tvg-logo="https://343live.com/upload/7422.jpg" group-title="กีฬา",beIN SPORTS 3
+
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/7422/playlist.m3u8
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/7422_backup/playlist.m3u8
+#EXTINF:-1 tvg-id="7423" tvg-name="beIN SPORTS 2" tvg-logo="https://343live.com/upload/7423.jpg" group-title="กีฬา",beIN SPORTS 2
+
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/7423/playlist.m3u8
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/7423_backup/playlist.m3u8
+#EXTINF:-1 tvg-id="7424" tvg-name="beIN SPORTS 1" tvg-logo="https://343live.com/upload/7424.jpg" group-title="กีฬา",beIN SPORTS 1
+
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/7424/playlist.m3u8
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/7424_backup/playlist.m3u8
+#EXTINF:-1 tvg-id="7839" tvg-name="FOX Business" tvg-logo="https://343live.com/upload/7839.jpg" group-title="ทั่วไป",FOX Business
+
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/7839/playlist.m3u8
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/7839_backup/playlist.m3u8
+#EXTINF:-1 tvg-id="8007" tvg-name="Cartoon Network" tvg-logo="https://343live.com/upload/8007.jpg" group-title="ข่าว",Cartoon Network
+
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/8007/playlist.m3u8
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/8007_backup/playlist.m3u8
+#EXTINF:-1 tvg-id="8735" tvg-name="ITV4" tvg-logo="https://343live.com/upload/8735.jpg" group-title="ทั่วไป",ITV4
+
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/8735/playlist.m3u8
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/8735_backup/playlist.m3u8
+#EXTINF:-1 tvg-id="8736" tvg-name="ITV3" tvg-logo="https://343live.com/upload/8736.jpg" group-title="ทั่วไป",ITV3
+
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/8736/playlist.m3u8
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/8736_backup/playlist.m3u8
+#EXTINF:-1 tvg-id="8737" tvg-name="ITV2" tvg-logo="https://343live.com/upload/8737.jpg" group-title="ทั่วไป",ITV2
+
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/8737/playlist.m3u8
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/8737_backup/playlist.m3u8
+#EXTINF:-1 tvg-id="8738" tvg-name="ITV1" tvg-logo="https://343live.com/upload/8738.jpg" group-title="ทั่วไป",ITV1
+
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/8738/playlist.m3u8
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/8738_backup/playlist.m3u8
+#EXTINF:-1 tvg-id="8739" tvg-name="NBA" tvg-logo="https://343live.com/upload/8739.jpg" group-title="กีฬา",NBA
+
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/8739/playlist.m3u8
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/8739_backup/playlist.m3u8
+#EXTINF:-1 tvg-id="8740" tvg-name="Willow Cricket" tvg-logo="https://343live.com/upload/8740.jpg" group-title="กีฬา",Willow Cricket
+
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/8740/playlist.m3u8
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/8740_backup/playlist.m3u8
+#EXTINF:-1 tvg-id="8999" tvg-name="Boomerang" tvg-logo="https://343live.com/upload/8999.jpg" group-title="เด็ก / การ์ตูน",Boomerang
+
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/8999/playlist.m3u8
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/8999_backup/playlist.m3u8
+#EXTINF:-1 tvg-id="9196" tvg-name="FOX NEWS" tvg-logo="https://343live.com/upload/9196.jpg" group-title="ข่าว",FOX NEWS
+
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/9196/playlist.m3u8
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/9196_backup/playlist.m3u8
+#EXTINF:-1 tvg-id="10329" tvg-name="WWE Network" tvg-logo="https://343live.com/upload/10329.jpg" group-title="ทั่วไป",WWE Network
+
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/10329/playlist.m3u8
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/10329_backup/playlist.m3u8
+#EXTINF:-1 tvg-id="10330" tvg-name="MLB Network" tvg-logo="https://343live.com/upload/10330.jpg" group-title="กีฬา",MLB Network
+
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/10330/playlist.m3u8
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/10330_backup/playlist.m3u8
+#EXTINF:-1 tvg-id="10331" tvg-name="Being Sport USA" tvg-logo="https://343live.com/upload/10331.jpg" group-title="กีฬา",Being Sport USA
+
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/10331/playlist.m3u8
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/10331_backup/playlist.m3u8
+#EXTINF:-1 tvg-id="10332" tvg-name="Tennis Channel" tvg-logo="https://343live.com/upload/10332.jpg" group-title="กีฬา",Tennis Channel
+
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/10332/playlist.m3u8
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/10332_backup/playlist.m3u8
+#EXTINF:-1 tvg-id="11900" tvg-name="TSN 5" tvg-logo="https://343live.com/upload/11900.jpg" group-title="กีฬา",TSN 5
+
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/11900/playlist.m3u8
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/11900_backup/playlist.m3u8
+#EXTINF:-1 tvg-id="11901" tvg-name="TSN 4" tvg-logo="https://343live.com/upload/11901.jpg" group-title="กีฬา",TSN 4
+
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/11901/playlist.m3u8
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/11901_backup/playlist.m3u8
+#EXTINF:-1 tvg-id="11902" tvg-name="TSN 3" tvg-logo="https://343live.com/upload/11902.jpg" group-title="กีฬา",TSN 3
+
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/11902/playlist.m3u8
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/11902_backup/playlist.m3u8
+#EXTINF:-1 tvg-id="11903" tvg-name="TSN 2" tvg-logo="https://343live.com/upload/11903.jpg" group-title="กีฬา",TSN 2
+
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/11903/playlist.m3u8
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/11903_backup/playlist.m3u8
+#EXTINF:-1 tvg-id="11904" tvg-name="TSN 1" tvg-logo="https://343live.com/upload/11904.jpg" group-title="กีฬา",TSN 1
+
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/11904/playlist.m3u8
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/11904_backup/playlist.m3u8
+#EXTINF:-1 tvg-id="11920" tvg-name="NBC Sports" tvg-logo="https://343live.com/upload/11920.jpg" group-title="กีฬา",NBC Sports
+
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/11920/playlist.m3u8
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/11920_backup/playlist.m3u8
+#EXTINF:-1 tvg-id="11921" tvg-name="CBS Sports" tvg-logo="https://343live.com/upload/11921.jpg" group-title="กีฬา",CBS Sports
+
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/11921/playlist.m3u8
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/11921_backup/playlist.m3u8
+#EXTINF:-1 tvg-id="11922" tvg-name="NFL" tvg-logo="https://343live.com/upload/11922.jpg" group-title="กีฬา",NFL
+
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/11922/playlist.m3u8
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/11922_backup/playlist.m3u8
+#EXTINF:-1 tvg-id="11923" tvg-name="ESPN 2" tvg-logo="https://343live.com/upload/11923.jpg" group-title="กีฬา",ESPN 2
+
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/11923/playlist.m3u8
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/11923_backup/playlist.m3u8
+#EXTINF:-1 tvg-id="11924" tvg-name="ESPN 1" tvg-logo="https://343live.com/upload/11924.jpg" group-title="กีฬา",ESPN 1
+
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/11924/playlist.m3u8
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/11924_backup/playlist.m3u8
+#EXTINF:-1 tvg-id="11925" tvg-name="Fox Sports 2 USA" tvg-logo="https://343live.com/upload/11925.jpg" group-title="กีฬา",Fox Sports 2 USA
+
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/11925/playlist.m3u8
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/11925_backup/playlist.m3u8
+#EXTINF:-1 tvg-id="11926" tvg-name="Fox Sports 1 USA" tvg-logo="https://343live.com/upload/11926.jpg" group-title="กีฬา",Fox Sports 1 USA
+
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/11926/playlist.m3u8
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/11926_backup/playlist.m3u8
+#EXTINF:-1 tvg-id="11935" tvg-name="EuroSport 2" tvg-logo="https://343live.com/upload/11935.jpg" group-title="กีฬา",EuroSport 2
+
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/11935/playlist.m3u8
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/11935_backup/playlist.m3u8
+#EXTINF:-1 tvg-id="11936" tvg-name="EuroSport 1" tvg-logo="https://343live.com/upload/11936.jpg" group-title="กีฬา",EuroSport 1
+
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/11936/playlist.m3u8
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/11936_backup/playlist.m3u8
+#EXTINF:-1 tvg-id="11939" tvg-name="TNT Sport 4" tvg-logo="https://343live.com/upload/11939.jpg" group-title="กีฬา",TNT Sport 4
+
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/11939/playlist.m3u8
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/11939_backup/playlist.m3u8
+#EXTINF:-1 tvg-id="11940" tvg-name="TNT Sport 3" tvg-logo="https://343live.com/upload/11940.jpg" group-title="กีฬา",TNT Sport 3
+
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/11940/playlist.m3u8
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/11940_backup/playlist.m3u8
+#EXTINF:-1 tvg-id="11941" tvg-name="TNT Sport 2" tvg-logo="https://343live.com/upload/11941.jpg" group-title="กีฬา",TNT Sport 2
+
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/11941/playlist.m3u8
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/11941_backup/playlist.m3u8
+#EXTINF:-1 tvg-id="11947" tvg-name="TNT Sport 1" tvg-logo="https://343live.com/upload/11947.jpg" group-title="กีฬา",TNT Sport 1
+
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/11947/playlist.m3u8
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/11947_backup/playlist.m3u8
+#EXTINF:-1 tvg-id="11948" tvg-name="Sky Sports Premier League" tvg-logo="https://343live.com/upload/11948.jpg" group-title="กีฬา",Sky Sports Premier League
+
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/11948/playlist.m3u8
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/11948_backup/playlist.m3u8
+#EXTINF:-1 tvg-id="11949" tvg-name="Sky Sports Main Event" tvg-logo="https://343live.com/upload/11949.jpg" group-title="กีฬา",Sky Sports Main Event
+
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/11949/playlist.m3u8
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/11949_backup/playlist.m3u8
+#EXTINF:-1 tvg-id="11950" tvg-name="Sky Sports Golf" tvg-logo="https://343live.com/upload/11950.jpg" group-title="กีฬา",Sky Sports Golf
+
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/11950/playlist.m3u8
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/11950_backup/playlist.m3u8
+#EXTINF:-1 tvg-id="11951" tvg-name="Sky Sports Cricket" tvg-logo="https://343live.com/upload/11951.jpg" group-title="กีฬา",Sky Sports Cricket
+
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/11951/playlist.m3u8
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/11951_backup/playlist.m3u8
+#EXTINF:-1 tvg-id="11952" tvg-name="Sky Sports Action" tvg-logo="https://343live.com/upload/11952.jpg" group-title="กีฬา",Sky Sports Action
+
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/11952/playlist.m3u8
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/11952_backup/playlist.m3u8
+#EXTINF:-1 tvg-id="11972" tvg-name="Sky Sports +" tvg-logo="https://343live.com/upload/11972.jpg" group-title="กีฬา",Sky Sports +
+
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/11972/playlist.m3u8
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/11972_backup/playlist.m3u8
+#EXTINF:-1 tvg-id="11973" tvg-name="Sky Sports F1" tvg-logo="https://343live.com/upload/11973.jpg" group-title="กีฬา",Sky Sports F1
+
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/11973/playlist.m3u8
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/11973_backup/playlist.m3u8
+#EXTINF:-1 tvg-id="11974" tvg-name="Sky Sports Football" tvg-logo="https://343live.com/upload/11974.jpg" group-title="กีฬา",Sky Sports Football
+
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/11974/playlist.m3u8
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/11974_backup/playlist.m3u8
+#EXTINF:-1 tvg-id="11975" tvg-name="Sky Sports Mix" tvg-logo="https://343live.com/upload/11975.jpg" group-title="กีฬา",Sky Sports Mix
+
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/11975/playlist.m3u8
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/11975_backup/playlist.m3u8
+#EXTINF:-1 tvg-id="11976" tvg-name="Sky Sports News" tvg-logo="https://343live.com/upload/11976.jpg" group-title="กีฬา",Sky Sports News
+
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/11976/playlist.m3u8
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/11976_backup/playlist.m3u8
+#EXTINF:-1 tvg-id="11977" tvg-name="Sky Sports Racing" tvg-logo="https://343live.com/upload/11977.jpg" group-title="กีฬา",Sky Sports Racing
+
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/11977/playlist.m3u8
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/11977_backup/playlist.m3u8
+#EXTINF:-1 tvg-id="12682" tvg-name="MUTV" tvg-logo="https://343live.com/upload/12682.jpg" group-title="กีฬา",MUTV
+
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/12682/playlist.m3u8
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/12682_backup/playlist.m3u8
+#EXTINF:-1 tvg-id="12684" tvg-name="Liverpool TV" tvg-logo="https://343live.com/upload/12684.jpg" group-title="ทั่วไป",Liverpool TV
+
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/12684/playlist.m3u8
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/12684_backup/playlist.m3u8
+#EXTINF:-1 tvg-id="13071" tvg-name="Arena Sport 5" tvg-logo="https://343live.com/upload/13071.jpg" group-title="กีฬา",Arena Sport 5
+
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/13071/playlist.m3u8
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/13071_backup/playlist.m3u8
+#EXTINF:-1 tvg-id="13915" tvg-name="Arena Sport 4" tvg-logo="https://343live.com/upload/13915.jpg" group-title="กีฬา",Arena Sport 4
+
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/13915/playlist.m3u8
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/13915_backup/playlist.m3u8
+#EXTINF:-1 tvg-id="13916" tvg-name="Arena Sport 3" tvg-logo="https://343live.com/upload/13916.jpg" group-title="กีฬา",Arena Sport 3
+
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/13916/playlist.m3u8
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/13916_backup/playlist.m3u8
+#EXTINF:-1 tvg-id="13917" tvg-name="Arena Sport 2" tvg-logo="https://343live.com/upload/13917.jpg" group-title="กีฬา",Arena Sport 2
+
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/13917/playlist.m3u8
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/13917_backup/playlist.m3u8
+#EXTINF:-1 tvg-id="13918" tvg-name="Arena Sport 1" tvg-logo="https://343live.com/upload/13918.jpg" group-title="กีฬา",Arena Sport 1
+
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/13918/playlist.m3u8
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/13918_backup/playlist.m3u8
+#EXTINF:-1 tvg-id="14972" tvg-name="NHL" tvg-logo="https://343live.com/upload/14972.jpg" group-title="กีฬา",NHL
+
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/14972/playlist.m3u8
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/14972_backup/playlist.m3u8
+#EXTINF:-1 tvg-id="14975" tvg-name="Sportsnet Ontario" tvg-logo="https://343live.com/upload/14975.jpg" group-title="กีฬา",Sportsnet Ontario
+
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/14975/playlist.m3u8
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/14975_backup/playlist.m3u8
+#EXTINF:-1 tvg-id="15787" tvg-name="Sportsnet 360" tvg-logo="https://343live.com/upload/15787.jpg" group-title="กีฬา",Sportsnet 360
+
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/15787/playlist.m3u8
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/15787_backup/playlist.m3u8
+#EXTINF:-1 tvg-id="16299" tvg-name="Sportsnet ONE" tvg-logo="https://343live.com/upload/16299.jpg" group-title="กีฬา",Sportsnet ONE
+
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/16299/playlist.m3u8
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/16299_backup/playlist.m3u8
+#EXTINF:-1 tvg-id="16302" tvg-name="Sportsnet West" tvg-logo="https://343live.com/upload/16302.jpg" group-title="กีฬา",Sportsnet West
+
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/16302/playlist.m3u8
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/16302_backup/playlist.m3u8
+#EXTINF:-1 tvg-id="16304" tvg-name="Sportsnet World" tvg-logo="https://343live.com/upload/16304.jpg" group-title="กีฬา",Sportsnet World
+
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/16304/playlist.m3u8
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/16304_backup/playlist.m3u8
+#EXTINF:-1 tvg-id="61281" tvg-name="Bein France 3" tvg-logo="https://343live.com/upload/61281.jpg" group-title="กีฬา",Bein France 3
+
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/61281/playlist.m3u8
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/61281_backup/playlist.m3u8
+#EXTINF:-1 tvg-id="61283" tvg-name="Bein France 2" tvg-logo="https://343live.com/upload/61283.jpg" group-title="กีฬา",Bein France 2
+
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/61283/playlist.m3u8
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/61283_backup/playlist.m3u8
+#EXTINF:-1 tvg-id="61286" tvg-name="Bein France 1" tvg-logo="https://343live.com/upload/61286.jpg" group-title="กีฬา",Bein France 1
+
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/61286/playlist.m3u8
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/61286_backup/playlist.m3u8
+#EXTINF:-1 tvg-id="61289" tvg-name="Fight Sports" tvg-logo="https://343live.com/upload/61289.jpg" group-title="กีฬา",Fight Sports
+
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/61289/playlist.m3u8
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/61289_backup/playlist.m3u8
+#EXTINF:-1 tvg-id="63471" tvg-name="Sport TV 5" tvg-logo="https://343live.com/upload/63471.jpg" group-title="กีฬา",Sport TV 5
+
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/63471/playlist.m3u8
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/63471_backup/playlist.m3u8
+#EXTINF:-1 tvg-id="63472" tvg-name="Sport TV 4" tvg-logo="https://343live.com/upload/63472.jpg" group-title="กีฬา",Sport TV 4
+
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/63472/playlist.m3u8
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/63472_backup/playlist.m3u8
+#EXTINF:-1 tvg-id="63475" tvg-name="Sport TV 3" tvg-logo="https://343live.com/upload/63475.jpg" group-title="กีฬา",Sport TV 3
+
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/63475/playlist.m3u8
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/63475_backup/playlist.m3u8
+#EXTINF:-1 tvg-id="63478" tvg-name="Sport TV 2" tvg-logo="https://343live.com/upload/63478.jpg" group-title="กีฬา",Sport TV 2
+
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/63478/playlist.m3u8
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/63478_backup/playlist.m3u8
+#EXTINF:-1 tvg-id="63481" tvg-name="Sport TV 1" tvg-logo="https://343live.com/upload/63481.jpg" group-title="กีฬา",Sport TV 1
+
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/63481/playlist.m3u8
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/63481_backup/playlist.m3u8
+#EXTINF:-1 tvg-id="81433" tvg-name="ONE Championship" tvg-logo="https://343live.com/upload/81433.jpg" group-title="กีฬา",ONE Championship
+
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/81433/playlist.m3u8
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/81433_backup/playlist.m3u8
+#EXTINF:-1 tvg-id="81611" tvg-name="Monomax 8" tvg-logo="https://343live.com/upload/81611.jpg" group-title="เพลง / ดนตรี",Monomax 8
+
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/81611/playlist.m3u8
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/81611_backup/playlist.m3u8
+#EXTINF:-1 tvg-id="81639" tvg-name="Monomax 7" tvg-logo="https://343live.com/upload/81639.jpg" group-title="เพลง / ดนตรี",Monomax 7
+
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/81639/playlist.m3u8
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/81639_backup/playlist.m3u8
+#EXTINF:-1 tvg-id="81741" tvg-name="Monomax 6" tvg-logo="https://343live.com/upload/81741.jpg" group-title="เพลง / ดนตรี",Monomax 6
+
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/81741/playlist.m3u8
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/81741_backup/playlist.m3u8
+#EXTINF:-1 tvg-id="81779" tvg-name="Monomax 5" tvg-logo="https://343live.com/upload/81779.jpg" group-title="เพลง / ดนตรี",Monomax 5
+
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/81779/playlist.m3u8
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/81779_backup/playlist.m3u8
+#EXTINF:-1 tvg-id="81912" tvg-name="Monomax 4" tvg-logo="https://343live.com/upload/81912.jpg" group-title="เพลง / ดนตรี",Monomax 4
+
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/81912/playlist.m3u8
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/81912_backup/playlist.m3u8
+#EXTINF:-1 tvg-id="82044" tvg-name="Monomax 3" tvg-logo="https://343live.com/upload/82044.jpg" group-title="เพลง / ดนตรี",Monomax 3
+
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/82044/playlist.m3u8
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/82044_backup/playlist.m3u8
+#EXTINF:-1 tvg-id="82079" tvg-name="Monomax 2" tvg-logo="https://343live.com/upload/82079.jpg" group-title="เพลง / ดนตรี",Monomax 2
+
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/82079/playlist.m3u8
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/82079_backup/playlist.m3u8
+#EXTINF:-1 tvg-id="82290" tvg-name="Monomax 1" tvg-logo="https://343live.com/upload/82290.jpg" group-title="เพลง / ดนตรี",Monomax 1
+
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/82290/playlist.m3u8
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/82290_backup/playlist.m3u8
+
+#EXTINF:-1 tvg-id="" tvg-name="MONOMAX SPORT 1" tvg-logo="https://s3.dooflixlive.com/assets/images/league/tournaments_fifa-world-cup-2026_1500x1500_1781238422.png" group-title="ฟุตบอลโลก", ,WC1
+http://54.37.19.157/monomax1/playlist.m3u8
+#EXTINF:-1 tvg-id="" tvg-name="MONOMAX SPORT 1" tvg-logo="https://s3.dooflixlive.com/assets/images/league/tournaments_fifa-world-cup-2026_1500x1500_1781238422.png" group-title="ฟุตบอลโลก", ,WC2
+http://54.37.19.157/monomax2/playlist.m3u8
+#EXTINF:-1 tvg-id="" tvg-name="MONOMAX SPORT 1" tvg-logo="https://s3.dooflixlive.com/assets/images/league/tournaments_fifa-world-cup-2026_1500x1500_1781238422.png" group-title="ฟุตบอลโลก", ,WC3
+http://54.37.19.157/monomax3/playlist.m3u8
+#EXTINF:-1 tvg-id="" tvg-name="MONOMAX SPORT 1" tvg-logo="https://s3.dooflixlive.com/assets/images/league/tournaments_fifa-world-cup-2026_1500x1500_1781238422.png" group-title="ฟุตบอลโลก", ,WC4
+http://54.37.19.157/monomax5/playlist.m3u8
+#EXTINF:-1 tvg-id="" tvg-name="MONOMAX SPORT 1" tvg-logo="https://s3.dooflixlive.com/assets/images/league/tournaments_fifa-world-cup-2026_1500x1500_1781238422.png" group-title="ฟุตบอลโลก", ,WC5
+http://54.37.19.157/monomax6/playlist.m3u8
+#EXTINF:-1 tvg-id="" tvg-name="MONOMAX SPORT 1" tvg-logo="https://s3.dooflixlive.com/assets/images/league/tournaments_fifa-world-cup-2026_1500x1500_1781238422.png" group-title="ฟุตบอลโลก", ,WC6
+http://54.37.19.157/monomax7/playlist.m3u8
+#EXTINF:-1 tvg-id="" tvg-name="MONOMAX SPORT 1" tvg-logo="https://a57.foxsports.com/statics.foxsports.com/www.foxsports.com/content/uploads/2025/05/750/422/2026-fifa-world-cup-logo.jpg?ve=1&tl=1" group-title="ฟุตบอลโลก",WC7
+http://54.37.19.157/monomax8/playlist.m3u8
+#EXTINF:-1 tvg-id="" tvg-name="MONOMAX SPORT 1" tvg-logo="https://a57.foxsports.com/statics.foxsports.com/www.foxsports.com/content/uploads/2025/05/750/422/2026-fifa-world-cup-logo.jpg?ve=1&tl=1" group-title="ฟุตบอลโลก",WC8
+http://54.37.19.157/monomax9/playlist.m3u8
+#EXTINF:-1 tvg-id="" tvg-name="MONOMAX SPORT 1" tvg-logo="https://a57.foxsports.com/statics.foxsports.com/www.foxsports.com/content/uploads/2025/05/750/422/2026-fifa-world-cup-logo.jpg?ve=1&tl=1" group-title="ฟุตบอลโลก", WC9
+http://54.37.19.157/monomax6/playlist.m3u8
+#EXTINF:-1 tvg-id="" tvg-name="MONOMAX SPORT 1" tvg-logo="https://a57.foxsports.com/statics.foxsports.com/www.foxsports.com/content/uploads/2025/05/750/422/2026-fifa-world-cup-logo.jpg?ve=1&tl=1" group-title="ฟุตบอลโลก",MONOMAX FIFA 1
+https://ww.dooball350a.com/live/event1/playlist.m3u8
+#EXTINF:-1 tvg-id="" tvg-name="MONOMAX SPORT 1" tvg-logo="https://a57.foxsports.com/statics.foxsports.com/www.foxsports.com/content/uploads/2025/05/750/422/2026-fifa-world-cup-logo.jpg?ve=1&tl=1" group-title="ฟุตบอลโลก",CH1
+https://ww.dooball350a.com/live/sporttv1/chunks.m3u8
+#EXTINF:-1 tvg-id="" tvg-name="MONOMAX SPORT 1" tvg-logo="https://a57.foxsports.com/statics.foxsports.com/www.foxsports.com/content/uploads/2025/05/750/422/2026-fifa-world-cup-logo.jpg?ve=1&tl=1" group-title="ฟุตบอลโลก",CH1
+https://ww.dooball350a.com/live/sporttv5/chunks.m3u8
+#EXTINF:-1 tvg-id="" tvg-name="MONOMAX SPORT 1" tvg-logo="https://a57.foxsports.com/statics.foxsports.com/www.foxsports.com/content/uploads/2025/05/750/422/2026-fifa-world-cup-logo.jpg?ve=1&tl=1" group-title="ฟุตบอลโลก",CH3
+http://185.246.209.113:80/TSN1HD/index.m3u8
+#EXTINF:-1 tvg-id="" tvg-name="MONOMAX SPORT 1" tvg-logo="https://a57.foxsports.com/statics.foxsports.com/www.foxsports.com/content/uploads/2025/05/750/422/2026-fifa-world-cup-logo.jpg?ve=1&tl=1" group-title="ฟุตบอลโลก",CH4
+http://185.246.209.113:80/TSN5HD/index.m3u8
+
+#EXTINF:-1 tvg-id="" tvg-name=""tvg-logo="https://api.eatmorebanana.org/images/png/hd-monobkp.png" group-title="DIGITAL" tvg-name="HD-MONOBKP",HD-MONOBKP
+
+#EXTINF:-1 tvg-id="" tvg-name=""tvg-logo="https://api.eatmorebanana.org/images/png/hd-monobkp.png" group-title="DIGITAL" tvg-name="HD-MONOBKP (สำรอง)",HD-MONO
+https://apiiptv.lnwthailive.online/api/play/stream.m3u8?c=hd-mono
+#EXTINF:-1 tvg-id="" tvg-name=""tvg-logo="https://api.eatmorebanana.org/images/png/sd-altv4.png" group-title="DIGITAL" tvg-name="SD-ALTV4",SD-ALTV4
+https://apiiptv.lnwthailive.online/api/play/stream.m3u8?c=sd-altv4
+#EXTINF:-1 tvg-id="" tvg-name=""tvg-logo="https://api.eatmorebanana.org/images/png/sd-nbt.png" group-title="DIGITAL" tvg-name="SD-NBT",SD-NBT
+https://apiiptv.lnwthailive.online/api/play/stream.m3u8?c=sd-nbt
+#EXTINF:-1 tvg-id="" tvg-name=""tvg-logo="https://api.eatmorebanana.org/images/png/sd-nbt.png" group-title="DIGITAL" tvg-name="SD-NBT (สำรอง)",SD-NBT (สำรอง)
+http://54.37.19.157/nbt/playlist.m3u8
+#EXTINF:-1 tvg-id="" tvg-name=""tvg-logo="https://api.eatmorebanana.org/images/png/hd-amarin.png" group-title="DIGITAL" tvg-name="HD-AMARIN",HD-AMARIN
+https://apiiptv.lnwthailive.online/api/play/stream.m3u8?c=hd-amarin
+#EXTINF:-1 tvg-id="" tvg-name=""tvg-logo="https://api.eatmorebanana.org/images/png/hd-amarin.png" group-title="DIGITAL" tvg-name="HD-AMARIN (สำรอง)",HD-AMARIN (สำรอง)
+http://54.37.19.157/amarin/playlist.m3u8
+#EXTINF:-1 tvg-id="" tvg-name=""tvg-logo="https://api.eatmorebanana.org/images/png/hd-ch3.png" group-title="DIGITAL" tvg-name="HD-CH3",HD-CH3
+https://apiiptv.lnwthailive.online/api/play/stream.m3u8?c=hd-ch3
+#EXTINF:-1 tvg-id="" tvg-name=""tvg-logo="https://api.eatmorebanana.org/images/png/hd-ch3.png" group-title="DIGITAL" tvg-name="HD-CH3 (สำรอง)",HD-CH3 (สำรอง)
+http://54.37.19.157/ch3/playlist.m3u8
+#EXTINF:-1 tvg-id="" tvg-name=""tvg-logo="https://api.eatmorebanana.org/images/png/hd-ch5.png" group-title="DIGITAL" tvg-name="HD-CH5",HD-CH5
+https://apiiptv.lnwthailive.online/api/play/stream.m3u8?c=hd-ch5
+#EXTINF:-1 tvg-id="" tvg-name=""tvg-logo="https://api.eatmorebanana.org/images/png/hd-ch5.png" group-title="DIGITAL" tvg-name="HD-CH5 (สำรอง)",HD-CH5 (สำรอง)
+http://54.37.19.157/ch5/playlist.m3u8
+#EXTINF:-1 tvg-id="" tvg-name=""tvg-logo="https://api.eatmorebanana.org/images/png/hd-ch7.png" group-title="DIGITAL" tvg-name="HD-CH7",HD-CH7
+https://apiiptv.lnwthailive.online/api/play/stream.m3u8?c=hd-ch7
+#EXTINF:-1 tvg-id="" tvg-name=""tvg-logo="https://api.eatmorebanana.org/images/png/hd-ch7.png" group-title="DIGITAL" tvg-name="HD-CH7 (สำรอง)",HD-CH7 (สำรอง)
+http://54.37.19.157/ch7/playlist.m3u8
+#EXTINF:-1 tvg-id="" tvg-name=""tvg-logo="https://api.eatmorebanana.org/images/png/hd-ch8.png" group-title="DIGITAL" tvg-name="HD-CH8",HD-CH8
+https://apiiptv.lnwthailive.online/api/play/stream.m3u8?c=hd-ch8
+#EXTINF:-1 tvg-id="" tvg-name=""tvg-logo="https://api.eatmorebanana.org/images/png/hd-ch8.png" group-title="DIGITAL" tvg-name="HD-CH8 (สำรอง)",HD-CH8 (สำรอง)
+http://54.37.19.157/ch8/playlist.m3u8
+#EXTINF:-1 tvg-id="" tvg-name=""tvg-logo="https://api.eatmorebanana.org/images/png/hd-gmmone.png" group-title="DIGITAL" tvg-name="HD-GMMONE",HD-GMMONE
+https://apiiptv.lnwthailive.online/api/play/stream.m3u8?c=hd-gmmone
+#EXTINF:-1 tvg-id="" tvg-name=""tvg-logo="https://api.eatmorebanana.org/images/png/hd-gmmone.png" group-title="DIGITAL" tvg-name="HD-GMMONE (สำรอง)",HD-GMMONE (สำรอง)
+http://54.37.19.157/one31/playlist.m3u8
+#EXTINF:-1 tvg-id="" tvg-name=""tvg-logo="https://api.eatmorebanana.org/images/png/hd-mcot.png" group-title="DIGITAL" tvg-name="HD-MCOT",HD-MCOT
+https://apiiptv.lnwthailive.online/api/play/stream.m3u8?c=hd-mcot
+#EXTINF:-1 tvg-id="" tvg-name=""tvg-logo="https://api.eatmorebanana.org/images/png/hd-mcot.png" group-title="DIGITAL" tvg-name="HD-MCOT (สำรอง)",HD-MCOT (สำรอง)
+http://54.37.19.157/mcot/playlist.m3u8
+#EXTINF:-1 tvg-id="" tvg-name=""tvg-logo="https://api.eatmorebanana.org/images/png/hd-mono.png" group-title="DIGITAL" tvg-name="HD-MONO",HD-MONO
+https://apiiptv.lnwthailive.online/api/play/stream.m3u8?c=hd-mono
+#EXTINF:-1 tvg-id="" tvg-name=""tvg-logo="https://api.eatmorebanana.org/images/png/hd-mono.png" group-title="DIGITAL" tvg-name="HD-MONO (สำรอง)",HD-MONO (สำรอง)
+https://apiiptv.lnwthailive.online/api/play/stream.m3u8?c=hd-mono
+#EXTINF:-1 tvg-id="" tvg-name=""tvg-logo="https://api.eatmorebanana.org/images/png/hd-pptv.png" group-title="DIGITAL" tvg-name="HD-PPTV",HD-PPTV
+https://apiiptv.lnwthailive.online/api/play/stream.m3u8?c=hd-pptv
+#EXTINF:-1 tvg-id="" tvg-name=""tvg-logo="https://api.eatmorebanana.org/images/png/hd-pptv.png" group-title="DIGITAL" tvg-name="HD-PPTV (สำรอง)",HD-PPTV (สำรอง)
+http://54.37.19.157/pptv/playlist.m3u8
+#EXTINF:-1 tvg-id="" tvg-name=""tvg-logo="https://api.eatmorebanana.org/images/png/hd-thairath.png" group-title="DIGITAL" tvg-name="HD-THAIRATH",HD-THAIRATH
+https://apiiptv.lnwthailive.online/api/play/stream.m3u8?c=hd-thairath
+#EXTINF:-1 tvg-id="" tvg-name=""tvg-logo="https://api.eatmorebanana.org/images/png/hd-thairath.png" group-title="DIGITAL" tvg-name="HD-THAIRATH (สำรอง)",HD-THAIRATH (สำรอง)
+http://54.37.19.157/thairath/playlist.m3u8
+#EXTINF:-1 tvg-id="" tvg-name=""tvg-logo="https://api.eatmorebanana.org/images/png/hd-tpbs.png" group-title="DIGITAL" tvg-name="HD-TPBS",HD-TPBS
+https://apiiptv.lnwthailive.online/api/play/stream.m3u8?c=hd-tpbs
+#EXTINF:-1 tvg-id="" tvg-name=""tvg-logo="https://api.eatmorebanana.org/images/png/hd-workpoint.png" group-title="DIGITAL" tvg-name="HD-WORKPOINT",HD-WORKPOINT
+https://apiiptv.lnwthailive.online/api/play/stream.m3u8?c=hd-workpoint
+#EXTINF:-1 tvg-id="" tvg-name=""tvg-logo="https://api.eatmorebanana.org/images/png/hd-workpoint.png" group-title="DIGITAL" tvg-name="HD-WORKPOINT (สำรอง)",HD-WORKPOINT (สำรอง)
+http://54.37.19.157/workpoint/playlist.m3u8
+#EXTINF:-1 tvg-id="" tvg-name=""tvg-logo="https://api.eatmorebanana.org/images/png/sd-24u.png" group-title="DIGITAL" tvg-name="SD-24U",SD-24U
+https://apiiptv.lnwthailive.online/api/play/stream.m3u8?c=sd-24u
+#EXTINF:-1 tvg-id="" tvg-name=""tvg-logo="https://api.eatmorebanana.org/images/png/sd-gmmchannel.png" group-title="DIGITAL" tvg-name="SD-GMMCHANNEL",SD-GMMCHANNEL
+http://54.37.19.157/gmm25/playlist.m3u8
+#EXTINF:-1 tvg-id="" tvg-name=""tvg-logo="https://api.eatmorebanana.org/images/png/sd-gmmchannel.png" group-title="DIGITAL" tvg-name="SD-GMMCHANNEL (สำรอง)",SD-GMMCHANNEL (สำรอง)
+https://apiiptv.lnwthailive.online/api/play/stream.m3u8?c=sd-gmmchannel
+#EXTINF:-1 tvg-id="" tvg-name=""tvg-logo="https://api.eatmorebanana.org/images/png/sd-nation.png" group-title="DIGITAL" tvg-name="SD-NATION",SD-NATION
+https://apiiptv.lnwthailive.online/api/play/stream.m3u8?c=sd-nation
+#EXTINF:-1 tvg-id="" tvg-name=""tvg-logo="https://api.eatmorebanana.org/images/png/sd-nation.png" group-title="DIGITAL" tvg-name="SD-NATION (สำรอง)",SD-NATION (สำรอง)
+http://54.37.19.157/nation/playlist.m3u8
+#EXTINF:-1 tvg-id="" tvg-name=""tvg-logo="https://api.eatmorebanana.org/images/png/sd-tnn24.png" group-title="DIGITAL" tvg-name="SD-TNN24",SD-TNN24
+https://apiiptv.lnwthailive.online/api/play/stream.m3u8?c=sd-tnn24
+#EXTINF:-1 tvg-id="" tvg-name=""tvg-logo="https://api.eatmorebanana.org/images/png/sd-tnn24.png" group-title="DIGITAL" tvg-name="SD-TNN24 (สำรอง)",SD-TNN24 (สำรอง)
+http://54.37.19.157/tnn16/playlist.m3u8
+#EXTINF:-1 tvg-id="" tvg-name=""tvg-logo="https://api.eatmorebanana.org/images/png/sd-tptv.png" group-title="DIGITAL" tvg-name="SD-TPTV",SD-TPTV
+https://apiiptv.lnwthailive.online/api/play/stream.m3u8?c=sd-tptv
+#EXTINF:-1 tvg-id="" tvg-name=""tvg-logo="https://api.eatmorebanana.org/images/png/sd-tptv.png" group-title="DIGITAL" tvg-name="SD-TPTV (สำรอง)",SD-TPTV (สำรอง)
+https://apiiptv.lnwthailive.online/api/play/stream.m3u8?c=sd-tptv
+
+#EXTINF:-1 tvg-id="" tvg-name=""tvg-logo="https://api.eatmorebanana.org/images/png/hd-asianmore.png" group-title="MOVIE&SERIES" tvg-name="HD-ASIANMORE",HD-ASIANMORE
+https://apiiptv.lnwthailive.online/api/play/stream.m3u8?c=hd-asianmore
+#EXTINF:-1 tvg-id="" tvg-name=""tvg-logo="https://api.eatmorebanana.org/images/png/hd-axn.png" group-title="MOVIE&SERIES" tvg-name="HD-ASIANMORE (สำรอง)",AXN 
+http://54.37.19.157/axn/playlist.m3u8
+#EXTINF:-1 tvg-id="" tvg-name=""tvg-logo="https://api.eatmorebanana.org/images/png/hd-dreamworks.png" group-title="MOVIE&SERIES" tvg-name="HD-DREAMWORKS",HD-DREAMWORKS
+https://apiiptv.lnwthailive.online/api/play/stream.m3u8?c=hd-dreamworks
+#EXTINF:-1 tvg-id="" tvg-name=""tvg-logo="https://api.eatmorebanana.org/images/png/sd-celestial.png" group-title="MOVIE&SERIES" tvg-name="HD-DREAMWORKS (สำรอง)",SD-CELESTIAL
+https://apiiptv.lnwthailive.online/api/play/stream.m3u8?c=sd-celestial
+#EXTINF:-1 tvg-id="" tvg-name=""tvg-logo="https://api.eatmorebanana.org/images/png/hd-axn.png" group-title="MOVIE&SERIES" tvg-name="HD-AXN",HD-AXN
+https://apiiptv.lnwthailive.online/api/play/stream.m3u8?c=hd-axn
+#EXTINF:-1 tvg-id="" tvg-name=""tvg-logo="https://api.eatmorebanana.org/images/png/hd-tfilm.png" group-title="MOVIE&SERIES" tvg-name="HD-TFILM",HD-TFILM
+https://apiiptv.lnwthailive.online/api/play/stream.m3u8?c=hd-tfilm
+#EXTINF:-1 tvg-id="" tvg-name=""tvg-logo="https://api.eatmorebanana.org/images/png/th-hbo.png" group-title="MOVIE&SERIES",HBO
+http://54.37.19.157/hbohd/playlist.m3u8
+#EXTINF:-1 tvg-id="" tvg-name=""tvg-logo="https://api.eatmorebanana.org/images/png/th-hbo.png" group-title="MOVIE&SERIES", HBOHTIS 
+http://54.37.19.157/hboh/playlist.m3u8
+#EXTINF:-1 tvg-id="" tvg-name=""tvg-logo="https://api.eatmorebanana.org/images/png/th-hbo.png" group-title="MOVIE&SERIES", HBOSIG 
+http://54.37.19.157/hbos/playlist.m3u8
+#EXTINF:-1 tvg-id="" tvg-name=""tvg-logo="https://api.eatmorebanana.org/images/png/th-hbo.png" group-title="MOVIE&SERIES", HBOFAMILY 
+http://54.37.19.157/hbof/playlist.m3u8
+#EXTINF:-1 tvg-id="" tvg-name=""tvg-logo="https://api.eatmorebanana.org/images/png/th-cinemax.png" group-title="MOVIE&SERIES",HBOCAM
+https://apiiptv.lnwthailive.online/api/play/stream.m3u8?c=hd-cinemax
+#EXTINF:-1 tvg-id="" tvg-name=""tvg-logo="https://api.eatmorebanana.org/images/png/hd-cinemax.png" group-title="MOVIE&SERIES" tvg-name="HD-AXN (สำรอง)",CINEMAX
+http://54.37.19.157/cinemax/playlist.m3u8
+#EXTINF:-1 tvg-id="" tvg-name=""tvg-logo="https://api.eatmorebanana.org/images/png/hd-tfilm2.png" group-title="MOVIE&SERIES" tvg-name="HD-TFILM2",HD-TFILM2
+https://apiiptv.lnwthailive.online/api/play/stream.m3u8?c=hd-tfilm2
+#EXTINF:-1 tvg-id="" tvg-name=""tvg-logo="https://api.eatmorebanana.org/images/png/sd-tlc.png" group-title="MOVIE&SERIES" tvg-name="HD-TFILM2 (สำรอง)",HD-TLC
+http://54.37.19.157/tlc/playlist.m3u8
+#EXTINF:-1 tvg-id="" tvg-name=""tvg-logo="https://api.eatmorebanana.org/images/png/hd-xzyte.png" group-title="MOVIE&SERIES" tvg-name="HD-XZYTE",HD-XZYTE
+https://apiiptv.lnwthailive.online/api/play/stream.m3u8?c=hd-xzyte
+#EXTINF:-1 tvg-id="" tvg-name=""tvg-logo="https://api.eatmorebanana.org/images/png/hd-xzyte.png" group-title="MOVIE&SERIES" tvg-name="HD-XZYTE (สำรอง)",HD-XZYTE (สำรอง)
+https://apiiptv.lnwthailive.online/api/play/stream.m3u8?c=hd-xzyte
+#EXTINF:-1 tvg-id="" tvg-name=""tvg-logo="https://api.eatmorebanana.org/images/png/sd-filmasia.png" group-title="MOVIE&SERIES" tvg-name="SD-FILMASIA",SD-FILMASIA
+https://apiiptv.lnwthailive.online/api/play/stream.m3u8?c=sd-filmasia
+#EXTINF:-1 tvg-id="" tvg-name=""tvg-logo="https://get.perfecttv.net/logo/rockentertainment.png" group-title="MOVIE&SERIES" tvg-name=" ", ROCK ENTERTAINMENT
+https://live.livedoomovies.com:4433/api/hls/live/2929/playlist.m3u8
+#EXTINF:-1 tvg-id="" tvg-name=""tvg-logo="https://get.perfecttv.net/logo/rockaction.png" group-title="MOVIE&SERIES" tvg-name=" ",ROCKACTION
+https://live.livedoomovies.com:4433/api/hls/live/2930/playlist.m3u8
+#EXTINF:-1 tvg-id="" tvg-name=""tvg-logo="https://api.eatmorebanana.org/images/png/sd-moviehits.png" group-title="MOVIE&SERIES" tvg-name="SD-MOVIEHITS",SD-MOVIEHITS
+https://apiiptv.lnwthailive.online/api/play/stream.m3u8?c=sd-moviehits
+#EXTINF:-1 tvg-id="" tvg-name=""tvg-logo="https://api.eatmorebanana.org/images/png/sd-moviehits.png" group-title="MOVIE&SERIES" tvg-name="SD-MOVIEHITS (สำรอง)",SD-MOVIEHITS (สำรอง)
+https://apiiptv.lnwthailive.online/api/play/stream.m3u8?c=sd-moviehits
+#EXTINF:-1 tvg-id="" tvg-name=""tvg-logo="https://api.eatmorebanana.org/images/png/sd-series.png" group-title="MOVIE&SERIES" tvg-name="SD-SERIES",SD-SERIES
+https://apiiptv.lnwthailive.online/api/play/stream.m3u8?c=sd-series
+#EXTINF:-1 tvg-id="" tvg-name=""tvg-logo="https://api.eatmorebanana.org/images/png/sd-series.png" group-title="MOVIE&SERIES" tvg-name="SD-SERIES (สำรอง)",SD-SERIES (สำรอง)
+https://apiiptv.lnwthailive.online/api/play/stream.m3u8?c=sd-series
+#EXTINF:-1 tvg-id="" tvg-name=""tvg-logo="https://api.eatmorebanana.org/images/png/sd-thaifilm.png" group-title="MOVIE&SERIES" tvg-name="SD-THAIFILM",SD-THAIFILM
+https://apiiptv.lnwthailive.online/api/play/stream.m3u8?c=sd-thaifilm
+#EXTINF:-1 tvg-id="" tvg-name=""tvg-logo="https://api.eatmorebanana.org/images/png/sd-thaifilm.png" group-title="MOVIE&SERIES" tvg-name="SD-THAIFILM (สำรอง)",SD-THAIFILM (สำรอง)
+https://apiiptv.lnwthailive.online/api/play/stream.m3u8?c=sd-thaifilm
+
+#EXTINF:-1 tvg-id="" tvg-name=""tvg-logo="https://api.eatmorebanana.org/images/png/sd-asianfood.png" group-title="DOCUMENTARY" tvg-name="SD-ASIANFOOD",SD-ASIANFOOD
+https://apiiptv.lnwthailive.online/api/play/stream.m3u8?c=sd-asianfood
+#EXTINF:-1 tvg-id="" tvg-name=""tvg-logo="https://api.eatmorebanana.org/images/png/sd-asianfood.png" group-title="DOCUMENTARY" tvg-name="SD-ASIANFOOD (สำรอง)",SD-ASIANFOOD (สำรอง)
+https://apiiptv.lnwthailive.online/api/play/stream.m3u8?c=sd-asianfood
+#EXTINF:-1 tvg-id="" tvg-name=""tvg-logo="https://api.eatmorebanana.org/images/png/sd-expsci.png" group-title="DOCUMENTARY" tvg-name="SD-EXPSCI",SD-EXPSCI
+https://apiiptv.lnwthailive.online/api/play/stream.m3u8?c=sd-expsci
+#EXTINF:-1 tvg-id="" tvg-name=""tvg-logo="https://api.eatmorebanana.org/images/png/sd-expsci.png" group-title="DOCUMENTARY" tvg-name="SD-EXPSCI (สำรอง)",SD-EXPSCI (สำรอง)
+https://apiiptv.lnwthailive.online/api/play/stream.m3u8?c=sd-expsci
+#EXTINF:-1 tvg-id="" tvg-name=""tvg-logo="https://api.eatmorebanana.org/images/png/sd-discovery.png" group-title="DOCUMENTARY" tvg-name="SD-DISCOVERY",SD-DISCOVERY
+https://apiiptv.lnwthailive.online/api/play/stream.m3u8?c=sd-discovery
+#EXTINF:-1 tvg-id="" tvg-name=""tvg-logo="https://api.eatmorebanana.org/images/png/sd-discovery.png" group-title="DOCUMENTARY" tvg-name="SD-DISCOVERY (สำรอง)",SD-DISCOVERY (สำรอง)
+http://54.37.19.157/Discovery/tracks-v1a1/playlist.m3u8
+
+#EXTINF:-1 tvg-id="" tvg-name=""tvg-logo="https://api.eatmorebanana.org/images/png/epl-3.png" group-title="SPORTS" tvg-name="EPL-3",EPL-3
+https://apiiptv.lnwthailive.online/api/play/stream.m3u8?c=epl-3
+#EXTINF:-1 tvg-id="" tvg-name=""tvg-logo="https://api.eatmorebanana.org/images/png/epl-3.png" group-title="SPORTS" tvg-name="EPL-3 (สำรอง)",EPL-3 (สำรอง)
+
+#EXTINF:-1 tvg-id="" tvg-name=""tvg-logo="https://api.eatmorebanana.org/images/png/hd-spotv.png" group-title="SPORTS" tvg-name="HD-SPOTV",HD-SPOTV
+#EXTVLCOPT:http-referrer=https://343live.com/
+https://godlivetv.io/343live/2023/playlist.m3u8
+#EXTINF:-1 tvg-id="" tvg-name=""tvg-logo="https://api.eatmorebanana.org/images/png/hd-spotv.png" group-title="SPORTS" tvg-name="HD-SPOTV (สำรอง)",HD-SPOTV
+http://54.37.19.157/spotv/playlist.m3u8`;
+
+        // ตัวแปรระบบหลัก
+        let channels = [];
+        let categories = ['ทั้งหมด'];
+        let activeCategory = 'ทั้งหมด';
+
+        // เริ่มต้นวิเคราะห์ข้อมูลเมื่อเปิดหน้าเว็บ
+        window.onload = function() {
+            parseM3U(m3uData);
+            renderCategories();
+            renderChannels();
+            
+            // เล่นช่องแรกให้โดยอัตโนมัติถ้าหากมีข้อมูลช่อง
+            if(channels.length > 0) {
+                selectChannel(channels[0]);
+            }
+        };
+
+        // --- 🤖 ฟังก์ชันถอดรหัสอ่านข้อความ M3U (M3U Parser) ---
+        function parseM3U(data) {
+            const lines = data.split('\n');
+            let currentItem = null;
+
+            for (let i = 0; i < lines.length; i++) {
+                let line = lines[i].trim();
+                if (!line) continue;
+
+                // ตรวจสอบข้อมูลแท็กช่องทีวี
+                if (line.startsWith('#EXTINF:')) {
+                    currentItem = {};
+                    
+                    // ดึงลิงก์รูปภาพหน้าปก (tvg-logo)
+                    const logoMatch = line.match(/tvg-logo="([^"]+)"/);
+                    currentItem.logo = logoMatch ? logoMatch[1] : "https://placehold.co/150?text=TV";
+
+                    // ดึงกลุ่มหมวดหมู่ (group-title)
+                    const groupMatch = line.match(/group-title="([^"]+)"/);
+                    currentItem.category = groupMatch ? groupMatch[1] : "ทั่วไป";
+
+                    // ดึงชื่อรายการ/ชื่อช่องทีวี (ข้อความด้านหลังเครื่องหมายคอมม่า `,`)
+                    const commaIndex = line.lastIndexOf(',');
+                    if (commaIndex !== -1) {
+                        currentItem.name = line.substring(commaIndex + 1).trim();
+                    } else {
+                        currentItem.name = "ไม่มีชื่อช่อง";
+                    }
+
+                    // บันทึกหมวดหมู่ใหม่ที่เจอเก็บไว้แยกแท็บ
+                    if (!categories.includes(currentItem.category)) {
+                        categories.push(currentItem.category);
+                    }
+                } 
+                // ตรวจสอบบรรทัดที่เป็นลิงก์วิดีโอสตรีมมิ่ง (ข้ามตัวเลือกเสริมอื่นๆ ไปก่อน)
+                else if (line.startsWith('http://') || line.startsWith('https://')) {
+                    if (currentItem) {
+                        currentItem.url = line;
+                        channels.push(currentItem);
+                        currentItem = null; // รีเซ็ตเพื่อรอรับช่องถัดไป
+                    }
+                }
+            }
+            document.getElementById('total-channels').innerText = channels.length;
+        }
+
+        // --- 📁 ฟังก์ชันสร้างแท็บปุ่มกดหมวดหมู่รายการ ---
+        function renderCategories() {
+            const container = document.getElementById("category-tabs");
+            container.innerHTML = "";
+
+            categories.forEach(cat => {
+                const isSelected = cat === activeCategory;
+                const button = document.createElement("button");
+                button.innerText = cat;
+                button.className = `whitespace-nowrap px-4 py-1.5 rounded-full text-xs font-semibold transition-all cursor-pointer ${
+                    isSelected ? 'bg-red-600 text-white font-bold shadow-md shadow-red-900/40' : 'bg-gray-800 text-gray-400 hover:bg-gray-700 hover:text-white'
+                }`;
+
+                button.onclick = () => {
+                    activeCategory = cat;
+                    renderCategories();
+                    renderChannels();
+                };
+                container.appendChild(button);
+            });
+        }
+
+        // --- 📺 ฟังก์ชันแสดงรายชื่อช่องทีวีลงในรายการด้านขวามือ ---
+        function renderChannels() {
+            const container = document.getElementById("channel-list");
+            container.innerHTML = "";
+
+            // กรองช่องตามหมวดหมู่ที่คลิกเลือกไว้
+            const filteredChannels = activeCategory === 'ทั้งหมด' 
+                ? channels 
+                : channels.filter(ch => ch.category === activeCategory);
+
+            if (filteredChannels.length === 0) {
+                container.innerHTML = `<p class="text-center text-gray-500 mt-8 text-xs">❌ ไม่พบช่องในหมวดหมู่นี้</p>`;
+                return;
+            }
+
+            filteredChannels.forEach(item => {
+                const card = document.createElement("div");
+                card.className = "flex items-center gap-3 bg-gray-900/60 hover:bg-gray-800/80 p-2.5 rounded-xl border border-gray-800/60 hover:border-red-500/40 transition-all duration-150 cursor-pointer group";
+                
+                card.onclick = () => selectChannel(item);
+
+                card.innerHTML = `
+                    <div class="relative h-11 w-11 flex-shrink-0 bg-gray-950 rounded-lg overflow-hidden border border-gray-800 flex items-center justify-center p-1">
+                        <img src="${item.logo}" alt="" class="h-full w-full object-contain" onerror="this.src='https://placehold.co/150?text=No+Img'">
+                    </div>
+                    <div class="flex-1 min-w-0">
+                        <h4 class="text-xs font-bold text-gray-200 truncate group-hover:text-red-400 transition-colors">${item.name}</h4>
+                        <p class="text-[10px] text-gray-500 mt-0.5 truncate">${item.category}</p>
+                    </div>
+                    <div class="text-gray-700 group-hover:text-red-500 transition-colors px-1">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" class="w-4 h-4"><path stroke-linecap="round" stroke-linejoin="round" d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.347a1.125 1.125 0 0 1 0 1.972l-11.54 6.347a1.125 1.125 0 0 1-1.667-.986V5.653Z" /></svg>
+                    </div>
+                `;
+                container.appendChild(card);
+            });
+        }
+
+        // --- 🎥 ฟังก์ชันสลับการควบคุมเครื่องเล่นและส่งลิงก์วิดีโอไปเล่นสด ---
+        function selectChannel(item) {
+            const video = document.getElementById('video-player');
+            
+            // เปลี่ยนข้อความรายละเอียดด้านล่างตัวเล่น
+            document.getElementById("current-title").innerText = item.name;
+            document.getElementById("current-group").innerText = item.category;
+            document.getElementById("current-url").innerText = `ลิงก์แหล่งที่มา: ${item.url}`;
+            document.getElementById("current-logo").src = item.logo;
+
+            // ตรวจสอบการสตรีมวิดีโอสดแบบ HLS (.m3u8)
+            if (Hls.isSupported()) {
+                const hls = new Hls();
+                hls.loadSource(item.url);
+                hls.attachMedia(video);
+                hls.on(Hls.Events.MANIFEST_PARSED, () => {
+                    video.play().catch(e => console.log("รออนุญาตให้เล่นอัตโนมัติจากเบราว์เซอร์"));
+                });
+            } 
+            // รองรับสำหรับ Safari / iOS เบราว์เซอร์โดยตรง
+            else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+                video.src = item.url;
+                video.addEventListener('loadedmetadata', () => {
+                    video.play();
+                });
+            } else {
+                alert("ขออภัย! เบราว์เซอร์นี้ไม่มีความสามารถในการถอดรหัสวิดีโอแบบสตรีมมิ่ง M3U8 ได้ครับ");
+            }
+        }
+    </script>
+</body>
+</html>
